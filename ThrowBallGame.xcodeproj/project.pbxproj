@@ -10,10 +10,8 @@
 		A9A4D4A11ACFA1B5008A448E /* ZCGameBall.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4801ACFA1B5008A448E /* ZCGameBall.m */; };
 		A9A4D4A21ACFA1B5008A448E /* ZCGameBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4831ACFA1B5008A448E /* ZCGameBasket.m */; };
 		A9A4D4A31ACFA1B5008A448E /* Game_View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4861ACFA1B5008A448E /* Game_View.m */; };
-		A9A4D4A41ACFA1B5008A448E /* GameImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4881ACFA1B5008A448E /* GameImageView.m */; };
 		A9A4D4A51ACFA1B5008A448E /* ZCGameDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D48A1ACFA1B5008A448E /* ZCGameDrawView.m */; };
 		A9A4D4A61ACFA1B5008A448E /* ZCGameImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D48C1ACFA1B5008A448E /* ZCGameImageView.m */; };
-		A9A4D4A71ACFA1B5008A448E /* ZGameDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D48E1ACFA1B5008A448E /* ZGameDrawView.m */; };
 		A9A4D4A81ACFA1B5008A448E /* ZCGameHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4911ACFA1B5008A448E /* ZCGameHole.m */; };
 		A9A4D4A91ACFA1B5008A448E /* ball_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4931ACFA1B5008A448E /* ball_3.png */; };
 		A9A4D4AA1ACFA1B5008A448E /* basket.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4941ACFA1B5008A448E /* basket.png */; };
@@ -22,8 +20,6 @@
 		A9A4D4AD1ACFA1B5008A448E /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4971ACFA1B5008A448E /* hole.png */; };
 		A9A4D4AE1ACFA1B5008A448E /* ZCGameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D49A1ACFA1B5008A448E /* ZCGameCard.m */; };
 		A9A4D4AF1ACFA1B5008A448E /* ZCGameStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D49C1ACFA1B5008A448E /* ZCGameStat.m */; };
-		A9A4D4B01ACFA1B5008A448E /* ZGameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D49E1ACFA1B5008A448E /* ZGameCard.m */; };
-		A9A4D4B11ACFA1B5008A448E /* ZGameStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4A01ACFA1B5008A448E /* ZGameStat.m */; };
 		A9B58A6F1ABABADB00F6CEBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */; };
 		A9B58A711ABABADB00F6CEBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A701ABABADB00F6CEBF /* Foundation.framework */; };
 		A9B58A731ABABADB00F6CEBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A721ABABADB00F6CEBF /* CoreGraphics.framework */; };
@@ -35,6 +31,7 @@
 		A9B58A851ABABADB00F6CEBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A841ABABADB00F6CEBF /* Default-568h@2x.png */; };
 		A9B58A881ABABADB00F6CEBF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A861ABABADB00F6CEBF /* MainStoryboard.storyboard */; };
 		A9B58A8B1ABABADC00F6CEBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B58A8A1ABABADC00F6CEBF /* ViewController.m */; };
+		A9D8F4A81AD039A900BC9DDB /* ZCGThrowBallCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = A9D8F4A71AD039A900BC9DDB /* ZCGThrowBallCtrl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,14 +41,10 @@
 		A9A4D4831ACFA1B5008A448E /* ZCGameBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameBasket.m; sourceTree = "<group>"; };
 		A9A4D4851ACFA1B5008A448E /* Game_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game_View.h; sourceTree = "<group>"; };
 		A9A4D4861ACFA1B5008A448E /* Game_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game_View.m; sourceTree = "<group>"; };
-		A9A4D4871ACFA1B5008A448E /* GameImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameImageView.h; sourceTree = "<group>"; };
-		A9A4D4881ACFA1B5008A448E /* GameImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameImageView.m; sourceTree = "<group>"; };
 		A9A4D4891ACFA1B5008A448E /* ZCGameDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameDrawView.h; sourceTree = "<group>"; };
 		A9A4D48A1ACFA1B5008A448E /* ZCGameDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameDrawView.m; sourceTree = "<group>"; };
 		A9A4D48B1ACFA1B5008A448E /* ZCGameImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameImageView.h; sourceTree = "<group>"; };
 		A9A4D48C1ACFA1B5008A448E /* ZCGameImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameImageView.m; sourceTree = "<group>"; };
-		A9A4D48D1ACFA1B5008A448E /* ZGameDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGameDrawView.h; sourceTree = "<group>"; };
-		A9A4D48E1ACFA1B5008A448E /* ZGameDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGameDrawView.m; sourceTree = "<group>"; };
 		A9A4D4901ACFA1B5008A448E /* ZCGameHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameHole.h; sourceTree = "<group>"; };
 		A9A4D4911ACFA1B5008A448E /* ZCGameHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameHole.m; sourceTree = "<group>"; };
 		A9A4D4931ACFA1B5008A448E /* ball_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball_3.png; sourceTree = "<group>"; };
@@ -63,10 +56,6 @@
 		A9A4D49A1ACFA1B5008A448E /* ZCGameCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameCard.m; sourceTree = "<group>"; };
 		A9A4D49B1ACFA1B5008A448E /* ZCGameStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameStat.h; sourceTree = "<group>"; };
 		A9A4D49C1ACFA1B5008A448E /* ZCGameStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameStat.m; sourceTree = "<group>"; };
-		A9A4D49D1ACFA1B5008A448E /* ZGameCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGameCard.h; sourceTree = "<group>"; };
-		A9A4D49E1ACFA1B5008A448E /* ZGameCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGameCard.m; sourceTree = "<group>"; };
-		A9A4D49F1ACFA1B5008A448E /* ZGameStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGameStat.h; sourceTree = "<group>"; };
-		A9A4D4A01ACFA1B5008A448E /* ZGameStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGameStat.m; sourceTree = "<group>"; };
 		A9B58A6A1ABABADB00F6CEBF /* ThrowBallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowBallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9B58A701ABABADB00F6CEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -83,6 +72,8 @@
 		A9B58A871ABABADB00F6CEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9B58A891ABABADB00F6CEBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A9B58A8A1ABABADC00F6CEBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A9D8F4A61AD039A800BC9DDB /* ZCGThrowBallCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGThrowBallCtrl.h; sourceTree = "<group>"; };
+		A9D8F4A71AD039A900BC9DDB /* ZCGThrowBallCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGThrowBallCtrl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +108,8 @@
 			children = (
 				A9A4D47F1ACFA1B5008A448E /* ZCGameBall.h */,
 				A9A4D4801ACFA1B5008A448E /* ZCGameBall.m */,
+				A9D8F4A61AD039A800BC9DDB /* ZCGThrowBallCtrl.h */,
+				A9D8F4A71AD039A900BC9DDB /* ZCGThrowBallCtrl.m */,
 			);
 			path = ball;
 			sourceTree = "<group>";
@@ -135,14 +128,10 @@
 			children = (
 				A9A4D4851ACFA1B5008A448E /* Game_View.h */,
 				A9A4D4861ACFA1B5008A448E /* Game_View.m */,
-				A9A4D4871ACFA1B5008A448E /* GameImageView.h */,
-				A9A4D4881ACFA1B5008A448E /* GameImageView.m */,
 				A9A4D4891ACFA1B5008A448E /* ZCGameDrawView.h */,
 				A9A4D48A1ACFA1B5008A448E /* ZCGameDrawView.m */,
 				A9A4D48B1ACFA1B5008A448E /* ZCGameImageView.h */,
 				A9A4D48C1ACFA1B5008A448E /* ZCGameImageView.m */,
-				A9A4D48D1ACFA1B5008A448E /* ZGameDrawView.h */,
-				A9A4D48E1ACFA1B5008A448E /* ZGameDrawView.m */,
 			);
 			path = gameView;
 			sourceTree = "<group>";
@@ -175,10 +164,6 @@
 				A9A4D49A1ACFA1B5008A448E /* ZCGameCard.m */,
 				A9A4D49B1ACFA1B5008A448E /* ZCGameStat.h */,
 				A9A4D49C1ACFA1B5008A448E /* ZCGameStat.m */,
-				A9A4D49D1ACFA1B5008A448E /* ZGameCard.h */,
-				A9A4D49E1ACFA1B5008A448E /* ZGameCard.m */,
-				A9A4D49F1ACFA1B5008A448E /* ZGameStat.h */,
-				A9A4D4A01ACFA1B5008A448E /* ZGameStat.m */,
 			);
 			path = statistic;
 			sourceTree = "<group>";
@@ -315,15 +300,12 @@
 				A9A4D4A11ACFA1B5008A448E /* ZCGameBall.m in Sources */,
 				A9A4D4A21ACFA1B5008A448E /* ZCGameBasket.m in Sources */,
 				A9A4D4A31ACFA1B5008A448E /* Game_View.m in Sources */,
-				A9A4D4A41ACFA1B5008A448E /* GameImageView.m in Sources */,
 				A9A4D4A51ACFA1B5008A448E /* ZCGameDrawView.m in Sources */,
 				A9A4D4A61ACFA1B5008A448E /* ZCGameImageView.m in Sources */,
-				A9A4D4A71ACFA1B5008A448E /* ZGameDrawView.m in Sources */,
 				A9A4D4A81ACFA1B5008A448E /* ZCGameHole.m in Sources */,
 				A9A4D4AE1ACFA1B5008A448E /* ZCGameCard.m in Sources */,
 				A9A4D4AF1ACFA1B5008A448E /* ZCGameStat.m in Sources */,
-				A9A4D4B01ACFA1B5008A448E /* ZGameCard.m in Sources */,
-				A9A4D4B11ACFA1B5008A448E /* ZGameStat.m in Sources */,
+				A9D8F4A81AD039A900BC9DDB /* ZCGThrowBallCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

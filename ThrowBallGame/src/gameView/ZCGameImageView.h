@@ -31,6 +31,8 @@
 // display an image
 - (void)SetImage:(UIImage *)pImageSrc;
 
+- (CGPoint)GetCenterPosition;
+
 // photo processing methods
 // bu shi cai jian  shi suo fang
 - (UIImage *)Get_Image_From_File : (NSString *)file_name

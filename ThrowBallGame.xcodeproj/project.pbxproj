@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A9A4D4A11ACFA1B5008A448E /* ZCGameBall.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4801ACFA1B5008A448E /* ZCGameBall.m */; };
+		A9A4D4A21ACFA1B5008A448E /* ZCGameBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4831ACFA1B5008A448E /* ZCGameBasket.m */; };
+		A9A4D4A31ACFA1B5008A448E /* Game_View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4861ACFA1B5008A448E /* Game_View.m */; };
+		A9A4D4A41ACFA1B5008A448E /* GameImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4881ACFA1B5008A448E /* GameImageView.m */; };
+		A9A4D4A51ACFA1B5008A448E /* ZCGameDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D48A1ACFA1B5008A448E /* ZCGameDrawView.m */; };
+		A9A4D4A61ACFA1B5008A448E /* ZCGameImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D48C1ACFA1B5008A448E /* ZCGameImageView.m */; };
+		A9A4D4A71ACFA1B5008A448E /* ZGameDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D48E1ACFA1B5008A448E /* ZGameDrawView.m */; };
+		A9A4D4A81ACFA1B5008A448E /* ZCGameHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4911ACFA1B5008A448E /* ZCGameHole.m */; };
+		A9A4D4A91ACFA1B5008A448E /* ball_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4931ACFA1B5008A448E /* ball_3.png */; };
+		A9A4D4AA1ACFA1B5008A448E /* basket.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4941ACFA1B5008A448E /* basket.png */; };
+		A9A4D4AB1ACFA1B5008A448E /* basket_2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4951ACFA1B5008A448E /* basket_2_1.png */; };
+		A9A4D4AC1ACFA1B5008A448E /* basket_2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4961ACFA1B5008A448E /* basket_2_2.png */; };
+		A9A4D4AD1ACFA1B5008A448E /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A4D4971ACFA1B5008A448E /* hole.png */; };
+		A9A4D4AE1ACFA1B5008A448E /* ZCGameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D49A1ACFA1B5008A448E /* ZCGameCard.m */; };
+		A9A4D4AF1ACFA1B5008A448E /* ZCGameStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D49C1ACFA1B5008A448E /* ZCGameStat.m */; };
+		A9A4D4B01ACFA1B5008A448E /* ZGameCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D49E1ACFA1B5008A448E /* ZGameCard.m */; };
+		A9A4D4B11ACFA1B5008A448E /* ZGameStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A4D4A01ACFA1B5008A448E /* ZGameStat.m */; };
+		A9B58A6F1ABABADB00F6CEBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */; };
+		A9B58A711ABABADB00F6CEBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A701ABABADB00F6CEBF /* Foundation.framework */; };
+		A9B58A731ABABADB00F6CEBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A721ABABADB00F6CEBF /* CoreGraphics.framework */; };
+		A9B58A791ABABADB00F6CEBF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A771ABABADB00F6CEBF /* InfoPlist.strings */; };
+		A9B58A7B1ABABADB00F6CEBF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B58A7A1ABABADB00F6CEBF /* main.m */; };
+		A9B58A7F1ABABADB00F6CEBF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B58A7E1ABABADB00F6CEBF /* AppDelegate.m */; };
+		A9B58A811ABABADB00F6CEBF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A801ABABADB00F6CEBF /* Default.png */; };
+		A9B58A831ABABADB00F6CEBF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A821ABABADB00F6CEBF /* Default@2x.png */; };
+		A9B58A851ABABADB00F6CEBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A841ABABADB00F6CEBF /* Default-568h@2x.png */; };
+		A9B58A881ABABADB00F6CEBF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A861ABABADB00F6CEBF /* MainStoryboard.storyboard */; };
+		A9B58A8B1ABABADC00F6CEBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B58A8A1ABABADC00F6CEBF /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A9A4D47F1ACFA1B5008A448E /* ZCGameBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameBall.h; sourceTree = "<group>"; };
+		A9A4D4801ACFA1B5008A448E /* ZCGameBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameBall.m; sourceTree = "<group>"; };
+		A9A4D4821ACFA1B5008A448E /* ZCGameBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameBasket.h; sourceTree = "<group>"; };
+		A9A4D4831ACFA1B5008A448E /* ZCGameBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameBasket.m; sourceTree = "<group>"; };
+		A9A4D4851ACFA1B5008A448E /* Game_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game_View.h; sourceTree = "<group>"; };
+		A9A4D4861ACFA1B5008A448E /* Game_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game_View.m; sourceTree = "<group>"; };
+		A9A4D4871ACFA1B5008A448E /* GameImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameImageView.h; sourceTree = "<group>"; };
+		A9A4D4881ACFA1B5008A448E /* GameImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameImageView.m; sourceTree = "<group>"; };
+		A9A4D4891ACFA1B5008A448E /* ZCGameDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameDrawView.h; sourceTree = "<group>"; };
+		A9A4D48A1ACFA1B5008A448E /* ZCGameDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameDrawView.m; sourceTree = "<group>"; };
+		A9A4D48B1ACFA1B5008A448E /* ZCGameImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameImageView.h; sourceTree = "<group>"; };
+		A9A4D48C1ACFA1B5008A448E /* ZCGameImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameImageView.m; sourceTree = "<group>"; };
+		A9A4D48D1ACFA1B5008A448E /* ZGameDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGameDrawView.h; sourceTree = "<group>"; };
+		A9A4D48E1ACFA1B5008A448E /* ZGameDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGameDrawView.m; sourceTree = "<group>"; };
+		A9A4D4901ACFA1B5008A448E /* ZCGameHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameHole.h; sourceTree = "<group>"; };
+		A9A4D4911ACFA1B5008A448E /* ZCGameHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameHole.m; sourceTree = "<group>"; };
+		A9A4D4931ACFA1B5008A448E /* ball_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball_3.png; sourceTree = "<group>"; };
+		A9A4D4941ACFA1B5008A448E /* basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket.png; sourceTree = "<group>"; };
+		A9A4D4951ACFA1B5008A448E /* basket_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket_2_1.png; sourceTree = "<group>"; };
+		A9A4D4961ACFA1B5008A448E /* basket_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket_2_2.png; sourceTree = "<group>"; };
+		A9A4D4971ACFA1B5008A448E /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
+		A9A4D4991ACFA1B5008A448E /* ZCGameCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameCard.h; sourceTree = "<group>"; };
+		A9A4D49A1ACFA1B5008A448E /* ZCGameCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameCard.m; sourceTree = "<group>"; };
+		A9A4D49B1ACFA1B5008A448E /* ZCGameStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGameStat.h; sourceTree = "<group>"; };
+		A9A4D49C1ACFA1B5008A448E /* ZCGameStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGameStat.m; sourceTree = "<group>"; };
+		A9A4D49D1ACFA1B5008A448E /* ZGameCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGameCard.h; sourceTree = "<group>"; };
+		A9A4D49E1ACFA1B5008A448E /* ZGameCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGameCard.m; sourceTree = "<group>"; };
+		A9A4D49F1ACFA1B5008A448E /* ZGameStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGameStat.h; sourceTree = "<group>"; };
+		A9A4D4A01ACFA1B5008A448E /* ZGameStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGameStat.m; sourceTree = "<group>"; };
+		A9B58A6A1ABABADB00F6CEBF /* ThrowBallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowBallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A9B58A701ABABADB00F6CEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A9B58A721ABABADB00F6CEBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A9B58A761ABABADB00F6CEBF /* ThrowBallGame-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThrowBallGame-Info.plist"; sourceTree = "<group>"; };
+		A9B58A781ABABADB00F6CEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A9B58A7A1ABABADB00F6CEBF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A9B58A7C1ABABADB00F6CEBF /* ThrowBallGame-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThrowBallGame-Prefix.pch"; sourceTree = "<group>"; };
+		A9B58A7D1ABABADB00F6CEBF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A9B58A7E1ABABADB00F6CEBF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A9B58A801ABABADB00F6CEBF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		A9B58A821ABABADB00F6CEBF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		A9B58A841ABABADB00F6CEBF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A9B58A871ABABADB00F6CEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		A9B58A891ABABADB00F6CEBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A9B58A8A1ABABADC00F6CEBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A9B58A671ABABADB00F6CEBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B58A6F1ABABADB00F6CEBF /* UIKit.framework in Frameworks */,
+				A9B58A711ABABADB00F6CEBF /* Foundation.framework in Frameworks */,
+				A9B58A731ABABADB00F6CEBF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A9A4D47D1ACFA1B5008A448E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D47E1ACFA1B5008A448E /* ball */,
+				A9A4D4811ACFA1B5008A448E /* basket */,
+				A9A4D4841ACFA1B5008A448E /* gameView */,
+				A9A4D48F1ACFA1B5008A448E /* hole */,
+				A9A4D4921ACFA1B5008A448E /* picture */,
+				A9A4D4981ACFA1B5008A448E /* statistic */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A9A4D47E1ACFA1B5008A448E /* ball */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D47F1ACFA1B5008A448E /* ZCGameBall.h */,
+				A9A4D4801ACFA1B5008A448E /* ZCGameBall.m */,
+			);
+			path = ball;
+			sourceTree = "<group>";
+		};
+		A9A4D4811ACFA1B5008A448E /* basket */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D4821ACFA1B5008A448E /* ZCGameBasket.h */,
+				A9A4D4831ACFA1B5008A448E /* ZCGameBasket.m */,
+			);
+			path = basket;
+			sourceTree = "<group>";
+		};
+		A9A4D4841ACFA1B5008A448E /* gameView */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D4851ACFA1B5008A448E /* Game_View.h */,
+				A9A4D4861ACFA1B5008A448E /* Game_View.m */,
+				A9A4D4871ACFA1B5008A448E /* GameImageView.h */,
+				A9A4D4881ACFA1B5008A448E /* GameImageView.m */,
+				A9A4D4891ACFA1B5008A448E /* ZCGameDrawView.h */,
+				A9A4D48A1ACFA1B5008A448E /* ZCGameDrawView.m */,
+				A9A4D48B1ACFA1B5008A448E /* ZCGameImageView.h */,
+				A9A4D48C1ACFA1B5008A448E /* ZCGameImageView.m */,
+				A9A4D48D1ACFA1B5008A448E /* ZGameDrawView.h */,
+				A9A4D48E1ACFA1B5008A448E /* ZGameDrawView.m */,
+			);
+			path = gameView;
+			sourceTree = "<group>";
+		};
+		A9A4D48F1ACFA1B5008A448E /* hole */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D4901ACFA1B5008A448E /* ZCGameHole.h */,
+				A9A4D4911ACFA1B5008A448E /* ZCGameHole.m */,
+			);
+			path = hole;
+			sourceTree = "<group>";
+		};
+		A9A4D4921ACFA1B5008A448E /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D4931ACFA1B5008A448E /* ball_3.png */,
+				A9A4D4941ACFA1B5008A448E /* basket.png */,
+				A9A4D4951ACFA1B5008A448E /* basket_2_1.png */,
+				A9A4D4961ACFA1B5008A448E /* basket_2_2.png */,
+				A9A4D4971ACFA1B5008A448E /* hole.png */,
+			);
+			path = picture;
+			sourceTree = "<group>";
+		};
+		A9A4D4981ACFA1B5008A448E /* statistic */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D4991ACFA1B5008A448E /* ZCGameCard.h */,
+				A9A4D49A1ACFA1B5008A448E /* ZCGameCard.m */,
+				A9A4D49B1ACFA1B5008A448E /* ZCGameStat.h */,
+				A9A4D49C1ACFA1B5008A448E /* ZCGameStat.m */,
+				A9A4D49D1ACFA1B5008A448E /* ZGameCard.h */,
+				A9A4D49E1ACFA1B5008A448E /* ZGameCard.m */,
+				A9A4D49F1ACFA1B5008A448E /* ZGameStat.h */,
+				A9A4D4A01ACFA1B5008A448E /* ZGameStat.m */,
+			);
+			path = statistic;
+			sourceTree = "<group>";
+		};
+		A9B58A5F1ABABADB00F6CEBF = {
+			isa = PBXGroup;
+			children = (
+				A9B58A741ABABADB00F6CEBF /* ThrowBallGame */,
+				A9B58A6D1ABABADB00F6CEBF /* Frameworks */,
+				A9B58A6B1ABABADB00F6CEBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A9B58A6B1ABABADB00F6CEBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9B58A6A1ABABADB00F6CEBF /* ThrowBallGame.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A9B58A6D1ABABADB00F6CEBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */,
+				A9B58A701ABABADB00F6CEBF /* Foundation.framework */,
+				A9B58A721ABABADB00F6CEBF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9B58A741ABABADB00F6CEBF /* ThrowBallGame */ = {
+			isa = PBXGroup;
+			children = (
+				A9A4D47D1ACFA1B5008A448E /* src */,
+				A9B58A7D1ABABADB00F6CEBF /* AppDelegate.h */,
+				A9B58A7E1ABABADB00F6CEBF /* AppDelegate.m */,
+				A9B58A861ABABADB00F6CEBF /* MainStoryboard.storyboard */,
+				A9B58A891ABABADB00F6CEBF /* ViewController.h */,
+				A9B58A8A1ABABADC00F6CEBF /* ViewController.m */,
+				A9B58A751ABABADB00F6CEBF /* Supporting Files */,
+			);
+			path = ThrowBallGame;
+			sourceTree = "<group>";
+		};
+		A9B58A751ABABADB00F6CEBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A9B58A761ABABADB00F6CEBF /* ThrowBallGame-Info.plist */,
+				A9B58A771ABABADB00F6CEBF /* InfoPlist.strings */,
+				A9B58A7A1ABABADB00F6CEBF /* main.m */,
+				A9B58A7C1ABABADB00F6CEBF /* ThrowBallGame-Prefix.pch */,
+				A9B58A801ABABADB00F6CEBF /* Default.png */,
+				A9B58A821ABABADB00F6CEBF /* Default@2x.png */,
+				A9B58A841ABABADB00F6CEBF /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A9B58A691ABABADB00F6CEBF /* ThrowBallGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A9B58A8E1ABABADC00F6CEBF /* Build configuration list for PBXNativeTarget "ThrowBallGame" */;
+			buildPhases = (
+				A9B58A661ABABADB00F6CEBF /* Sources */,
+				A9B58A671ABABADB00F6CEBF /* Frameworks */,
+				A9B58A681ABABADB00F6CEBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ThrowBallGame;
+			productName = ThrowBallGame;
+			productReference = A9B58A6A1ABABADB00F6CEBF /* ThrowBallGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A9B58A611ABABADB00F6CEBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = zhu;
+			};
+			buildConfigurationList = A9B58A641ABABADB00F6CEBF /* Build configuration list for PBXProject "ThrowBallGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A9B58A5F1ABABADB00F6CEBF;
+			productRefGroup = A9B58A6B1ABABADB00F6CEBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A9B58A691ABABADB00F6CEBF /* ThrowBallGame */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A9B58A681ABABADB00F6CEBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B58A791ABABADB00F6CEBF /* InfoPlist.strings in Resources */,
+				A9B58A811ABABADB00F6CEBF /* Default.png in Resources */,
+				A9B58A831ABABADB00F6CEBF /* Default@2x.png in Resources */,
+				A9B58A851ABABADB00F6CEBF /* Default-568h@2x.png in Resources */,
+				A9B58A881ABABADB00F6CEBF /* MainStoryboard.storyboard in Resources */,
+				A9A4D4A91ACFA1B5008A448E /* ball_3.png in Resources */,
+				A9A4D4AA1ACFA1B5008A448E /* basket.png in Resources */,
+				A9A4D4AB1ACFA1B5008A448E /* basket_2_1.png in Resources */,
+				A9A4D4AC1ACFA1B5008A448E /* basket_2_2.png in Resources */,
+				A9A4D4AD1ACFA1B5008A448E /* hole.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A9B58A661ABABADB00F6CEBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B58A7B1ABABADB00F6CEBF /* main.m in Sources */,
+				A9B58A7F1ABABADB00F6CEBF /* AppDelegate.m in Sources */,
+				A9B58A8B1ABABADC00F6CEBF /* ViewController.m in Sources */,
+				A9A4D4A11ACFA1B5008A448E /* ZCGameBall.m in Sources */,
+				A9A4D4A21ACFA1B5008A448E /* ZCGameBasket.m in Sources */,
+				A9A4D4A31ACFA1B5008A448E /* Game_View.m in Sources */,
+				A9A4D4A41ACFA1B5008A448E /* GameImageView.m in Sources */,
+				A9A4D4A51ACFA1B5008A448E /* ZCGameDrawView.m in Sources */,
+				A9A4D4A61ACFA1B5008A448E /* ZCGameImageView.m in Sources */,
+				A9A4D4A71ACFA1B5008A448E /* ZGameDrawView.m in Sources */,
+				A9A4D4A81ACFA1B5008A448E /* ZCGameHole.m in Sources */,
+				A9A4D4AE1ACFA1B5008A448E /* ZCGameCard.m in Sources */,
+				A9A4D4AF1ACFA1B5008A448E /* ZCGameStat.m in Sources */,
+				A9A4D4B01ACFA1B5008A448E /* ZGameCard.m in Sources */,
+				A9A4D4B11ACFA1B5008A448E /* ZGameStat.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A9B58A771ABABADB00F6CEBF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9B58A781ABABADB00F6CEBF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A9B58A861ABABADB00F6CEBF /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A9B58A871ABABADB00F6CEBF /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A9B58A8C1ABABADC00F6CEBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A9B58A8D1ABABADC00F6CEBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A9B58A8F1ABABADC00F6CEBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThrowBallGame/ThrowBallGame-Prefix.pch";
+				INFOPLIST_FILE = "ThrowBallGame/ThrowBallGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A9B58A901ABABADC00F6CEBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ThrowBallGame/ThrowBallGame-Prefix.pch";
+				INFOPLIST_FILE = "ThrowBallGame/ThrowBallGame-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A9B58A641ABABADB00F6CEBF /* Build configuration list for PBXProject "ThrowBallGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B58A8C1ABABADC00F6CEBF /* Debug */,
+				A9B58A8D1ABABADC00F6CEBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A9B58A8E1ABABADC00F6CEBF /* Build configuration list for PBXNativeTarget "ThrowBallGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A9B58A8F1ABABADC00F6CEBF /* Debug */,
+				A9B58A901ABABADC00F6CEBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A9B58A611ABABADB00F6CEBF /* Project object */;
+}

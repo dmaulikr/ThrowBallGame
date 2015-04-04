@@ -27,6 +27,7 @@
     [self SetImage:[self Get_Image_From_File:file_name with_type:file_type]];
 }
 
+
 - (void)SetHoleSize:(CGRect)rect
 {
     [self setFrame:rect];

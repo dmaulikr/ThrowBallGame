@@ -17,12 +17,14 @@
     
     int m_nContainerIndex;
     
+    CGPoint m_basketCenterPoint;
+    
     ZCGameBall *mp_gameBall;
     
 }
 - (void)InitBasket;
 - (void)ReceiveBall : (ZCGameBall *)p_ballSrc;
 - (void)LostBall;
-- (void)MoveToPoint:(CGPoint)point;
+- (void)MoveBasketToPoint:(CGPoint)point;
 
 @end

@@ -95,13 +95,13 @@
 }
 
 
-- (void)DrawLineToPoint : (CGPoint)pointSrc
+- (void)DrawAddLineToPoint : (CGPoint)pointSrc
 {
     m_endPoint = pointSrc;
     [self DrawLine:m_startPoint withEndPoint:m_endPoint];
 }
 
-- (void)MoveToPoint : (CGPoint)pointSrc
+- (void)DrawMoveToPoint : (CGPoint)pointSrc
 {
     m_startPoint = pointSrc;
 }

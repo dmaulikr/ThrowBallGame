@@ -48,10 +48,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////
 // draw a line
 // you can only invoke DrawLine fuction
-// or you can invoke MoveToPoint and then call DrawLineToPoint to draw a line
+// or you can invoke MoveToPoint and then call DrawAddLineToPoint to draw a line
 - (void)DrawLine : (CGPoint)startPoint withEndPoint:(CGPoint)endPoint;
-- (void)DrawLineToPoint : (CGPoint)pointSrc;
-- (void)MoveToPoint : (CGPoint)pointSrc;
+- (void)DrawAddLineToPoint : (CGPoint)pointSrc;
+- (void)DrawMoveToPoint : (CGPoint)pointSrc;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // draw a line with arrow

@@ -44,8 +44,8 @@ ZCGameDrawView *g_pDrawView;
     [g_pDrawView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
     g_pDrawView.image = [g_pDrawView Image_Rotation_Angle_90:g_pDrawView.image with_direction:BG_LEFT];
     [pMainView insertSubview:g_pDrawView atIndex:1];
+
     
-    //[g_pDrawView AddImage:[g_pDrawView Get_Image_From_File:@"ball_3" with_type:@"png"] withFrame : CGRectMake(150, 150, 50, 50)];
     
     ZCGameHole *p_gameHole = [[ZCGameHole alloc] initWithFrame:CGRectMake(20, 20, 30, 30)];
     [p_gameHole InitHole:@"hole" with_type:@"png"];
@@ -59,9 +59,8 @@ ZCGameDrawView *g_pDrawView;
     [p_gameBasket InitBasket];
     [pMainView insertSubview:p_gameBasket atIndex:4];
     
-    [p_gameBasket MoveToPoint:CGPointMake(50, 300)];
+    //[p_gameBasket MoveBasketToPoint:CGPointMake(200, 200)];
     
-    [p_gameBall removeFromSuperview];
     [p_gameBasket ReceiveBall:p_gameBall];
 }
 
@@ -80,7 +79,7 @@ ZCGameDrawView *g_pDrawView;
     CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
     
     //if (pView == g_pDrawView) {
-        [g_pDrawView MoveToPoint:point];
+        [g_pDrawView DrawMoveToPoint:point];
     //}
 }
 
@@ -93,8 +92,8 @@ ZCGameDrawView *g_pDrawView;
     CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
     
     //if (pView == g_pDrawView) {
-        [g_pDrawView DrawLineToPoint:point];
-        [g_pDrawView MoveToPoint:point];
+        [g_pDrawView DrawAddLineToPoint:point];
+        [g_pDrawView DrawMoveToPoint:point];
         //NSLog(@"touchesMoved...\n");
     //}
 }

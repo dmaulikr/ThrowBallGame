@@ -14,6 +14,6 @@
 }
 @property (weak, nonatomic) IBOutlet UIView *pMainView;
 
-
+- (void)ThrowBall;
 
 @end

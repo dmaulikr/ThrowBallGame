@@ -8,17 +8,20 @@
 
 #import "ViewController.h"
 #import "src/gameView/Game_View.h"
-#import "src/gameView/ZCGameImageView.h"
-#import "src/gameView/ZCGameDrawView.h"
-#import "src/hole/ZCGameHole.h"
-#import "src/ball/ZCGameBall.h"
-#import "src/basket/ZCGameBasket.h"
+#import "src/gameView/ZCGImageView.h"
+#import "src/gameView/ZCGDrawView.h"
+#import "src/hole/ZCGHole.h"
+#import "src/ball/ZCGBall.h"
+#import "src/basket/ZCGBasket.h"
+#import "./src/statistic/ZCGCard.h"
+#import "./src/game/ZCGThrowBallCtrl.h"
+#import "./src/game/ZCGTimer.h"
 
 @interface ViewController ()
 
 @end
 
-ZCGameDrawView *g_pDrawView;
+ZCGDrawView *g_pDrawView;
 
 @implementation ViewController
 
@@ -37,9 +40,8 @@ ZCGameDrawView *g_pDrawView;
     [pGameView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
     [pMainView insertSubview:pGameView atIndex:0];
     
-    
     //GameImageView *pImageView = [[GameImageView alloc] initWithFrame:rect];
-    g_pDrawView = [[ZCGameDrawView alloc] initWithFrame:rect];
+    g_pDrawView = [[ZCGDrawView alloc] initWithFrame:rect];
     [g_pDrawView DrawLine:CGPointMake(50, 150) withEndPoint:CGPointMake(100, 200)];
     [g_pDrawView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
     g_pDrawView.image = [g_pDrawView Image_Rotation_Angle_90:g_pDrawView.image with_direction:BG_LEFT];
@@ -47,21 +49,36 @@ ZCGameDrawView *g_pDrawView;
 
     
     
-    ZCGameHole *p_gameHole = [[ZCGameHole alloc] initWithFrame:CGRectMake(20, 20, 30, 30)];
+    ZCGHole *p_gameHole = [[ZCGHole alloc] initWithFrame:CGRectMake(20, 200, 50, 50)];
     [p_gameHole InitHole:@"hole" with_type:@"png"];
     [pMainView insertSubview:p_gameHole atIndex:2];
     
-    ZCGameBall *p_gameBall = [[ZCGameBall alloc] initWithFrame:CGRectMake(200, 200, 30, 30)];
+    ZCGBall *p_gameBall = [[ZCGBall alloc] initWithFrame:CGRectMake(250, 200, 30, 30)];
     [p_gameBall InitBall:@"ball_3" with_type:@"png"];
     [pMainView insertSubview:p_gameBall atIndex:3];
     
-    ZCGameBasket *p_gameBasket = [[ZCGameBasket alloc] initWithFrame:CGRectMake(100, 100, 40, 40)];
+    ZCGBasket *p_gameBasket = [[ZCGBasket alloc] initWithFrame:CGRectMake(50, 200, 40, 40)];
     [p_gameBasket InitBasket];
     [pMainView insertSubview:p_gameBasket atIndex:4];
     
+    ZCGThrowBallCtrl *p_throwBallCtrl = [[ZCGThrowBallCtrl alloc] init];
+    [p_throwBallCtrl SetBall:p_gameBall];
+    [p_throwBallCtrl TryAddHole:p_gameHole];
+    [p_throwBallCtrl SetBasket:p_gameBasket];
+    
+    [p_throwBallCtrl SetVelocityAndDirection:2 directionDeg:-70];
+    [p_throwBallCtrl ThrowBallInit];
+    
+    [ZCGTimer LaunchTimer:0.01 target:p_throwBallCtrl selector:@selector(ThrowBall) repeats:YES];
+    
     //[p_gameBasket MoveBasketToPoint:CGPointMake(200, 200)];
     
-    [p_gameBasket ReceiveBall:p_gameBall];
+    //[p_gameBasket ReceiveBall:p_gameBall];
+}
+
+- (void)ThrowBall
+{
+    
 }
 
 - (void)didReceiveMemoryWarning

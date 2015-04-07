@@ -5,12 +5,13 @@
 //  Created by zhu on 4/6/15.
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
-
 #import "ZCGField.h"
+#import "../thing/tree/ZCGTree.h"
+#import "../background/ZCGBackground.h"
 
 @implementation ZCGField
 
-+ (void)LoadField:(ZCGBackground *)p_backgnd
++ (void)LoadScene:(ZCGBackground *)p_backgnd
 {    
     UIImage *p_image = [p_backgnd Get_Image_From_File:@"yewai" with_type:@"jpg"];
     [p_backgnd SetImage:p_image];

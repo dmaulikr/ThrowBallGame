@@ -7,17 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "../gameView/ZCGView.h"
+@class ZCGView;
+
+#define BG_START_BUTTON_ID 0
+#define BG_HELP_BUTTON_ID 1
 
 @interface ZCGStartScreenMgr : NSObject
 {
-    ZCGView *mp_startMainView;
-    
-    UIButton *mp_startBtn;
-    UIButton *mp_helpBtn;
 }
-- (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
+@property(nonatomic, retain) ZCGView *mp_startMainView;
 - (BOOL)InitStartScreen:(ZCGView *)p_startMainView;
 
 @end

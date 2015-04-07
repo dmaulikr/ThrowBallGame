@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../ball/ZCGBall.h"
-#import "../basket/ZCGBasket.h"
-#import "../hole/ZCGHole.h"
+
+@class ZCGBall;
+@class ZCGHole;
+@class ZCGBasket;
+
 
 #define BG_ACC 10
 #define BG_BALL_TIME_STEP 0.1
@@ -17,11 +19,12 @@
 #define BG_HOLE_COUNT_MAX 10
 #define BG_GROUND_X_DEFAULT 30
 
+
 @interface ZCGThrowBallCtrl : NSObject
 {
-    ZCGBall *mp_gameBall;
-    ZCGBasket *mp_gameBasket;
     ZCGHole *mp_gameHoleArr[BG_HOLE_COUNT_MAX];
+    
+
     
     // count how many hole have add 
     int m_nCurrentHoleCount;
@@ -44,6 +47,8 @@
     double m_fBallMovetTime;
     
 }
+@property(nonatomic, retain) ZCGBall *mp_gameBall;
+@property(nonatomic, retain) ZCGBasket *mp_gameBasket;
 
 - (BOOL)ThrowBall;
 - (void)BallMotion;

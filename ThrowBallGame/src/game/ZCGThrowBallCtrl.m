@@ -7,6 +7,10 @@
 //
 
 #import "ZCGThrowBallCtrl.h"
+#import "../thing/ball/ZCGBall.h"
+#import "../thing/basket/ZCGBasket.h"
+#import "../thing/hole/ZCGHole.h"
+
 
 @interface ZCGThrowBallCtrl ()
 {
@@ -17,6 +21,25 @@
 
 
 @implementation ZCGThrowBallCtrl
+@synthesize mp_gameBall;
+@synthesize mp_gameBasket;
+
+
+- (void)dealloc
+{
+    if (m_nCurrentHoleCount != 0) {
+        for (int i = 0; i < m_nCurrentHoleCount; i++) {
+            [mp_gameHoleArr[i] release];
+            mp_gameHoleArr[i] = nil;//
+        }
+    }
+    
+    [mp_gameBall release];    
+    [mp_gameBasket release];
+    
+    [super dealloc];
+}
+
 
 - (id)init
 {
@@ -35,6 +58,7 @@
     mp_gameBall = nil;
     mp_gameBasket = nil;
     
+        
     for (int i = 0; i < BG_HOLE_COUNT_MAX; i++) {
         mp_gameHoleArr[i] = nil;
     }
@@ -62,14 +86,13 @@
 
 - (void)SetBasket:(ZCGBasket *)p_basket
 {
-    mp_gameBasket = p_basket;
+    self.mp_gameBasket = p_basket;
 }
 
 - (void)SetBall:(ZCGBall *)p_ball
 {
-    mp_gameBall = p_ball;
+    self.mp_gameBall = p_ball;
 }
-
 
 - (BOOL)TryAddHole:(ZCGHole *)p_hole
 {
@@ -77,7 +100,9 @@
         return NO;
     }
     
-    mp_gameHoleArr[m_nCurrentHoleCount++] = p_hole;
+    [p_hole retain];
+    [mp_gameHoleArr[m_nCurrentHoleCount++] release];
+    mp_gameHoleArr[m_nCurrentHoleCount] = p_hole;
     
     return YES;
 }

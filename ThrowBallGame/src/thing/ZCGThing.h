@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
-#import "ZCGImageView.h"
+#import "../gameView/ZCGImageView.h"
 
 @interface ZCGThing : ZCGImageView
 

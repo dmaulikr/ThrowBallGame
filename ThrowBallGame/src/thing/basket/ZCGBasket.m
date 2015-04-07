@@ -7,15 +7,39 @@
 //
 
 #import "ZCGBasket.h"
+#import "../ball/ZCGBall.h"
 
+@interface ZCGBasket ()
+{
+}
+@property(nonatomic, retain) ZCGThing *mp_basketEntireImageView;
+@property(nonatomic, retain) ZCGThing *mp_basketSectionImageView;
+
+@end
+
+
+// implementation
 @implementation ZCGBasket
+@synthesize mp_gameBall;
+@synthesize mp_basketEntireImageView;
+@synthesize mp_basketSectionImageView;
+
+- (void)dealloc
+{
+    [mp_gameBall release];
+    [mp_basketEntireImageView release];
+    [mp_basketSectionImageView release];
+    
+    [super dealloc];
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     
     if (self) {
-        mp_gameBall = nil;
+        self.mp_gameBall = nil;
         [self setBackgroundColor:[UIColor clearColor]];
     }
     
@@ -64,8 +88,9 @@
 {
     [p_ballSrc removeFromSuperview];
     [p_ballSrc MoveBallToPoint:m_basketCenterPoint];
-    mp_gameBall = p_ballSrc;
-    [self insertSubview:p_ballSrc atIndex:1];
+    self.mp_gameBall = p_ballSrc;
+    //[self insertSubview:p_ballSrc atIndex:1];
+    [self insertSubview:mp_gameBall atIndex:1];
 }
 
 - (void)LostBall
@@ -75,6 +100,7 @@
     }
     //mp_gameBall.hidden = YES;
     [mp_gameBall removeFromSuperview];
+    [mp_gameBall release];
     mp_gameBall = nil;
 }
 

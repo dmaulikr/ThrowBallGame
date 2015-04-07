@@ -7,6 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9A2F8C11AD3D6A500F91CBE /* ZCGBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8821AD3D6A500F91CBE /* ZCGBackground.m */; };
+		A9A2F8C21AD3D6A500F91CBE /* ZCGBackgroundMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8841AD3D6A500F91CBE /* ZCGBackgroundMgr.m */; };
+		A9A2F8C31AD3D6A500F91CBE /* ZCGThrowBallCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8871AD3D6A500F91CBE /* ZCGThrowBallCtrl.m */; };
+		A9A2F8C41AD3D6A500F91CBE /* ZCGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8891AD3D6A500F91CBE /* ZCGTimer.m */; };
+		A9A2F8C51AD3D6A500F91CBE /* Game_View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F88C1AD3D6A500F91CBE /* Game_View.m */; };
+		A9A2F8C61AD3D6A500F91CBE /* ZCGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F88E1AD3D6A500F91CBE /* ZCGButton.m */; };
+		A9A2F8C71AD3D6A500F91CBE /* ZCGDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8901AD3D6A500F91CBE /* ZCGDrawView.m */; };
+		A9A2F8C81AD3D6A500F91CBE /* ZCGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8921AD3D6A500F91CBE /* ZCGImageView.m */; };
+		A9A2F8C91AD3D6A500F91CBE /* ZCGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8941AD3D6A500F91CBE /* ZCGLabel.m */; };
+		A9A2F8CA1AD3D6A500F91CBE /* ZCGView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8961AD3D6A500F91CBE /* ZCGView.m */; };
+		A9A2F8CB1AD3D6A500F91CBE /* ball_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F8981AD3D6A500F91CBE /* ball_3.png */; };
+		A9A2F8CC1AD3D6A500F91CBE /* basket.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F8991AD3D6A500F91CBE /* basket.png */; };
+		A9A2F8CD1AD3D6A500F91CBE /* basket_2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F89A1AD3D6A500F91CBE /* basket_2_1.png */; };
+		A9A2F8CE1AD3D6A500F91CBE /* basket_2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F89B1AD3D6A500F91CBE /* basket_2_2.png */; };
+		A9A2F8CF1AD3D6A500F91CBE /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F89C1AD3D6A500F91CBE /* hole.png */; };
+		A9A2F8D01AD3D6A500F91CBE /* tree_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F89D1AD3D6A500F91CBE /* tree_1.png */; };
+		A9A2F8D11AD3D6A500F91CBE /* yewai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9A2F89E1AD3D6A500F91CBE /* yewai.jpg */; };
+		A9A2F8D21AD3D6A500F91CBE /* ZCGField.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8A11AD3D6A500F91CBE /* ZCGField.m */; };
+		A9A2F8D31AD3D6A500F91CBE /* ZCGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8A31AD3D6A500F91CBE /* ZCGScene.m */; };
+		A9A2F8D41AD3D6A500F91CBE /* ZCGSceneMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8A51AD3D6A500F91CBE /* ZCGSceneMgr.m */; };
+		A9A2F8D51AD3D6A500F91CBE /* ZCGCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8A81AD3D6A500F91CBE /* ZCGCard.m */; };
+		A9A2F8D61AD3D6A500F91CBE /* ZCGStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8AA1AD3D6A500F91CBE /* ZCGStat.m */; };
+		A9A2F8D71AD3D6A500F91CBE /* ZCGBall.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8AE1AD3D6A500F91CBE /* ZCGBall.m */; };
+		A9A2F8D81AD3D6A500F91CBE /* ZCGBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8B11AD3D6A500F91CBE /* ZCGBasket.m */; };
+		A9A2F8D91AD3D6A500F91CBE /* ZCGHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8B41AD3D6A500F91CBE /* ZCGHole.m */; };
+		A9A2F8DA1AD3D6A500F91CBE /* ZCGTree.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8B71AD3D6A500F91CBE /* ZCGTree.m */; };
+		A9A2F8DB1AD3D6A500F91CBE /* ZCGThing.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8B91AD3D6A500F91CBE /* ZCGThing.m */; };
+		A9A2F8DC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8BC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m */; };
+		A9A2F8DD1AD3D6A500F91CBE /* ZCGStartScreenMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8BE1AD3D6A500F91CBE /* ZCGStartScreenMgr.m */; };
+		A9A2F8DE1AD3D6A500F91CBE /* ZCGUIMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8C01AD3D6A500F91CBE /* ZCGUIMgr.m */; };
 		A9B58A6F1ABABADB00F6CEBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */; };
 		A9B58A711ABABADB00F6CEBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A701ABABADB00F6CEBF /* Foundation.framework */; };
 		A9B58A731ABABADB00F6CEBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A721ABABADB00F6CEBF /* CoreGraphics.framework */; };
@@ -18,39 +48,62 @@
 		A9B58A851ABABADB00F6CEBF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A841ABABADB00F6CEBF /* Default-568h@2x.png */; };
 		A9B58A881ABABADB00F6CEBF /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9B58A861ABABADB00F6CEBF /* MainStoryboard.storyboard */; };
 		A9B58A8B1ABABADC00F6CEBF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B58A8A1ABABADC00F6CEBF /* ViewController.m */; };
-		A9B707EA1AD228E7008B907E /* ZCGBackgroundMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B707E91AD228E7008B907E /* ZCGBackgroundMgr.m */; };
-		A9B707F11AD22A13008B907E /* ZCGTree.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B707F01AD22A13008B907E /* ZCGTree.m */; };
-		A9B707F51AD22B45008B907E /* tree_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B707F21AD22B45008B907E /* tree_1.png */; };
-		A9B707F71AD22B45008B907E /* yewai.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A9B707F41AD22B45008B907E /* yewai.jpg */; };
-		A9B707FA1AD22DD6008B907E /* ZCGBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B707F91AD22DD6008B907E /* ZCGBackground.m */; };
-		A9B707FE1AD23453008B907E /* ZCGThing.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B707FD1AD23453008B907E /* ZCGThing.m */; };
-		A9B708021AD247DA008B907E /* ZCGScene.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B708011AD247DA008B907E /* ZCGScene.m */; };
-		A9B708051AD24B49008B907E /* ZCGField.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B708041AD24B49008B907E /* ZCGField.m */; };
-		A9B708081AD26B7F008B907E /* ZCGSceneMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B708071AD26B7C008B907E /* ZCGSceneMgr.m */; };
-		A9C1339C1AD1391D00FB57CE /* ZCGBall.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1337E1AD1391D00FB57CE /* ZCGBall.m */; };
-		A9C1339D1AD1391D00FB57CE /* ZCGBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C133811AD1391D00FB57CE /* ZCGBasket.m */; };
-		A9C1339E1AD1391D00FB57CE /* ZCGThrowBallCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C133841AD1391D00FB57CE /* ZCGThrowBallCtrl.m */; };
-		A9C1339F1AD1391D00FB57CE /* ZCGTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C133861AD1391D00FB57CE /* ZCGTimer.m */; };
-		A9C133A01AD1391D00FB57CE /* Game_View.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C133891AD1391D00FB57CE /* Game_View.m */; };
-		A9C133A11AD1391D00FB57CE /* ZCGDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1338B1AD1391D00FB57CE /* ZCGDrawView.m */; };
-		A9C133A21AD1391D00FB57CE /* ZCGImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1338D1AD1391D00FB57CE /* ZCGImageView.m */; };
-		A9C133A31AD1391D00FB57CE /* ZCGHole.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C133901AD1391D00FB57CE /* ZCGHole.m */; };
-		A9C133A41AD1391D00FB57CE /* ball_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C133921AD1391D00FB57CE /* ball_3.png */; };
-		A9C133A51AD1391D00FB57CE /* basket.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C133931AD1391D00FB57CE /* basket.png */; };
-		A9C133A61AD1391D00FB57CE /* basket_2_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C133941AD1391D00FB57CE /* basket_2_1.png */; };
-		A9C133A71AD1391D00FB57CE /* basket_2_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C133951AD1391D00FB57CE /* basket_2_2.png */; };
-		A9C133A81AD1391D00FB57CE /* hole.png in Resources */ = {isa = PBXBuildFile; fileRef = A9C133961AD1391D00FB57CE /* hole.png */; };
-		A9C133A91AD1391D00FB57CE /* ZCGCard.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C133991AD1391D00FB57CE /* ZCGCard.m */; };
-		A9C133AA1AD1391D00FB57CE /* ZCGStat.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1339B1AD1391D00FB57CE /* ZCGStat.m */; };
-		A9CF26931AD17E1500A09B86 /* ZCGView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF26921AD17E1500A09B86 /* ZCGView.m */; };
-		A9CF26971AD17FB000A09B86 /* ZCGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF26961AD17FAF00A09B86 /* ZCGButton.m */; };
-		A9CF269A1AD1801B00A09B86 /* ZCGLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF26991AD1801B00A09B86 /* ZCGLabel.m */; };
-		A9CF26B31AD1A97F00A09B86 /* ZCGPlayScreenMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF26AE1AD1A97F00A09B86 /* ZCGPlayScreenMgr.m */; };
-		A9CF26B41AD1A97F00A09B86 /* ZCGStartScreenMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF26B01AD1A97F00A09B86 /* ZCGStartScreenMgr.m */; };
-		A9CF26B51AD1A97F00A09B86 /* ZCGUIMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CF26B21AD1A97F00A09B86 /* ZCGUIMgr.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A9A2F8811AD3D6A500F91CBE /* ZCGBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBackground.h; sourceTree = "<group>"; };
+		A9A2F8821AD3D6A500F91CBE /* ZCGBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBackground.m; sourceTree = "<group>"; };
+		A9A2F8831AD3D6A500F91CBE /* ZCGBackgroundMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBackgroundMgr.h; sourceTree = "<group>"; };
+		A9A2F8841AD3D6A500F91CBE /* ZCGBackgroundMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBackgroundMgr.m; sourceTree = "<group>"; };
+		A9A2F8861AD3D6A500F91CBE /* ZCGThrowBallCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGThrowBallCtrl.h; sourceTree = "<group>"; };
+		A9A2F8871AD3D6A500F91CBE /* ZCGThrowBallCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGThrowBallCtrl.m; sourceTree = "<group>"; };
+		A9A2F8881AD3D6A500F91CBE /* ZCGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGTimer.h; sourceTree = "<group>"; };
+		A9A2F8891AD3D6A500F91CBE /* ZCGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGTimer.m; sourceTree = "<group>"; };
+		A9A2F88B1AD3D6A500F91CBE /* Game_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game_View.h; sourceTree = "<group>"; };
+		A9A2F88C1AD3D6A500F91CBE /* Game_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game_View.m; sourceTree = "<group>"; };
+		A9A2F88D1AD3D6A500F91CBE /* ZCGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGButton.h; sourceTree = "<group>"; };
+		A9A2F88E1AD3D6A500F91CBE /* ZCGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGButton.m; sourceTree = "<group>"; };
+		A9A2F88F1AD3D6A500F91CBE /* ZCGDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGDrawView.h; sourceTree = "<group>"; };
+		A9A2F8901AD3D6A500F91CBE /* ZCGDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGDrawView.m; sourceTree = "<group>"; };
+		A9A2F8911AD3D6A500F91CBE /* ZCGImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGImageView.h; sourceTree = "<group>"; };
+		A9A2F8921AD3D6A500F91CBE /* ZCGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGImageView.m; sourceTree = "<group>"; };
+		A9A2F8931AD3D6A500F91CBE /* ZCGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGLabel.h; sourceTree = "<group>"; };
+		A9A2F8941AD3D6A500F91CBE /* ZCGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGLabel.m; sourceTree = "<group>"; };
+		A9A2F8951AD3D6A500F91CBE /* ZCGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGView.h; sourceTree = "<group>"; };
+		A9A2F8961AD3D6A500F91CBE /* ZCGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGView.m; sourceTree = "<group>"; };
+		A9A2F8981AD3D6A500F91CBE /* ball_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball_3.png; sourceTree = "<group>"; };
+		A9A2F8991AD3D6A500F91CBE /* basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket.png; sourceTree = "<group>"; };
+		A9A2F89A1AD3D6A500F91CBE /* basket_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket_2_1.png; sourceTree = "<group>"; };
+		A9A2F89B1AD3D6A500F91CBE /* basket_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket_2_2.png; sourceTree = "<group>"; };
+		A9A2F89C1AD3D6A500F91CBE /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
+		A9A2F89D1AD3D6A500F91CBE /* tree_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree_1.png; sourceTree = "<group>"; };
+		A9A2F89E1AD3D6A500F91CBE /* yewai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yewai.jpg; sourceTree = "<group>"; };
+		A9A2F8A01AD3D6A500F91CBE /* ZCGField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGField.h; sourceTree = "<group>"; };
+		A9A2F8A11AD3D6A500F91CBE /* ZCGField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGField.m; sourceTree = "<group>"; };
+		A9A2F8A21AD3D6A500F91CBE /* ZCGScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGScene.h; sourceTree = "<group>"; };
+		A9A2F8A31AD3D6A500F91CBE /* ZCGScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGScene.m; sourceTree = "<group>"; };
+		A9A2F8A41AD3D6A500F91CBE /* ZCGSceneMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGSceneMgr.h; sourceTree = "<group>"; };
+		A9A2F8A51AD3D6A500F91CBE /* ZCGSceneMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGSceneMgr.m; sourceTree = "<group>"; };
+		A9A2F8A71AD3D6A500F91CBE /* ZCGCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGCard.h; sourceTree = "<group>"; };
+		A9A2F8A81AD3D6A500F91CBE /* ZCGCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGCard.m; sourceTree = "<group>"; };
+		A9A2F8A91AD3D6A500F91CBE /* ZCGStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGStat.h; sourceTree = "<group>"; };
+		A9A2F8AA1AD3D6A500F91CBE /* ZCGStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGStat.m; sourceTree = "<group>"; };
+		A9A2F8AD1AD3D6A500F91CBE /* ZCGBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBall.h; sourceTree = "<group>"; };
+		A9A2F8AE1AD3D6A500F91CBE /* ZCGBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBall.m; sourceTree = "<group>"; };
+		A9A2F8B01AD3D6A500F91CBE /* ZCGBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBasket.h; sourceTree = "<group>"; };
+		A9A2F8B11AD3D6A500F91CBE /* ZCGBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBasket.m; sourceTree = "<group>"; };
+		A9A2F8B31AD3D6A500F91CBE /* ZCGHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGHole.h; sourceTree = "<group>"; };
+		A9A2F8B41AD3D6A500F91CBE /* ZCGHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGHole.m; sourceTree = "<group>"; };
+		A9A2F8B61AD3D6A500F91CBE /* ZCGTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGTree.h; sourceTree = "<group>"; };
+		A9A2F8B71AD3D6A500F91CBE /* ZCGTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGTree.m; sourceTree = "<group>"; };
+		A9A2F8B81AD3D6A500F91CBE /* ZCGThing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGThing.h; sourceTree = "<group>"; };
+		A9A2F8B91AD3D6A500F91CBE /* ZCGThing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGThing.m; sourceTree = "<group>"; };
+		A9A2F8BB1AD3D6A500F91CBE /* ZCGPlayScreenMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGPlayScreenMgr.h; sourceTree = "<group>"; };
+		A9A2F8BC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGPlayScreenMgr.m; sourceTree = "<group>"; };
+		A9A2F8BD1AD3D6A500F91CBE /* ZCGStartScreenMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGStartScreenMgr.h; sourceTree = "<group>"; };
+		A9A2F8BE1AD3D6A500F91CBE /* ZCGStartScreenMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGStartScreenMgr.m; sourceTree = "<group>"; };
+		A9A2F8BF1AD3D6A500F91CBE /* ZCGUIMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGUIMgr.h; sourceTree = "<group>"; };
+		A9A2F8C01AD3D6A500F91CBE /* ZCGUIMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGUIMgr.m; sourceTree = "<group>"; };
 		A9B58A6A1ABABADB00F6CEBF /* ThrowBallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowBallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9B58A701ABABADB00F6CEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -67,59 +120,6 @@
 		A9B58A871ABABADB00F6CEBF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9B58A891ABABADB00F6CEBF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A9B58A8A1ABABADC00F6CEBF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A9B707E81AD228E7008B907E /* ZCGBackgroundMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBackgroundMgr.h; sourceTree = "<group>"; };
-		A9B707E91AD228E7008B907E /* ZCGBackgroundMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBackgroundMgr.m; sourceTree = "<group>"; };
-		A9B707EF1AD22A13008B907E /* ZCGTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGTree.h; sourceTree = "<group>"; };
-		A9B707F01AD22A13008B907E /* ZCGTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGTree.m; sourceTree = "<group>"; };
-		A9B707F21AD22B45008B907E /* tree_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree_1.png; sourceTree = "<group>"; };
-		A9B707F41AD22B45008B907E /* yewai.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yewai.jpg; sourceTree = "<group>"; };
-		A9B707F81AD22DD5008B907E /* ZCGBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBackground.h; sourceTree = "<group>"; };
-		A9B707F91AD22DD6008B907E /* ZCGBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBackground.m; sourceTree = "<group>"; };
-		A9B707FC1AD23453008B907E /* ZCGThing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGThing.h; sourceTree = "<group>"; };
-		A9B707FD1AD23453008B907E /* ZCGThing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGThing.m; sourceTree = "<group>"; };
-		A9B708001AD247DA008B907E /* ZCGScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGScene.h; sourceTree = "<group>"; };
-		A9B708011AD247DA008B907E /* ZCGScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGScene.m; sourceTree = "<group>"; };
-		A9B708031AD24B48008B907E /* ZCGField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGField.h; sourceTree = "<group>"; };
-		A9B708041AD24B49008B907E /* ZCGField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGField.m; sourceTree = "<group>"; };
-		A9B708061AD26B7B008B907E /* ZCGSceneMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGSceneMgr.h; sourceTree = "<group>"; };
-		A9B708071AD26B7C008B907E /* ZCGSceneMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGSceneMgr.m; sourceTree = "<group>"; };
-		A9C1337D1AD1391D00FB57CE /* ZCGBall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBall.h; sourceTree = "<group>"; };
-		A9C1337E1AD1391D00FB57CE /* ZCGBall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBall.m; sourceTree = "<group>"; };
-		A9C133801AD1391D00FB57CE /* ZCGBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGBasket.h; sourceTree = "<group>"; };
-		A9C133811AD1391D00FB57CE /* ZCGBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGBasket.m; sourceTree = "<group>"; };
-		A9C133831AD1391D00FB57CE /* ZCGThrowBallCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGThrowBallCtrl.h; sourceTree = "<group>"; };
-		A9C133841AD1391D00FB57CE /* ZCGThrowBallCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGThrowBallCtrl.m; sourceTree = "<group>"; };
-		A9C133851AD1391D00FB57CE /* ZCGTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGTimer.h; sourceTree = "<group>"; };
-		A9C133861AD1391D00FB57CE /* ZCGTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGTimer.m; sourceTree = "<group>"; };
-		A9C133881AD1391D00FB57CE /* Game_View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game_View.h; sourceTree = "<group>"; };
-		A9C133891AD1391D00FB57CE /* Game_View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game_View.m; sourceTree = "<group>"; };
-		A9C1338A1AD1391D00FB57CE /* ZCGDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGDrawView.h; sourceTree = "<group>"; };
-		A9C1338B1AD1391D00FB57CE /* ZCGDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGDrawView.m; sourceTree = "<group>"; };
-		A9C1338C1AD1391D00FB57CE /* ZCGImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGImageView.h; sourceTree = "<group>"; };
-		A9C1338D1AD1391D00FB57CE /* ZCGImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGImageView.m; sourceTree = "<group>"; };
-		A9C1338F1AD1391D00FB57CE /* ZCGHole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGHole.h; sourceTree = "<group>"; };
-		A9C133901AD1391D00FB57CE /* ZCGHole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGHole.m; sourceTree = "<group>"; };
-		A9C133921AD1391D00FB57CE /* ball_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball_3.png; sourceTree = "<group>"; };
-		A9C133931AD1391D00FB57CE /* basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket.png; sourceTree = "<group>"; };
-		A9C133941AD1391D00FB57CE /* basket_2_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket_2_1.png; sourceTree = "<group>"; };
-		A9C133951AD1391D00FB57CE /* basket_2_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = basket_2_2.png; sourceTree = "<group>"; };
-		A9C133961AD1391D00FB57CE /* hole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hole.png; sourceTree = "<group>"; };
-		A9C133981AD1391D00FB57CE /* ZCGCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGCard.h; sourceTree = "<group>"; };
-		A9C133991AD1391D00FB57CE /* ZCGCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGCard.m; sourceTree = "<group>"; };
-		A9C1339A1AD1391D00FB57CE /* ZCGStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGStat.h; sourceTree = "<group>"; };
-		A9C1339B1AD1391D00FB57CE /* ZCGStat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGStat.m; sourceTree = "<group>"; };
-		A9CF26911AD17E1400A09B86 /* ZCGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGView.h; sourceTree = "<group>"; };
-		A9CF26921AD17E1500A09B86 /* ZCGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGView.m; sourceTree = "<group>"; };
-		A9CF26951AD17FAF00A09B86 /* ZCGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGButton.h; sourceTree = "<group>"; };
-		A9CF26961AD17FAF00A09B86 /* ZCGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGButton.m; sourceTree = "<group>"; };
-		A9CF26981AD1801A00A09B86 /* ZCGLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGLabel.h; sourceTree = "<group>"; };
-		A9CF26991AD1801B00A09B86 /* ZCGLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGLabel.m; sourceTree = "<group>"; };
-		A9CF26AD1AD1A97F00A09B86 /* ZCGPlayScreenMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGPlayScreenMgr.h; sourceTree = "<group>"; };
-		A9CF26AE1AD1A97F00A09B86 /* ZCGPlayScreenMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGPlayScreenMgr.m; sourceTree = "<group>"; };
-		A9CF26AF1AD1A97F00A09B86 /* ZCGStartScreenMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGStartScreenMgr.h; sourceTree = "<group>"; };
-		A9CF26B01AD1A97F00A09B86 /* ZCGStartScreenMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGStartScreenMgr.m; sourceTree = "<group>"; };
-		A9CF26B11AD1A97F00A09B86 /* ZCGUIMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGUIMgr.h; sourceTree = "<group>"; };
-		A9CF26B21AD1A97F00A09B86 /* ZCGUIMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGUIMgr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +136,162 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A9A2F87F1AD3D6A500F91CBE /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8801AD3D6A500F91CBE /* background */,
+				A9A2F8851AD3D6A500F91CBE /* game */,
+				A9A2F88A1AD3D6A500F91CBE /* gameView */,
+				A9A2F8971AD3D6A500F91CBE /* picture */,
+				A9A2F89F1AD3D6A500F91CBE /* scene */,
+				A9A2F8A61AD3D6A500F91CBE /* statistic */,
+				A9A2F8AB1AD3D6A500F91CBE /* thing */,
+				A9A2F8BA1AD3D6A500F91CBE /* UIMgr */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		A9A2F8801AD3D6A500F91CBE /* background */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8811AD3D6A500F91CBE /* ZCGBackground.h */,
+				A9A2F8821AD3D6A500F91CBE /* ZCGBackground.m */,
+				A9A2F8831AD3D6A500F91CBE /* ZCGBackgroundMgr.h */,
+				A9A2F8841AD3D6A500F91CBE /* ZCGBackgroundMgr.m */,
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
+		A9A2F8851AD3D6A500F91CBE /* game */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8861AD3D6A500F91CBE /* ZCGThrowBallCtrl.h */,
+				A9A2F8871AD3D6A500F91CBE /* ZCGThrowBallCtrl.m */,
+				A9A2F8881AD3D6A500F91CBE /* ZCGTimer.h */,
+				A9A2F8891AD3D6A500F91CBE /* ZCGTimer.m */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		A9A2F88A1AD3D6A500F91CBE /* gameView */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F88B1AD3D6A500F91CBE /* Game_View.h */,
+				A9A2F88C1AD3D6A500F91CBE /* Game_View.m */,
+				A9A2F88D1AD3D6A500F91CBE /* ZCGButton.h */,
+				A9A2F88E1AD3D6A500F91CBE /* ZCGButton.m */,
+				A9A2F88F1AD3D6A500F91CBE /* ZCGDrawView.h */,
+				A9A2F8901AD3D6A500F91CBE /* ZCGDrawView.m */,
+				A9A2F8911AD3D6A500F91CBE /* ZCGImageView.h */,
+				A9A2F8921AD3D6A500F91CBE /* ZCGImageView.m */,
+				A9A2F8931AD3D6A500F91CBE /* ZCGLabel.h */,
+				A9A2F8941AD3D6A500F91CBE /* ZCGLabel.m */,
+				A9A2F8951AD3D6A500F91CBE /* ZCGView.h */,
+				A9A2F8961AD3D6A500F91CBE /* ZCGView.m */,
+			);
+			path = gameView;
+			sourceTree = "<group>";
+		};
+		A9A2F8971AD3D6A500F91CBE /* picture */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8981AD3D6A500F91CBE /* ball_3.png */,
+				A9A2F8991AD3D6A500F91CBE /* basket.png */,
+				A9A2F89A1AD3D6A500F91CBE /* basket_2_1.png */,
+				A9A2F89B1AD3D6A500F91CBE /* basket_2_2.png */,
+				A9A2F89C1AD3D6A500F91CBE /* hole.png */,
+				A9A2F89D1AD3D6A500F91CBE /* tree_1.png */,
+				A9A2F89E1AD3D6A500F91CBE /* yewai.jpg */,
+			);
+			path = picture;
+			sourceTree = "<group>";
+		};
+		A9A2F89F1AD3D6A500F91CBE /* scene */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8A01AD3D6A500F91CBE /* ZCGField.h */,
+				A9A2F8A11AD3D6A500F91CBE /* ZCGField.m */,
+				A9A2F8A21AD3D6A500F91CBE /* ZCGScene.h */,
+				A9A2F8A31AD3D6A500F91CBE /* ZCGScene.m */,
+				A9A2F8A41AD3D6A500F91CBE /* ZCGSceneMgr.h */,
+				A9A2F8A51AD3D6A500F91CBE /* ZCGSceneMgr.m */,
+			);
+			path = scene;
+			sourceTree = "<group>";
+		};
+		A9A2F8A61AD3D6A500F91CBE /* statistic */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8A71AD3D6A500F91CBE /* ZCGCard.h */,
+				A9A2F8A81AD3D6A500F91CBE /* ZCGCard.m */,
+				A9A2F8A91AD3D6A500F91CBE /* ZCGStat.h */,
+				A9A2F8AA1AD3D6A500F91CBE /* ZCGStat.m */,
+			);
+			path = statistic;
+			sourceTree = "<group>";
+		};
+		A9A2F8AB1AD3D6A500F91CBE /* thing */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8AC1AD3D6A500F91CBE /* ball */,
+				A9A2F8AF1AD3D6A500F91CBE /* basket */,
+				A9A2F8B21AD3D6A500F91CBE /* hole */,
+				A9A2F8B51AD3D6A500F91CBE /* tree */,
+				A9A2F8B81AD3D6A500F91CBE /* ZCGThing.h */,
+				A9A2F8B91AD3D6A500F91CBE /* ZCGThing.m */,
+			);
+			path = thing;
+			sourceTree = "<group>";
+		};
+		A9A2F8AC1AD3D6A500F91CBE /* ball */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8AD1AD3D6A500F91CBE /* ZCGBall.h */,
+				A9A2F8AE1AD3D6A500F91CBE /* ZCGBall.m */,
+			);
+			path = ball;
+			sourceTree = "<group>";
+		};
+		A9A2F8AF1AD3D6A500F91CBE /* basket */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8B01AD3D6A500F91CBE /* ZCGBasket.h */,
+				A9A2F8B11AD3D6A500F91CBE /* ZCGBasket.m */,
+			);
+			path = basket;
+			sourceTree = "<group>";
+		};
+		A9A2F8B21AD3D6A500F91CBE /* hole */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8B31AD3D6A500F91CBE /* ZCGHole.h */,
+				A9A2F8B41AD3D6A500F91CBE /* ZCGHole.m */,
+			);
+			path = hole;
+			sourceTree = "<group>";
+		};
+		A9A2F8B51AD3D6A500F91CBE /* tree */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8B61AD3D6A500F91CBE /* ZCGTree.h */,
+				A9A2F8B71AD3D6A500F91CBE /* ZCGTree.m */,
+			);
+			path = tree;
+			sourceTree = "<group>";
+		};
+		A9A2F8BA1AD3D6A500F91CBE /* UIMgr */ = {
+			isa = PBXGroup;
+			children = (
+				A9A2F8BB1AD3D6A500F91CBE /* ZCGPlayScreenMgr.h */,
+				A9A2F8BC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m */,
+				A9A2F8BD1AD3D6A500F91CBE /* ZCGStartScreenMgr.h */,
+				A9A2F8BE1AD3D6A500F91CBE /* ZCGStartScreenMgr.m */,
+				A9A2F8BF1AD3D6A500F91CBE /* ZCGUIMgr.h */,
+				A9A2F8C01AD3D6A500F91CBE /* ZCGUIMgr.m */,
+			);
+			path = UIMgr;
+			sourceTree = "<group>";
+		};
 		A9B58A5F1ABABADB00F6CEBF = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +322,7 @@
 		A9B58A741ABABADB00F6CEBF /* ThrowBallGame */ = {
 			isa = PBXGroup;
 			children = (
-				A9C1337B1AD1391D00FB57CE /* src */,
+				A9A2F87F1AD3D6A500F91CBE /* src */,
 				A9B58A7D1ABABADB00F6CEBF /* AppDelegate.h */,
 				A9B58A7E1ABABADB00F6CEBF /* AppDelegate.m */,
 				A9B58A861ABABADB00F6CEBF /* MainStoryboard.storyboard */,
@@ -189,170 +345,6 @@
 				A9B58A841ABABADB00F6CEBF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A9B707EC1AD228F0008B907E /* background */ = {
-			isa = PBXGroup;
-			children = (
-				A9B707E81AD228E7008B907E /* ZCGBackgroundMgr.h */,
-				A9B707E91AD228E7008B907E /* ZCGBackgroundMgr.m */,
-				A9B707F81AD22DD5008B907E /* ZCGBackground.h */,
-				A9B707F91AD22DD6008B907E /* ZCGBackground.m */,
-				A9B707EF1AD22A13008B907E /* ZCGTree.h */,
-				A9B707F01AD22A13008B907E /* ZCGTree.m */,
-			);
-			name = background;
-			sourceTree = "<group>";
-		};
-		A9B707ED1AD22915008B907E /* startScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A9CF26AF1AD1A97F00A09B86 /* ZCGStartScreenMgr.h */,
-				A9CF26B01AD1A97F00A09B86 /* ZCGStartScreenMgr.m */,
-			);
-			name = startScreen;
-			sourceTree = "<group>";
-		};
-		A9B707EE1AD2294B008B907E /* playScreen */ = {
-			isa = PBXGroup;
-			children = (
-				A9CF26AD1AD1A97F00A09B86 /* ZCGPlayScreenMgr.h */,
-				A9CF26AE1AD1A97F00A09B86 /* ZCGPlayScreenMgr.m */,
-			);
-			name = playScreen;
-			sourceTree = "<group>";
-		};
-		A9B707FB1AD233E2008B907E /* thing */ = {
-			isa = PBXGroup;
-			children = (
-				A9B707FC1AD23453008B907E /* ZCGThing.h */,
-				A9B707FD1AD23453008B907E /* ZCGThing.m */,
-			);
-			path = thing;
-			sourceTree = "<group>";
-		};
-		A9B707FF1AD24477008B907E /* scene */ = {
-			isa = PBXGroup;
-			children = (
-				A9B708001AD247DA008B907E /* ZCGScene.h */,
-				A9B708011AD247DA008B907E /* ZCGScene.m */,
-				A9B708031AD24B48008B907E /* ZCGField.h */,
-				A9B708041AD24B49008B907E /* ZCGField.m */,
-				A9B708061AD26B7B008B907E /* ZCGSceneMgr.h */,
-				A9B708071AD26B7C008B907E /* ZCGSceneMgr.m */,
-			);
-			path = scene;
-			sourceTree = "<group>";
-		};
-		A9C1337B1AD1391D00FB57CE /* src */ = {
-			isa = PBXGroup;
-			children = (
-				A9B707FF1AD24477008B907E /* scene */,
-				A9B707FB1AD233E2008B907E /* thing */,
-				A9CF26AC1AD1A97D00A09B86 /* UIMgr */,
-				A9C1337C1AD1391D00FB57CE /* ball */,
-				A9C1337F1AD1391D00FB57CE /* basket */,
-				A9C133821AD1391D00FB57CE /* game */,
-				A9C133871AD1391D00FB57CE /* gameView */,
-				A9C1338E1AD1391D00FB57CE /* hole */,
-				A9C133911AD1391D00FB57CE /* picture */,
-				A9C133971AD1391D00FB57CE /* statistic */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		A9C1337C1AD1391D00FB57CE /* ball */ = {
-			isa = PBXGroup;
-			children = (
-				A9C1337D1AD1391D00FB57CE /* ZCGBall.h */,
-				A9C1337E1AD1391D00FB57CE /* ZCGBall.m */,
-			);
-			path = ball;
-			sourceTree = "<group>";
-		};
-		A9C1337F1AD1391D00FB57CE /* basket */ = {
-			isa = PBXGroup;
-			children = (
-				A9C133801AD1391D00FB57CE /* ZCGBasket.h */,
-				A9C133811AD1391D00FB57CE /* ZCGBasket.m */,
-			);
-			path = basket;
-			sourceTree = "<group>";
-		};
-		A9C133821AD1391D00FB57CE /* game */ = {
-			isa = PBXGroup;
-			children = (
-				A9C133831AD1391D00FB57CE /* ZCGThrowBallCtrl.h */,
-				A9C133841AD1391D00FB57CE /* ZCGThrowBallCtrl.m */,
-				A9C133851AD1391D00FB57CE /* ZCGTimer.h */,
-				A9C133861AD1391D00FB57CE /* ZCGTimer.m */,
-			);
-			path = game;
-			sourceTree = "<group>";
-		};
-		A9C133871AD1391D00FB57CE /* gameView */ = {
-			isa = PBXGroup;
-			children = (
-				A9C133881AD1391D00FB57CE /* Game_View.h */,
-				A9C133891AD1391D00FB57CE /* Game_View.m */,
-				A9CF26911AD17E1400A09B86 /* ZCGView.h */,
-				A9CF26921AD17E1500A09B86 /* ZCGView.m */,
-				A9CF26981AD1801A00A09B86 /* ZCGLabel.h */,
-				A9CF26991AD1801B00A09B86 /* ZCGLabel.m */,
-				A9CF26951AD17FAF00A09B86 /* ZCGButton.h */,
-				A9CF26961AD17FAF00A09B86 /* ZCGButton.m */,
-				A9C1338A1AD1391D00FB57CE /* ZCGDrawView.h */,
-				A9C1338B1AD1391D00FB57CE /* ZCGDrawView.m */,
-				A9C1338C1AD1391D00FB57CE /* ZCGImageView.h */,
-				A9C1338D1AD1391D00FB57CE /* ZCGImageView.m */,
-			);
-			path = gameView;
-			sourceTree = "<group>";
-		};
-		A9C1338E1AD1391D00FB57CE /* hole */ = {
-			isa = PBXGroup;
-			children = (
-				A9C1338F1AD1391D00FB57CE /* ZCGHole.h */,
-				A9C133901AD1391D00FB57CE /* ZCGHole.m */,
-			);
-			path = hole;
-			sourceTree = "<group>";
-		};
-		A9C133911AD1391D00FB57CE /* picture */ = {
-			isa = PBXGroup;
-			children = (
-				A9C133921AD1391D00FB57CE /* ball_3.png */,
-				A9C133931AD1391D00FB57CE /* basket.png */,
-				A9C133941AD1391D00FB57CE /* basket_2_1.png */,
-				A9C133951AD1391D00FB57CE /* basket_2_2.png */,
-				A9C133961AD1391D00FB57CE /* hole.png */,
-				A9B707F21AD22B45008B907E /* tree_1.png */,
-				A9B707F41AD22B45008B907E /* yewai.jpg */,
-			);
-			path = picture;
-			sourceTree = "<group>";
-		};
-		A9C133971AD1391D00FB57CE /* statistic */ = {
-			isa = PBXGroup;
-			children = (
-				A9C133981AD1391D00FB57CE /* ZCGCard.h */,
-				A9C133991AD1391D00FB57CE /* ZCGCard.m */,
-				A9C1339A1AD1391D00FB57CE /* ZCGStat.h */,
-				A9C1339B1AD1391D00FB57CE /* ZCGStat.m */,
-			);
-			path = statistic;
-			sourceTree = "<group>";
-		};
-		A9CF26AC1AD1A97D00A09B86 /* UIMgr */ = {
-			isa = PBXGroup;
-			children = (
-				A9B707ED1AD22915008B907E /* startScreen */,
-				A9B707EC1AD228F0008B907E /* background */,
-				A9B707EE1AD2294B008B907E /* playScreen */,
-				A9CF26B11AD1A97F00A09B86 /* ZCGUIMgr.h */,
-				A9CF26B21AD1A97F00A09B86 /* ZCGUIMgr.m */,
-			);
-			path = UIMgr;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,13 +403,13 @@
 				A9B58A831ABABADB00F6CEBF /* Default@2x.png in Resources */,
 				A9B58A851ABABADB00F6CEBF /* Default-568h@2x.png in Resources */,
 				A9B58A881ABABADB00F6CEBF /* MainStoryboard.storyboard in Resources */,
-				A9C133A41AD1391D00FB57CE /* ball_3.png in Resources */,
-				A9C133A51AD1391D00FB57CE /* basket.png in Resources */,
-				A9C133A61AD1391D00FB57CE /* basket_2_1.png in Resources */,
-				A9C133A71AD1391D00FB57CE /* basket_2_2.png in Resources */,
-				A9C133A81AD1391D00FB57CE /* hole.png in Resources */,
-				A9B707F51AD22B45008B907E /* tree_1.png in Resources */,
-				A9B707F71AD22B45008B907E /* yewai.jpg in Resources */,
+				A9A2F8CB1AD3D6A500F91CBE /* ball_3.png in Resources */,
+				A9A2F8CC1AD3D6A500F91CBE /* basket.png in Resources */,
+				A9A2F8CD1AD3D6A500F91CBE /* basket_2_1.png in Resources */,
+				A9A2F8CE1AD3D6A500F91CBE /* basket_2_2.png in Resources */,
+				A9A2F8CF1AD3D6A500F91CBE /* hole.png in Resources */,
+				A9A2F8D01AD3D6A500F91CBE /* tree_1.png in Resources */,
+				A9A2F8D11AD3D6A500F91CBE /* yewai.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,29 +423,29 @@
 				A9B58A7B1ABABADB00F6CEBF /* main.m in Sources */,
 				A9B58A7F1ABABADB00F6CEBF /* AppDelegate.m in Sources */,
 				A9B58A8B1ABABADC00F6CEBF /* ViewController.m in Sources */,
-				A9C1339C1AD1391D00FB57CE /* ZCGBall.m in Sources */,
-				A9C1339D1AD1391D00FB57CE /* ZCGBasket.m in Sources */,
-				A9C1339E1AD1391D00FB57CE /* ZCGThrowBallCtrl.m in Sources */,
-				A9C1339F1AD1391D00FB57CE /* ZCGTimer.m in Sources */,
-				A9C133A01AD1391D00FB57CE /* Game_View.m in Sources */,
-				A9C133A11AD1391D00FB57CE /* ZCGDrawView.m in Sources */,
-				A9C133A21AD1391D00FB57CE /* ZCGImageView.m in Sources */,
-				A9C133A31AD1391D00FB57CE /* ZCGHole.m in Sources */,
-				A9C133A91AD1391D00FB57CE /* ZCGCard.m in Sources */,
-				A9C133AA1AD1391D00FB57CE /* ZCGStat.m in Sources */,
-				A9CF26931AD17E1500A09B86 /* ZCGView.m in Sources */,
-				A9CF26971AD17FB000A09B86 /* ZCGButton.m in Sources */,
-				A9CF269A1AD1801B00A09B86 /* ZCGLabel.m in Sources */,
-				A9CF26B31AD1A97F00A09B86 /* ZCGPlayScreenMgr.m in Sources */,
-				A9CF26B41AD1A97F00A09B86 /* ZCGStartScreenMgr.m in Sources */,
-				A9CF26B51AD1A97F00A09B86 /* ZCGUIMgr.m in Sources */,
-				A9B707EA1AD228E7008B907E /* ZCGBackgroundMgr.m in Sources */,
-				A9B707F11AD22A13008B907E /* ZCGTree.m in Sources */,
-				A9B707FA1AD22DD6008B907E /* ZCGBackground.m in Sources */,
-				A9B707FE1AD23453008B907E /* ZCGThing.m in Sources */,
-				A9B708021AD247DA008B907E /* ZCGScene.m in Sources */,
-				A9B708051AD24B49008B907E /* ZCGField.m in Sources */,
-				A9B708081AD26B7F008B907E /* ZCGSceneMgr.m in Sources */,
+				A9A2F8C11AD3D6A500F91CBE /* ZCGBackground.m in Sources */,
+				A9A2F8C21AD3D6A500F91CBE /* ZCGBackgroundMgr.m in Sources */,
+				A9A2F8C31AD3D6A500F91CBE /* ZCGThrowBallCtrl.m in Sources */,
+				A9A2F8C41AD3D6A500F91CBE /* ZCGTimer.m in Sources */,
+				A9A2F8C51AD3D6A500F91CBE /* Game_View.m in Sources */,
+				A9A2F8C61AD3D6A500F91CBE /* ZCGButton.m in Sources */,
+				A9A2F8C71AD3D6A500F91CBE /* ZCGDrawView.m in Sources */,
+				A9A2F8C81AD3D6A500F91CBE /* ZCGImageView.m in Sources */,
+				A9A2F8C91AD3D6A500F91CBE /* ZCGLabel.m in Sources */,
+				A9A2F8CA1AD3D6A500F91CBE /* ZCGView.m in Sources */,
+				A9A2F8D21AD3D6A500F91CBE /* ZCGField.m in Sources */,
+				A9A2F8D31AD3D6A500F91CBE /* ZCGScene.m in Sources */,
+				A9A2F8D41AD3D6A500F91CBE /* ZCGSceneMgr.m in Sources */,
+				A9A2F8D51AD3D6A500F91CBE /* ZCGCard.m in Sources */,
+				A9A2F8D61AD3D6A500F91CBE /* ZCGStat.m in Sources */,
+				A9A2F8D71AD3D6A500F91CBE /* ZCGBall.m in Sources */,
+				A9A2F8D81AD3D6A500F91CBE /* ZCGBasket.m in Sources */,
+				A9A2F8D91AD3D6A500F91CBE /* ZCGHole.m in Sources */,
+				A9A2F8DA1AD3D6A500F91CBE /* ZCGTree.m in Sources */,
+				A9A2F8DB1AD3D6A500F91CBE /* ZCGThing.m in Sources */,
+				A9A2F8DC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m in Sources */,
+				A9A2F8DD1AD3D6A500F91CBE /* ZCGStartScreenMgr.m in Sources */,
+				A9A2F8DE1AD3D6A500F91CBE /* ZCGUIMgr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +524,7 @@
 		A9B58A8F1ABABADC00F6CEBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThrowBallGame/ThrowBallGame-Prefix.pch";
 				INFOPLIST_FILE = "ThrowBallGame/ThrowBallGame-Info.plist";
@@ -543,6 +536,7 @@
 		A9B58A901ABABADC00F6CEBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThrowBallGame/ThrowBallGame-Prefix.pch";
 				INFOPLIST_FILE = "ThrowBallGame/ThrowBallGame-Info.plist";

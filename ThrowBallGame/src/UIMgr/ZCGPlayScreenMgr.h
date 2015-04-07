@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "../gameView/ZCGView.h"
+
+@class ZCGView;
+@class ZCGBall;
+@class ZCGBasket;
+@class ZCGBackground;
 
 #define BG_POWER_PLUS_BUTTON_ID 0
 #define BG_POWER_REDUCE_BUTTON_ID 1
@@ -25,17 +28,19 @@
 
 @interface ZCGPlayScreenMgr : NSObject
 {
-    ZCGView *mp_playViewContainer;
-    int nSubviewIndex;
-    
-    UIButton *mp_homeButton;
-    UIButton *mp_throwButton;
-    UIButton *mp_nextCardButton;
-    UIButton *mp_preCardButton;
-    
-    UILabel *mp_stateLabel;
+    int m_nPlaySubviewIndex;
 }
+@property(nonatomic, retain) ZCGView *mp_playViewContainer;
+@property(nonatomic, retain) ZCGBall *mp_gameBall;
+@property(nonatomic, retain) ZCGBasket *mp_gameBasket;
+@property(nonatomic, retain) ZCGBackground *mp_backgnd;
+@property(nonatomic, retain) ZCGView *mp_touchView;
+// mp_gameContainer is used to put the ball basket hole and so on
+@property(nonatomic, retain) ZCGView *mp_gameContainer;
+
 - (BOOL)InitPlayScreen:(ZCGView *)p_mainPlayView;
+
+- (void)InitPlayScreenLabel;
 
 - (void)InitPlayScreenButton;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;

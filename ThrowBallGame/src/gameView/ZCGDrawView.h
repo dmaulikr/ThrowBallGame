@@ -41,7 +41,7 @@
     // store the frame of this view object
     CGRect m_rect;
 }
-
+@property(nonatomic, retain) UIImage *m_pMainImage;
 - (void)EnableDrawFunction;
 - (void)DisableDrawFunction;
 

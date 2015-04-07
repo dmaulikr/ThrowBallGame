@@ -7,19 +7,25 @@
 //
 #import <string.h>
 #import "ZCGScene.h"
+#import "../background/ZCGBackground.h"
 
 @implementation ZCGScene
 
-- (void)InitScene:(ZCGBackground *)p_backgnd
+- (void)dealloc
 {
-    mp_backgnd = p_backgnd;
+    [super dealloc];
 }
 
 - (void)LoadScene:(const char *)strScene
 {
-    if (strcmp(strScene, "field")) {
+    if (strcmp(strScene, "field") == 0) {
         
     }
+}
+
++ (void)LoadScene:(ZCGBackground *)p_backgnd
+{
+    // nothing to do
 }
 
 @end

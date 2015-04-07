@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
-#import "../thing/ZCGThing.h"
+#import "../ZCGThing.h"
 
 @interface ZCGTree : ZCGThing
 {

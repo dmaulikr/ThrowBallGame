@@ -8,26 +8,31 @@
 
 #import "ViewController.h"
 #import "src/gameView/Game_View.h"
+#import "src/gameView/ZCGView.h"
 #import "src/gameView/ZCGImageView.h"
 #import "src/gameView/ZCGDrawView.h"
-#import "src/hole/ZCGHole.h"
-#import "src/ball/ZCGBall.h"
-#import "src/basket/ZCGBasket.h"
+#import "src/thing/hole/ZCGHole.h"
+#import "src/thing/ball/ZCGBall.h"
+#import "src/thing/basket/ZCGBasket.h"
 #import "./src/statistic/ZCGCard.h"
 #import "./src/game/ZCGThrowBallCtrl.h"
 #import "./src/game/ZCGTimer.h"
-#import "./src/UIMgr/ZCGBackground.h"
+#import "./src/background/ZCGBackground.h"
 #import "./src/scene/ZCGField.h"
+#import "src/UIMgr/ZCGPlayScreenMgr.h"
+#import "src/UIMgr/ZCGStartScreenMgr.h"
 
 @interface ViewController ()
 
 @end
 
 ZCGDrawView *g_pDrawView;
+ZCGView *gp_mainGameView;
 
 @implementation ViewController
 
 @synthesize pMainView;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,55 +47,71 @@ ZCGDrawView *g_pDrawView;
     CGRect rect = ([UIScreen mainScreen].bounds);
     
     pMainView.frame = rect;
+    gp_mainGameView = [[ZCGView alloc] initWithFrame:rect];
+    [pMainView insertSubview:gp_mainGameView atIndex:0];
     
     //CGRect *pRect = &rect;
     
-    Game_View *pGameView = [[Game_View alloc] initWithFrame:rect];
-    [pGameView setBackgroundColor:[UIColor clearColor]];
-    [pGameView Set_Line_Color:[UIColor blueColor].CGColor];
-    [pGameView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
-    [pMainView insertSubview:pGameView atIndex:0];
     
-    //GameImageView *pImageView = [[GameImageView alloc] initWithFrame:rect];
-    g_pDrawView = [[ZCGDrawView alloc] initWithFrame:rect];
-    [g_pDrawView DrawLine:CGPointMake(50, 150) withEndPoint:CGPointMake(100, 200)];
-    [g_pDrawView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
-    g_pDrawView.image = [ZCGDrawView Image_Rotation_Angle_90:g_pDrawView.image with_direction:BG_LEFT];
-    [pMainView insertSubview:g_pDrawView atIndex:1];
-
+//    Game_View *pGameView = [[Game_View alloc] initWithFrame:rect];
+//    [pGameView setBackgroundColor:[UIColor clearColor]];
+//    [pGameView Set_Line_Color:[UIColor blueColor].CGColor];
+//    [pGameView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
+//    [gp_mainGameView insertSubview:pGameView atIndex:0];
+//    
+//    //GameImageView *pImageView = [[GameImageView alloc] initWithFrame:rect];
+//    g_pDrawView = [[ZCGDrawView alloc] initWithFrame:rect];
+//    [g_pDrawView DrawLine:CGPointMake(50, 150) withEndPoint:CGPointMake(100, 200)];
+//    [g_pDrawView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
+//    g_pDrawView.image = [ZCGDrawView Image_Rotation_Angle_90:g_pDrawView.image with_direction:BG_LEFT];
+//    [gp_mainGameView insertSubview:g_pDrawView atIndex:1];
+//
+//    
+//    
+//    ZCGHole *p_gameHole = [[ZCGHole alloc] initWithFrame:CGRectMake(20, 200, 50, 50)];
+//    [p_gameHole InitHole:@"hole" with_type:@"png"];
+//    [gp_mainGameView insertSubview:p_gameHole atIndex:2];
+//    
+//    ZCGBall *p_gameBall = [[ZCGBall alloc] initWithFrame:CGRectMake(250, 200, 30, 30)];
+//    [p_gameBall InitBall:@"ball_3" with_type:@"png"];
+//    [gp_mainGameView insertSubview:p_gameBall atIndex:3];
+//    
+//    ZCGBasket *p_gameBasket = [[ZCGBasket alloc] initWithFrame:CGRectMake(50, 200, 40, 40)];
+//    [p_gameBasket InitBasket];
+//    [gp_mainGameView insertSubview:p_gameBasket atIndex:4];
+//    
+//    ZCGThrowBallCtrl *p_throwBallCtrl = [[ZCGThrowBallCtrl alloc] init];
+//    [p_throwBallCtrl SetBall:p_gameBall];
+//    [p_throwBallCtrl TryAddHole:p_gameHole];
+//    [p_throwBallCtrl SetBasket:p_gameBasket];
+//    
+//    [p_throwBallCtrl SetVelocityAndDirection:2 directionDeg:-70];
+//    [p_throwBallCtrl ThrowBallInit];
+//    
+//    [ZCGTimer LaunchTimer:0.01 target:p_throwBallCtrl selector:@selector(ThrowBall) repeats:YES];
+//    
+//    //[p_gameBasket MoveBasketToPoint:CGPointMake(200, 200)];
+//    
+//    //[p_gameBasket ReceiveBall:p_gameBall];
+//    
+//    
+//    ZCGBackground *p_backgnd = [[ZCGBackground alloc] initWithFrame:pMainView.frame];
+//    [ZCGField LoadScene:p_backgnd];
+//    //[p_backgnd LoadScene:"field"];
+//    [gp_mainGameView insertSubview:p_backgnd atIndex:6];
+//
+//    [pGameView release];
+//    [p_gameBall release];
+//    [p_gameBasket release];
+//    [p_gameHole release];
+//    [p_throwBallCtrl release];
+//    [p_backgnd release];
     
+//    ZCGPlayScreenMgr *p_mgr = [ZCGPlayScreenMgr new];
+//    [p_mgr InitPlayScreen:gp_mainGameView];
     
-    ZCGHole *p_gameHole = [[ZCGHole alloc] initWithFrame:CGRectMake(20, 200, 50, 50)];
-    [p_gameHole InitHole:@"hole" with_type:@"png"];
-    [pMainView insertSubview:p_gameHole atIndex:2];
-    
-    ZCGBall *p_gameBall = [[ZCGBall alloc] initWithFrame:CGRectMake(250, 200, 30, 30)];
-    [p_gameBall InitBall:@"ball_3" with_type:@"png"];
-    [pMainView insertSubview:p_gameBall atIndex:3];
-    
-    ZCGBasket *p_gameBasket = [[ZCGBasket alloc] initWithFrame:CGRectMake(50, 200, 40, 40)];
-    [p_gameBasket InitBasket];
-    [pMainView insertSubview:p_gameBasket atIndex:4];
-    
-    ZCGThrowBallCtrl *p_throwBallCtrl = [[ZCGThrowBallCtrl alloc] init];
-    [p_throwBallCtrl SetBall:p_gameBall];
-    [p_throwBallCtrl TryAddHole:p_gameHole];
-    [p_throwBallCtrl SetBasket:p_gameBasket];
-    
-    [p_throwBallCtrl SetVelocityAndDirection:2 directionDeg:-70];
-    [p_throwBallCtrl ThrowBallInit];
-    
-    [ZCGTimer LaunchTimer:0.01 target:p_throwBallCtrl selector:@selector(ThrowBall) repeats:YES];
-    
-    //[p_gameBasket MoveBasketToPoint:CGPointMake(200, 200)];
-    
-    //[p_gameBasket ReceiveBall:p_gameBall];
-    
-    
-    ZCGBackground *p_backgnd = [[ZCGBackground alloc] initWithFrame:pMainView.frame];
-    [ZCGField LoadField:p_backgnd];
-    //[p_backgnd setBackgroundColor:[UIColor blackColor]];
-    [pMainView insertSubview:p_backgnd atIndex:0];
+    ZCGStartScreenMgr *p_mgr = [ZCGStartScreenMgr new];
+    [p_mgr InitStartScreen:gp_mainGameView];
     
 }
 

@@ -7,8 +7,39 @@
 //
 
 #import "ZCGUIMgr.h"
+#import "../gameView/ZCGView.h"
+#import "ZCGPlayScreenMgr.h"
+#import "ZCGStartScreenMgr.h"
+#import "ZCGBackgroundMgr.h"
+
+
+@interface ZCGUIMgr ()
+{
+}
+@property(nonatomic, retain) ZCGView *mp_startMainScreen;
+@property(nonatomic, retain) ZCGView *mp_playMainScreen;
+@property(nonatomic, retain) ZCGPlayScreenMgr *mp_playScreenMgr;
+@property(nonatomic, retain) ZCGStartScreenMgr *mp_startScreenMgr;
+@end
+
 
 @implementation ZCGUIMgr
+@synthesize mp_mainViewContainer;
+@synthesize mp_startMainScreen;
+@synthesize mp_startScreenMgr;
+@synthesize mp_playMainScreen;
+@synthesize mp_playScreenMgr;
+
+- (void)dealloc
+{
+    [mp_mainViewContainer release];
+    [mp_startMainScreen release];
+    [mp_playMainScreen release];
+    [mp_playScreenMgr release];
+    [mp_startScreenMgr release];
+    
+    [super dealloc];
+}
 
 - (id)init:(ZCGView *)p_mainViewContainer
 {
@@ -24,18 +55,21 @@
 {
     CGRect frame;
     
-    mp_mainViewContainer = p_mainViewContainer;
+    self.mp_mainViewContainer = p_mainViewContainer;
     
     frame = mp_mainViewContainer.frame;
-    frame.origin = CGPointMake(0, 0);
-    mp_startMainScreen = [[ZCGView alloc] initWithFrame:frame];
-    mp_playMainScreen = [[ZCGView alloc] initWithFrame:frame];
-    mp_startMainScreen.hidden = YES;
-    mp_playMainScreen.hidden = YES;
     
+    frame.origin = CGPointMake(0, 0);
+    
+    mp_startMainScreen = [[ZCGView alloc] initWithFrame:frame];
+    [mp_startMainScreen setBackgroundColor:[UIColor clearColor]];
+    mp_startMainScreen.hidden = YES;
     mp_startScreenMgr = [[ZCGStartScreenMgr alloc] init];
     [mp_startScreenMgr InitStartScreen:mp_startMainScreen];
     
+    mp_playMainScreen = [[ZCGView alloc] initWithFrame:frame];
+    [mp_playMainScreen setBackgroundColor:[UIColor clearColor]];
+    mp_playMainScreen.hidden = YES;
     mp_playScreenMgr = [[ZCGPlayScreenMgr alloc] init];
     [mp_playScreenMgr InitPlayScreen:mp_playMainScreen];
     
@@ -44,7 +78,14 @@
     
     mp_startMainScreen.hidden = NO;
     mp_playMainScreen.hidden = YES;
+    
+    [mp_mainViewContainer insertSubview:mp_startMainScreen atIndex:0];
+    [mp_mainViewContainer insertSubview:mp_playMainScreen atIndex:1];
+    
+    return;
 }
+
+
 
 @end
 

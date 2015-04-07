@@ -42,7 +42,6 @@
     CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
     
     m_bitmapContextRef = context;
-    
 }
 
 - (void)ReleaseBitmapContext

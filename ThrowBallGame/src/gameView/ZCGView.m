@@ -10,6 +10,7 @@
 
 @implementation ZCGView
 
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -38,7 +39,10 @@
 
 - (UILabel *)Add_Label : (NSString *)text with_frame : (CGRect)frame with_index : (int)nIndex
 {
-    UILabel *p = [[UILabel alloc] initWithFrame:frame];
+    UILabel *p;
+    
+    p = [UILabel new];
+    [p setFrame:frame];
     
     //[p setTransform:CGAffineTransformMakeRotation(M_PI / 2)];
     [p setText:text];

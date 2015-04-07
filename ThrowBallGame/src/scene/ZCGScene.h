@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "../UIMgr/ZCGBackground.h"
+
+@class ZCGBackground;
 
 @interface ZCGScene : NSObject
 {
-    ZCGBackground *mp_backgnd;
 }
-- (void)InitScene:(ZCGBackground *)p_backgnd;
 - (void)LoadScene:(const char *)strScene;
++ (void)LoadScene:(ZCGBackground *)p_backgnd;
 
 
 @end

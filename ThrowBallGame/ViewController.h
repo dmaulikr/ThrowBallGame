@@ -12,7 +12,7 @@
 {
 
 }
-@property (weak, nonatomic) IBOutlet UIView *pMainView;
+@property (strong, nonatomic) IBOutlet UIView *pMainView;
 
 - (void)ThrowBall;
 

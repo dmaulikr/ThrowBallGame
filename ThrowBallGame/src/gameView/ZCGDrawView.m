@@ -9,6 +9,14 @@
 #import "ZCGDrawView.h"
 
 @implementation ZCGDrawView
+@synthesize m_pMainImage;
+
+- (void)dealloc
+{
+    [m_pMainImage release];
+    
+    [super dealloc];
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -16,7 +24,7 @@
     if (self) {
         // Initialization code
         m_rect = frame;
-        m_pMainImage = nil;
+        self.m_pMainImage = nil;
         
         m_fLineWidth = 3;
         m_StrokeColorRef = [UIColor blackColor].CGColor;
@@ -65,7 +73,7 @@
     CGContextSetLineWidth(context, 3);
     
     if (m_pMainImage == nil) {
-        m_pMainImage = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+        self.m_pMainImage = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
     }
     else
     {
@@ -83,7 +91,7 @@
 
 - (void)SetImage : (UIImage *)pImageSrc
 {
-    m_pMainImage = pImageSrc;
+    self.m_pMainImage = pImageSrc;
     self.image = pImageSrc;
 }
 

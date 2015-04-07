@@ -7,6 +7,7 @@
 //
 
 #import "ZCGBackground.h"
+#import "../scene/ZCGField.h"
 
 @implementation ZCGBackground
 
@@ -29,7 +30,14 @@
 - (void)AddQuietThing:(ZCGThing *)p_thing withFrame:(CGRect)frame
 {
     [self AddImage:p_thing.image withFrame:frame];
-   }
+}
+
+- (void)LoadScene:(const char *)strScene
+{
+    if (strcmp(strScene, "field") == 0) {
+        [ZCGField LoadScene:self];
+    }
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.

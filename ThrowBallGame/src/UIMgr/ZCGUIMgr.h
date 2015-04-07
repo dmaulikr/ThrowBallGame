@@ -10,26 +10,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-#import "../gameView/ZCGView.h"
-#import "ZCGPlayScreenMgr.h"
-#import "ZCGStartScreenMgr.h"
-#import "ZCGBackgroundMgr.h"
+@class ZCGView;
 
 @interface ZCGUIMgr : NSObject
 {
-    ZCGView *mp_mainViewContainer;
-    
-    ZCGView *mp_startMainScreen;
-    ZCGView *mp_playMainScreen;
-    
-    ZCGBackground *mp_backgnd;
-    ZCGBackgroundMgr *mp_backgndMgr;
-    
-    
-    ZCGPlayScreenMgr *mp_playScreenMgr;
-    ZCGStartScreenMgr *mp_startScreenMgr;
 }
+@property(nonatomic, retain) ZCGView *mp_mainViewContainer;
 - (id)init:(ZCGView *)p_mainViewContainer;
 - (void)InitGameUI:(ZCGView *)p_mainViewContainer;
 

@@ -16,6 +16,8 @@
 #import "./src/statistic/ZCGCard.h"
 #import "./src/game/ZCGThrowBallCtrl.h"
 #import "./src/game/ZCGTimer.h"
+#import "./src/UIMgr/ZCGBackground.h"
+#import "./src/scene/ZCGField.h"
 
 @interface ViewController ()
 
@@ -31,7 +33,16 @@ ZCGDrawView *g_pDrawView;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [UIApplication sharedApplication].statusBarHidden = YES;
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    //screen_bounds_rect = [ UIScreen mainScreen ].bounds;
+    //status_bar_rect = [[UIApplication sharedApplication] statusBarFrame];
+    
     CGRect rect = ([UIScreen mainScreen].bounds);
+    
+    pMainView.frame = rect;
+    
     //CGRect *pRect = &rect;
     
     Game_View *pGameView = [[Game_View alloc] initWithFrame:rect];
@@ -44,7 +55,7 @@ ZCGDrawView *g_pDrawView;
     g_pDrawView = [[ZCGDrawView alloc] initWithFrame:rect];
     [g_pDrawView DrawLine:CGPointMake(50, 150) withEndPoint:CGPointMake(100, 200)];
     [g_pDrawView Draw_Arrow_Line:CGPointMake(50, 150) with_end_point:CGPointMake(300, 300) with_line_width:3];
-    g_pDrawView.image = [g_pDrawView Image_Rotation_Angle_90:g_pDrawView.image with_direction:BG_LEFT];
+    g_pDrawView.image = [ZCGDrawView Image_Rotation_Angle_90:g_pDrawView.image with_direction:BG_LEFT];
     [pMainView insertSubview:g_pDrawView atIndex:1];
 
     
@@ -74,6 +85,13 @@ ZCGDrawView *g_pDrawView;
     //[p_gameBasket MoveBasketToPoint:CGPointMake(200, 200)];
     
     //[p_gameBasket ReceiveBall:p_gameBall];
+    
+    
+    ZCGBackground *p_backgnd = [[ZCGBackground alloc] initWithFrame:pMainView.frame];
+    [ZCGField LoadField:p_backgnd];
+    //[p_backgnd setBackgroundColor:[UIColor blackColor]];
+    [pMainView insertSubview:p_backgnd atIndex:0];
+    
 }
 
 - (void)ThrowBall

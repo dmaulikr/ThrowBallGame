@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
-#import "../gameView/ZCGImageView.h"
+#import "../thing/ZCGThing.h"
 
-@interface ZCGHole : ZCGImageView
+@interface ZCGHole : ZCGThing
 {
     
 }

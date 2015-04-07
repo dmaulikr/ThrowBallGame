@@ -41,7 +41,8 @@
                        with_rect : (CGRect)rect;
 - (void)Display_Image : (UIImage *)p_image_src
             with_rect : (CGRect)rect;
-- (UIImage *)Image_Rotation_Angle_90 : (UIImage *)p_image_src with_direction : (int)n_direction;
++ (UIImage *)Image_Rotation_Angle_90 : (UIImage *)p_image_src with_direction : (int)n_direction;
+- (void)Image_Rotation_Angle_90:(int)n_direction;
 
 //- (void)Output;
 

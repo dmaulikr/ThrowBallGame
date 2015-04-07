@@ -25,6 +25,7 @@
        with_type : (NSString *)file_type
 {
     [self SetImage:[self Get_Image_From_File:file_name with_type:file_type]];
+    [self Image_Rotation_Angle_90:BG_RIGHT];;
 }
 
 

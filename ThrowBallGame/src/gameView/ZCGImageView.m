@@ -33,9 +33,12 @@
  **/
 - (void)InitBitmapContext
 {
+    int nWidth = self.frame.size.width;
+    int nHeight = self.frame.size.height;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     //create a graphic context with CGBitmapContextCreate
-    CGContextRef context = CGBitmapContextCreate(NULL, 200, 300, 8, 4 * 200, colorSpace, kCGImageAlphaPremultipliedFirst);
+    //CGContextRef context = CGBitmapContextCreate(NULL, 200, 300, 8, 4 * 200, colorSpace, kCGImageAlphaPremultipliedFirst);
+    CGContextRef context = CGBitmapContextCreate(NULL, nWidth, nHeight, 8, 4 * nWidth, colorSpace, kCGImageAlphaPremultipliedFirst);
     CGContextSetFillColorWithColor(context, [UIColor blackColor].CGColor);
     
     m_bitmapContextRef = context;
@@ -70,6 +73,8 @@
     CGContextDrawImage(m_bitmapContextRef, self.frame, self.image.CGImage);
     CGContextDrawImage(m_bitmapContextRef, frame, pImageSrc.CGImage);
     self.image = [self GetBimapFromBitmapContext];
+    //self.image = [self Image_Rotation_Angle_90:self.image with_direction:BG_RIGHT];
+
     [self ReleaseBitmapContext];
 }
 
@@ -119,13 +124,24 @@
     self.image = p_new_image;
 }
 
-- (UIImage *)Image_Rotation_Angle_90 : (UIImage *)p_image_src with_direction : (int)n_direction
++ (UIImage *)Image_Rotation_Angle_90 : (UIImage *)p_image_src with_direction : (int)n_direction
 {
     if (n_direction == BG_LEFT) {
         return [UIImage imageWithCGImage:p_image_src.CGImage scale:1 orientation:UIImageOrientationLeft];
     }
     
     return [UIImage imageWithCGImage:p_image_src.CGImage scale:1 orientation:UIImageOrientationRight];
+}
+
+- (void)Image_Rotation_Angle_90:(int)n_direction
+{
+    if (n_direction == BG_LEFT) {
+        self.image = [UIImage imageWithCGImage:self.image.CGImage scale:1 orientation:UIImageOrientationLeft];
+    }
+    
+    self.image = [UIImage imageWithCGImage:self.image.CGImage scale:1 orientation:UIImageOrientationRight];
+    
+    return;
 }
 
 

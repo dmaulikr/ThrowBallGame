@@ -33,16 +33,17 @@
     m_nContainerIndex = 0;
     
     //mp_containerView = [[UIView alloc] initWithFrame:basketRect];
-    mp_basketEntireImageView = [[ZCGImageView alloc] initWithFrame:basketRect];
-    mp_basketSectionImageView = [[ZCGImageView alloc] initWithFrame:basketRect];
+    mp_basketEntireImageView = [[ZCGThing alloc] initWithFrame:basketRect];
+    mp_basketSectionImageView = [[ZCGThing alloc] initWithFrame:basketRect];
     
     p_image =  [mp_basketEntireImageView Get_Image_From_File:@"basket" with_type:@"png"];
-    p_image = [mp_basketEntireImageView Image_Rotation_Angle_90:p_image with_direction:BG_RIGHT];
     [mp_basketEntireImageView SetImage : p_image];
+    [mp_basketEntireImageView Image_Rotation_Angle_90:BG_RIGHT];
     
     p_image =  [mp_basketSectionImageView Get_Image_From_File:@"basket_2_1" with_type:@"png"];
-    p_image = [mp_basketSectionImageView Image_Rotation_Angle_90:p_image with_direction:BG_RIGHT];
+    
     [mp_basketSectionImageView SetImage : p_image];
+    [mp_basketSectionImageView Image_Rotation_Angle_90:BG_RIGHT];
     
     
     mp_basketEntireImageView.center = m_basketCenterPoint;

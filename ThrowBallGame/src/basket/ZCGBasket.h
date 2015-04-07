@@ -6,14 +6,15 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "../gameView/ZCGImageView.h"
+//#import <Foundation/Foundation.h>
+#import "../thing/ZCGThing.h"
 #import "../ball/ZCGBall.h"
+#import "../gameView/ZCGView.h"
 
-@interface ZCGBasket : UIView
+@interface ZCGBasket : ZCGThing
 {
-    ZCGImageView *mp_basketEntireImageView;
-    ZCGImageView *mp_basketSectionImageView;
+    ZCGThing *mp_basketEntireImageView;
+    ZCGThing *mp_basketSectionImageView;
     
     int m_nContainerIndex;
     

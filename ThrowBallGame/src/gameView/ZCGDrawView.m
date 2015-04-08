@@ -7,6 +7,8 @@
 //
 
 #import "ZCGDrawView.h"
+#import <math.h>
+
 
 @implementation ZCGDrawView
 @synthesize m_pMainImage;
@@ -100,11 +102,28 @@
     CO_SYSTEM_TRANSFORM(startPoint);
     CO_SYSTEM_TRANSFORM(endPoint);
     
+    CGContextSetShouldAntialias(m_bitmapContextRef,NO);//设置线条平滑，不需要两边像素宽
     CGContextMoveToPoint(m_bitmapContextRef, startPoint.x, startPoint.y);
     CGContextAddLineToPoint(m_bitmapContextRef, endPoint.x, endPoint.y);
     CGContextStrokePath(m_bitmapContextRef);
     
     [self SetImage:[self GetBimapFromBitmapContext]];
+}
+
+- (void)DrawLine : (CGPoint)_start_point_ withLineLong:(float)_f_line_long_ withLineDirectionDeg : (float)f_line_direction
+{
+    CGPoint end_point;
+    CGPoint start_point;
+    
+    start_point = _start_point_;
+    
+    f_line_direction = PI / 2 - f_line_direction * PI / 180;
+    end_point.x = start_point.x + _f_line_long_ * cos(f_line_direction);
+    end_point.y = start_point.y + _f_line_long_ * sin(f_line_direction);
+    
+    [self DrawLine:start_point withEndPoint:end_point];
+    
+    return;
 }
 
 

@@ -16,6 +16,8 @@
 {
 }
 @property(nonatomic, retain) ZCGView *mp_mainViewContainer;
+@property(nonatomic, retain) ZCGView *mp_startMainScreen;
+@property(nonatomic, retain) ZCGView *mp_playMainScreen;
 - (id)init:(ZCGView *)p_mainViewContainer;
 - (void)InitGameUI:(ZCGView *)p_mainViewContainer;
 

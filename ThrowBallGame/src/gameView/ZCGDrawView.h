@@ -50,6 +50,8 @@
 // you can only invoke DrawLine fuction
 // or you can invoke MoveToPoint and then call DrawAddLineToPoint to draw a line
 - (void)DrawLine : (CGPoint)startPoint withEndPoint:(CGPoint)endPoint;
+- (void)DrawLine : (CGPoint)_start_point_ withLineLong:(float)_f_line_long_ withLineDirectionDeg : (float)f_line_direction;
+
 - (void)DrawAddLineToPoint : (CGPoint)pointSrc;
 - (void)DrawMoveToPoint : (CGPoint)pointSrc;
 

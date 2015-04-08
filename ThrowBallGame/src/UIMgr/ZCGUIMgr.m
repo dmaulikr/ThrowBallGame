@@ -16,8 +16,6 @@
 @interface ZCGUIMgr ()
 {
 }
-@property(nonatomic, retain) ZCGView *mp_startMainScreen;
-@property(nonatomic, retain) ZCGView *mp_playMainScreen;
 @property(nonatomic, retain) ZCGPlayScreenMgr *mp_playScreenMgr;
 @property(nonatomic, retain) ZCGStartScreenMgr *mp_startScreenMgr;
 @end

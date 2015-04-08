@@ -21,6 +21,7 @@
 #import "./src/scene/ZCGField.h"
 #import "src/UIMgr/ZCGPlayScreenMgr.h"
 #import "src/UIMgr/ZCGStartScreenMgr.h"
+#import "src/UIMgr/ZCGUIMgr.h"
 
 @interface ViewController ()
 
@@ -110,8 +111,13 @@ ZCGView *gp_mainGameView;
 //    ZCGPlayScreenMgr *p_mgr = [ZCGPlayScreenMgr new];
 //    [p_mgr InitPlayScreen:gp_mainGameView];
     
-    ZCGStartScreenMgr *p_mgr = [ZCGStartScreenMgr new];
-    [p_mgr InitStartScreen:gp_mainGameView];
+//    ZCGStartScreenMgr *p_mgr = [ZCGStartScreenMgr new];
+//    [p_mgr InitStartScreen:gp_mainGameView];
+    
+    ZCGUIMgr *p_mgr = [ZCGUIMgr new];
+    [p_mgr InitGameUI:gp_mainGameView];
+    p_mgr.mp_playMainScreen.hidden = NO;
+    p_mgr.mp_startMainScreen.hidden = YES;
     
 }
 

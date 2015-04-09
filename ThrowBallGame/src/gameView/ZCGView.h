@@ -14,5 +14,6 @@
 }
 - (UIButton *)Add_Button : (NSString *)title with_frame : (CGRect)frame with_tag:(int)nTag with_index : (int)nIndex;
 - (UILabel *)Add_Label : (NSString *)text with_frame : (CGRect)frame with_index : (int)nIndex;
-
+- (void)DisableTouchEvent;
+- (void)EnableTouchEvent;
 @end

@@ -78,6 +78,10 @@
     
 }
 
+- (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType
+{
+    
+}
 
 @end
 

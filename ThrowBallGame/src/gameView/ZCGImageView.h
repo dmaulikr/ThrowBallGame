@@ -18,6 +18,7 @@
     
     CGContextRef m_bitmapContextRef;
 }
+
 //@property int m_nText;
 - (void)DisableTouchEvent;
 - (void)EnableTouchEvent;

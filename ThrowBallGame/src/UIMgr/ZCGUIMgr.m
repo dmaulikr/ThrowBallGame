@@ -84,6 +84,14 @@
 }
 
 
+- (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType
+{
+    [mp_playScreenMgr TouchEventHandle:touches withEvent:event withEventType:touchEventType];
+    [mp_startScreenMgr TouchEventHandle:touches withEvent:event withEventType:touchEventType];
+    
+    return;
+}
+
 
 @end
 

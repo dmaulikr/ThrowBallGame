@@ -113,13 +113,13 @@
 {
     f_power_indicator_draw_line_width = BG_INDICATOR_WIDTH;
     f_power_indicator_draw_line_long = 30;
-    power_indicator_draw_point.x = f_power_indicator_draw_line_width / 2;
-    power_indicator_draw_point.y = 0;
+    power_indicator_start_draw_point.x = f_power_indicator_draw_line_width / 2;
+    power_indicator_start_draw_point.y = 0;
     
     f_direction_indicator_draw_line_width = BG_INDICATOR_WIDTH;
     f_direction_indicator_draw_line_long = 30;
-    direction_indicator_draw_point.x = f_direction_indicator_draw_line_width / 2;
-    direction_indicator_draw_point.y = 0;
+    direction_indicator_start_draw_point.x = f_direction_indicator_draw_line_width / 2;
+    direction_indicator_start_draw_point.y = 0;
     
     m_nPlaySubviewIndex = 0;
 }
@@ -181,8 +181,9 @@
     [mp_powerIndicatorView setBackgroundColor:[UIColor blackColor]];
     [mp_powerIndicatorView SetStrokeColor:[UIColor greenColor].CGColor];
     [mp_powerIndicatorView SetLineWidth:BG_INDICATOR_WIDTH];
-    [mp_powerIndicatorView DrawLine:power_indicator_draw_point withLineLong:f_power_indicator_draw_line_long withLineDirectionDeg:0];
+    [mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:f_power_indicator_draw_line_long withLineDirectionDeg:0];
     [mp_playViewContainer insertSubview:mp_powerIndicatorView atIndex:m_nPlaySubviewIndex++];
+    
     
     indicator_rect = CGRectMake(rect.size.width-40, 120,
                                 BG_INDICATOR_WIDTH, BG_INDICATOR_LONG);
@@ -190,7 +191,7 @@
     [mp_directionIndicatorView setBackgroundColor:[UIColor blackColor]];
     [mp_directionIndicatorView SetStrokeColor:[UIColor greenColor].CGColor];
     [mp_directionIndicatorView SetLineWidth:BG_INDICATOR_WIDTH];
-    [mp_directionIndicatorView DrawLine:direction_indicator_draw_point withLineLong:f_direction_indicator_draw_line_long withLineDirectionDeg:0];
+    [mp_directionIndicatorView DrawLine:direction_indicator_start_draw_point withLineLong:f_direction_indicator_draw_line_long withLineDirectionDeg:0];
     [mp_playViewContainer insertSubview:mp_directionIndicatorView atIndex:m_nPlaySubviewIndex++];
     
     // power button and label
@@ -226,8 +227,12 @@
 
 - (void)InitPlayScreenLabel
 {
-    mp_stateLabel = [mp_playViewContainer Add_Label:@"STAT:123456789123456789" with_frame:CGRectMake(110, 150, 300, 30) with_index:m_nPlaySubviewIndex++];
+    NSString *pStr = [[NSString alloc] initWithFormat:(@"CARD%d--TGT%d--LIFE%d--SCORE%d"),100,10, 100, 1000];
+    
+    mp_stateLabel = [mp_playViewContainer Add_Label:pStr with_frame:CGRectMake(90, 180, 350, 30) with_index:m_nPlaySubviewIndex++];
     [mp_stateLabel setTransform : CGAffineTransformMakeRotation(M_PI / 2)];
+    
+        
 }
 
 - (void)InitPlayScreenButton
@@ -294,6 +299,30 @@
             break;
     }
     
+}
+
+- (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType
+{
+    NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
+    UITouch *touch = [allTouches anyObject];   //视图中的所有对象
+    UIView *p_view = [touch view];
+    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
+    
+    if (p_view == mp_powerIndicatorView) {
+        [mp_powerIndicatorView SetStrokeColor:[UIColor blackColor].CGColor];
+        [mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:BG_INDICATOR_LONG withLineDirectionDeg:0];
+        [mp_powerIndicatorView SetStrokeColor:[UIColor greenColor].CGColor];
+        [mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:point.y withLineDirectionDeg:0];
+        //[mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withEndPoint:point];
+    }
+    else if (p_view == mp_directionIndicatorView)
+    {
+        [mp_directionIndicatorView SetStrokeColor:[UIColor blackColor].CGColor];
+        [mp_directionIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:BG_INDICATOR_LONG withLineDirectionDeg:0];
+        [mp_directionIndicatorView SetStrokeColor:[UIColor greenColor].CGColor];
+        [mp_directionIndicatorView DrawLine:power_indicator_start_draw_point
+                               withLineLong:point.y withLineDirectionDeg:0];
+    }
 }
 
 @end

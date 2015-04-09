@@ -114,7 +114,7 @@ ZCGView *gp_mainGameView;
 //    ZCGStartScreenMgr *p_mgr = [ZCGStartScreenMgr new];
 //    [p_mgr InitStartScreen:gp_mainGameView];
     
-    ZCGUIMgr *p_mgr = [ZCGUIMgr new];
+    p_mgr = [ZCGUIMgr new];
     [p_mgr InitGameUI:gp_mainGameView];
     p_mgr.mp_playMainScreen.hidden = NO;
     p_mgr.mp_startMainScreen.hidden = YES;
@@ -134,35 +134,18 @@ ZCGView *gp_mainGameView;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    //NSLog(@"TouchesBegan...\n");
-    NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
-    UITouch *touch = [allTouches anyObject];   //视图中的所有对象
-    //UIView *pView = [touch view];
-    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
-    
-    //if (pView == g_pDrawView) {
-        [g_pDrawView DrawMoveToPoint:point];
-    //}
+    [p_mgr TouchEventHandle:touches withEvent:event withEventType:TOUCH_BEGAN_EVENT_TYPE];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    
-    NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
-    UITouch *touch = [allTouches anyObject];   //视图中的所有对象
-    //UIView *pView = [touch view];
-    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
-    
-    //if (pView == g_pDrawView) {
-        [g_pDrawView DrawAddLineToPoint:point];
-        [g_pDrawView DrawMoveToPoint:point];
-        //NSLog(@"touchesMoved...\n");
-    //}
+    [p_mgr TouchEventHandle:touches withEvent:event withEventType:TOUCH_MOVE_EVENT_TYPE];
+   
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-
+    //[p_mgr TouchEventHandle:touches withEvent:event withEventType:TOUCH_END_EVENT_TYPE];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event

@@ -13,6 +13,20 @@
 @class ZCGBasket;
 @class ZCGBackground;
 
+#define BG_TOUCH_BEGAN 0
+#define BG_TOUCH_MOVE 1
+#define BG_TOUCH_END 2
+
+#ifndef __TOUCH_EVENT_TYPE__
+#define __TOUCH_EVENT_TYPE__
+typedef enum _TOUCH_EVENT_TYPE_
+{
+    TOUCH_BEGAN_EVENT_TYPE = 0,
+    TOUCH_MOVE_EVENT_TYPE = 1,
+    TOUCH_END_EVENT_TYPE = 2,
+}TOUCH_EVENT_TYPE;
+#endif
+
 #define BG_INDICATOR_LONG 100
 #define BG_INDICATOR_WIDTH 10
 // power indicator size
@@ -37,11 +51,11 @@
 {
     int m_nPlaySubviewIndex;
     
-    CGPoint power_indicator_draw_point;
+    CGPoint power_indicator_start_draw_point;
     float f_power_indicator_draw_line_width;
     float f_power_indicator_draw_line_long;
     
-    CGPoint direction_indicator_draw_point;
+    CGPoint direction_indicator_start_draw_point;
     float f_direction_indicator_draw_line_width;
     float f_direction_indicator_draw_line_long;
     
@@ -54,6 +68,7 @@
 
 - (BOOL)InitPlayScreen:(ZCGView *)p_mainPlayView;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
+- (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
 
 @end
 

@@ -188,14 +188,14 @@
 - (void)DisableTouchEvent
 {
     m_bEnableTouchEvent = NO;
+    self.userInteractionEnabled = NO;
 }
 
 - (void)EnableTouchEvent
 {
     m_bEnableTouchEvent = YES;
-    
+    self.userInteractionEnabled = YES;
 }
-
 
 /*
 // Only override drawRect: if you perform custom drawing.

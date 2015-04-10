@@ -8,13 +8,12 @@
 
 #import "ZCGStartScreenMgr.h"
 #import "../gameView/ZCGView.h"
+#import "ZCGUIMgr.h"
 
 @interface ZCGStartScreenMgr ()
 {
 
 }
-@property(nonatomic, retain) UIButton *mp_startBtn;
-@property(nonatomic, retain) UIButton *mp_helpBtn;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
 @end
 
@@ -22,6 +21,7 @@
 @synthesize mp_startMainView;
 @synthesize mp_startBtn;
 @synthesize mp_helpBtn;
+@synthesize mp_gameUIMgr;
 
 
 - (void)dealloc
@@ -29,6 +29,8 @@
     [mp_startMainView release];
     [mp_startBtn release];
     [mp_helpBtn release];
+    
+    [mp_gameUIMgr release];
     
     [super dealloc];
 }
@@ -68,6 +70,8 @@
     switch ([sender tag]) {
         case BG_START_BUTTON_ID:
             NSLog(@"START BUTTON IS CLICKED\n");
+            mp_gameUIMgr.mp_playMainScreen.hidden = NO;
+            mp_gameUIMgr.mp_startMainScreen.hidden = YES;
             break;
         case BG_HELP_BUTTON_ID:
             NSLog(@"HELP BUTTON IS CLICKED\n");

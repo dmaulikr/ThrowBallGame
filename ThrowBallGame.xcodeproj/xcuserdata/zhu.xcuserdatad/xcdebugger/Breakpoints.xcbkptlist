@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/ViewController.m"
-         timestampString = "450109165.526474"
+         timestampString = "450289643.081575"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "102"
-         endingLineNumber = "102"
+         startingLineNumber = "109"
+         endingLineNumber = "109"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450207423.600876"
+         timestampString = "450282976.124772"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "311"
-         endingLineNumber = "311"
+         startingLineNumber = "321"
+         endingLineNumber = "321"
          landmarkName = "-TouchEventHandle:withEvent:withEventType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450207225.995328"
+         timestampString = "450281157.616719"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "185"
-         endingLineNumber = "185"
+         startingLineNumber = "184"
+         endingLineNumber = "184"
          landmarkName = "-InitIndicator"
          landmarkType = "5">
       </FileBreakpoint>

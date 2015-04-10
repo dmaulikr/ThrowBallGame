@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ZCGUIMgr;
 
 @interface ViewController : UIViewController
 {
-    ZCGUIMgr *p_mgr;
+    
     
 }
 @property (strong, nonatomic) IBOutlet UIView *pMainView;

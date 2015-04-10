@@ -13,11 +13,10 @@
 #import "ZCGBackgroundMgr.h"
 
 
+
 @interface ZCGUIMgr ()
 {
 }
-@property(nonatomic, retain) ZCGPlayScreenMgr *mp_playScreenMgr;
-@property(nonatomic, retain) ZCGStartScreenMgr *mp_startScreenMgr;
 @end
 
 
@@ -63,13 +62,16 @@
     [mp_startMainScreen setBackgroundColor:[UIColor clearColor]];
     mp_startMainScreen.hidden = YES;
     mp_startScreenMgr = [[ZCGStartScreenMgr alloc] init];
+    mp_startScreenMgr.mp_gameUIMgr = self;
     [mp_startScreenMgr InitStartScreen:mp_startMainScreen];
+    
     
     mp_playMainScreen = [[ZCGView alloc] initWithFrame:frame];
     [mp_playMainScreen setBackgroundColor:[UIColor clearColor]];
     mp_playMainScreen.hidden = YES;
     mp_playScreenMgr = [[ZCGPlayScreenMgr alloc] init];
     [mp_playScreenMgr InitPlayScreen:mp_playMainScreen];
+    mp_playScreenMgr.mp_gameUIMgr = self;
     
     [mp_mainViewContainer insertSubview:mp_startMainScreen atIndex:0];
     [mp_mainViewContainer insertSubview:mp_playMainScreen atIndex:1];
@@ -77,10 +79,22 @@
     mp_startMainScreen.hidden = NO;
     mp_playMainScreen.hidden = YES;
     
+    
+    
     [mp_mainViewContainer insertSubview:mp_startMainScreen atIndex:0];
     [mp_mainViewContainer insertSubview:mp_playMainScreen atIndex:1];
     
     return;
+}
+
+- (ZCGView *)GetGameContainer
+{
+    return mp_playScreenMgr.mp_gameContainer;
+}
+
+- (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender
+{
+    
 }
 
 

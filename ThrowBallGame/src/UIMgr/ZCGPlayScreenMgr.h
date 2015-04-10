@@ -7,25 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIMgrHeader.h"
 
 @class ZCGView;
 @class ZCGBall;
 @class ZCGBasket;
 @class ZCGBackground;
+@class ZCGDrawView;
+@class ZCGUIMgr;
+
+
 
 #define BG_TOUCH_BEGAN 0
 #define BG_TOUCH_MOVE 1
 #define BG_TOUCH_END 2
 
-#ifndef __TOUCH_EVENT_TYPE__
-#define __TOUCH_EVENT_TYPE__
-typedef enum _TOUCH_EVENT_TYPE_
-{
-    TOUCH_BEGAN_EVENT_TYPE = 0,
-    TOUCH_MOVE_EVENT_TYPE = 1,
-    TOUCH_END_EVENT_TYPE = 2,
-}TOUCH_EVENT_TYPE;
-#endif
+
 
 #define BG_INDICATOR_LONG 100
 #define BG_INDICATOR_WIDTH 10
@@ -63,12 +60,24 @@ typedef enum _TOUCH_EVENT_TYPE_
 @property(nonatomic, retain) ZCGBall *mp_gameBall;
 @property(nonatomic, retain) ZCGBasket *mp_gameBasket;
 @property(nonatomic, retain) ZCGBackground *mp_backgnd;
+
+@property(nonatomic, retain) UIButton *mp_homeButton;
+@property(nonatomic, retain) UIButton *mp_throwButton;
+@property(nonatomic, retain) UIButton *mp_nextCardButton;
+@property(nonatomic, retain) UIButton *mp_preCardButton;
+@property(nonatomic, retain) UIButton *mp_powerPlusButton;
+@property(nonatomic, retain) UIButton *mp_powerReduceButton;
+@property(nonatomic, retain) UIButton *mp_directionPlusButton;
+@property(nonatomic, retain) UIButton *mp_directionReduceButton;
+
 // mp_gameContainer is used to put the ball basket hole and so on
 @property(nonatomic, retain) ZCGView *mp_gameContainer;
+@property(nonatomic, retain) ZCGUIMgr *mp_gameUIMgr;
 
 - (BOOL)InitPlayScreen:(ZCGView *)p_mainPlayView;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
+- (void)IndicatorDrawLine:(ZCGDrawView *)p_indicator;
 
 @end
 

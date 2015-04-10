@@ -23,12 +23,16 @@
 #import "src/UIMgr/ZCGStartScreenMgr.h"
 #import "src/UIMgr/ZCGUIMgr.h"
 
+#import "src/game/ZCGGame.h"
+
 @interface ViewController ()
 
 @end
 
 ZCGDrawView *g_pDrawView;
 ZCGView *gp_mainGameView;
+ZCGUIMgr *p_mgr;
+ZCGGame *gp_game;
 
 @implementation ViewController
 
@@ -50,6 +54,9 @@ ZCGView *gp_mainGameView;
     pMainView.frame = rect;
     gp_mainGameView = [[ZCGView alloc] initWithFrame:rect];
     [pMainView insertSubview:gp_mainGameView atIndex:0];
+    
+    gp_game = [ZCGGame new];
+    [gp_game InitGameWithMainView:gp_mainGameView];
     
     //CGRect *pRect = &rect;
     
@@ -114,10 +121,10 @@ ZCGView *gp_mainGameView;
 //    ZCGStartScreenMgr *p_mgr = [ZCGStartScreenMgr new];
 //    [p_mgr InitStartScreen:gp_mainGameView];
     
-    p_mgr = [ZCGUIMgr new];
-    [p_mgr InitGameUI:gp_mainGameView];
-    p_mgr.mp_playMainScreen.hidden = NO;
-    p_mgr.mp_startMainScreen.hidden = YES;
+//    p_mgr = [ZCGUIMgr new];
+//    [p_mgr InitGameUI:gp_mainGameView];
+//    p_mgr.mp_playMainScreen.hidden = NO;
+//    p_mgr.mp_startMainScreen.hidden = YES;
     
 }
 
@@ -134,12 +141,12 @@ ZCGView *gp_mainGameView;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [p_mgr TouchEventHandle:touches withEvent:event withEventType:TOUCH_BEGAN_EVENT_TYPE];
+    [gp_game TouchEventHandle:touches withEvent:event withEventType:TOUCH_BEGAN_EVENT_TYPE];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [p_mgr TouchEventHandle:touches withEvent:event withEventType:TOUCH_MOVE_EVENT_TYPE];
+    //[p_mgr TouchEventHandle:touches withEvent:event withEventType:TOUCH_MOVE_EVENT_TYPE];
    
 }
 

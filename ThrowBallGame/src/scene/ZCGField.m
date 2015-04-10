@@ -17,7 +17,7 @@
     [p_backgnd SetImage:p_image];
     [p_backgnd Image_Rotation_Angle_90:BG_RIGHT];
 
-    CGRect frame = CGRectMake(20, 300, 300, 150);
+    CGRect frame = CGRectMake(20, 350, 300, 150);
     ZCGTree *p_tree = [[ZCGTree alloc] initWithFrame:frame];
     [p_tree Image_Rotation_Angle_90:BG_RIGHT];
     [p_backgnd AddMovingThing:p_tree withFrame:p_tree.frame];

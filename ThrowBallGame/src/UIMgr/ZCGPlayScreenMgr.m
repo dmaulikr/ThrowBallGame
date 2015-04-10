@@ -14,20 +14,15 @@
 #import "../thing/basket//ZCGBasket.h"
 #import "../background/ZCGBackground.h"
 #import "../background/ZCGBackgroundMgr.h"
+#import "ZCGUIMgr.h"
 
+//extern ZCGUIMgr *p_mgr;
 
 @interface ZCGPlayScreenMgr ()
 @property(nonatomic, retain) ZCGView *mp_playViewContainer;
 @property(nonatomic, retain) ZCGView *mp_touchView;
 
-@property(nonatomic, retain) UIButton *mp_homeButton;
-@property(nonatomic, retain) UIButton *mp_throwButton;
-@property(nonatomic, retain) UIButton *mp_nextCardButton;
-@property(nonatomic, retain) UIButton *mp_preCardButton;
-@property(nonatomic, retain) UIButton *mp_powerPlusButton;
-@property(nonatomic, retain) UIButton *mp_powerReduceButton;
-@property(nonatomic, retain) UIButton *mp_directionPlusButton;
-@property(nonatomic, retain) UIButton *mp_directionReduceButton;
+
 
 @property(nonatomic, retain) UILabel *mp_powerLabel;
 @property(nonatomic, retain) UILabel *mp_directionLabel;
@@ -77,6 +72,8 @@
 @synthesize mp_powerIndicatorView;
 @synthesize mp_directionIndicatorView;
 
+@synthesize mp_gameUIMgr;
+
 
 - (void)dealloc
 {
@@ -105,6 +102,8 @@
     [mp_directionIndicatorView release];
     
     [mp_gameContainer release];
+    
+    [mp_gameUIMgr release];
     
     [super dealloc];
 }
@@ -147,7 +146,7 @@
     // need to insert to the mp_gameContainer
     mp_gameContainer = [[ZCGView alloc] initWithFrame:mp_playViewContainer.frame];
     [mp_gameContainer setBackgroundColor:[UIColor clearColor]];
-    [mp_playViewContainer insertSubview:mp_touchView atIndex:m_nPlaySubviewIndex++];
+    [mp_playViewContainer insertSubview:mp_gameContainer atIndex:m_nPlaySubviewIndex++];
     
     // init the touch view
     mp_touchView = [[ZCGView alloc] initWithFrame:mp_playViewContainer.frame];
@@ -273,21 +272,32 @@
     switch ([sender tag]) {
         case BG_POWER_PLUS_BUTTON_ID:
             NSLog(@"POWER PLUS BUTTON IS CLICKED\n");
+            //endPoint = power_indicator_start_draw_point;
+            f_power_indicator_draw_line_long++;
+            [self IndicatorDrawLine:mp_powerIndicatorView];
             break;
         case BG_POWER_REDUCE_BUTTON_ID:
             NSLog(@"POWER REDUCE BUTTON IS CLICKED\n");
+            f_power_indicator_draw_line_long--;
+            [self IndicatorDrawLine:mp_powerIndicatorView];
             break;
         case BG_DIRECTION_PLUS_BUTTON_ID:
             NSLog(@"DIRECTION PLUS BUTTON IS CLICKED\n");
+            f_direction_indicator_draw_line_long++;
+            [self IndicatorDrawLine:mp_directionIndicatorView];
             break;
         case BG_DIRECTION_REDUCE_BUTTON_ID:
             NSLog(@"DIRECTION REDUCE BUTTON IS CLICKED\n");
+            f_direction_indicator_draw_line_long--;
+            [self IndicatorDrawLine:mp_directionIndicatorView];
             break;
         case BG_THROW_BUTTON_ID:
             NSLog(@"THROW BUTTON IS CLICKED\n");
             break;
         case BG_HOME_BUTTON_ID:
             NSLog(@"HOME BUTTON IS CLICKED\n");
+            mp_gameUIMgr.mp_startMainScreen.hidden = NO;
+            mp_gameUIMgr.mp_playMainScreen.hidden = YES;
             break;
         case BG_PRE_CARD_BUTTON_ID:
             NSLog(@"PRE CARD BUTTON IS CLICKED\n");
@@ -309,20 +319,36 @@
     CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
     
     if (p_view == mp_powerIndicatorView) {
-        [mp_powerIndicatorView SetStrokeColor:[UIColor blackColor].CGColor];
-        [mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:BG_INDICATOR_LONG withLineDirectionDeg:0];
-        [mp_powerIndicatorView SetStrokeColor:[UIColor greenColor].CGColor];
-        [mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:point.y withLineDirectionDeg:0];
+        f_power_indicator_draw_line_long = point.y;
+        [self IndicatorDrawLine:mp_powerIndicatorView];
         //[mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withEndPoint:point];
     }
     else if (p_view == mp_directionIndicatorView)
     {
-        [mp_directionIndicatorView SetStrokeColor:[UIColor blackColor].CGColor];
-        [mp_directionIndicatorView DrawLine:power_indicator_start_draw_point withLineLong:BG_INDICATOR_LONG withLineDirectionDeg:0];
-        [mp_directionIndicatorView SetStrokeColor:[UIColor greenColor].CGColor];
-        [mp_directionIndicatorView DrawLine:power_indicator_start_draw_point
-                               withLineLong:point.y withLineDirectionDeg:0];
+        f_direction_indicator_draw_line_long = point.y;
+        [self IndicatorDrawLine:mp_directionIndicatorView];;
     }
+}
+
+
+- (void)IndicatorDrawLine:(ZCGDrawView *)p_indicator
+{
+    if (p_indicator == mp_powerIndicatorView) {
+        [p_indicator SetStrokeColor:[UIColor blackColor].CGColor];
+        [p_indicator DrawLine:power_indicator_start_draw_point withLineLong:BG_INDICATOR_LONG withLineDirectionDeg:0];
+        [p_indicator SetStrokeColor:[UIColor greenColor].CGColor];
+        [p_indicator DrawLine:power_indicator_start_draw_point withLineLong:f_power_indicator_draw_line_long withLineDirectionDeg:0];
+        //[mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withEndPoint:point];
+    }
+    else if (p_indicator == mp_directionIndicatorView)
+    {
+        [p_indicator SetStrokeColor:[UIColor blackColor].CGColor];
+        [p_indicator DrawLine:direction_indicator_start_draw_point withLineLong:BG_INDICATOR_LONG withLineDirectionDeg:0];
+        [p_indicator SetStrokeColor:[UIColor greenColor].CGColor];
+        [p_indicator DrawLine:direction_indicator_start_draw_point withLineLong:f_direction_indicator_draw_line_long withLineDirectionDeg:0];
+    }
+
+    return;
 }
 
 @end

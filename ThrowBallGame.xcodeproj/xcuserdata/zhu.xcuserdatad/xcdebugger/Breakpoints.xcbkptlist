@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450282976.124772"
+         timestampString = "450351675.305877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "321"
-         endingLineNumber = "321"
+         startingLineNumber = "325"
+         endingLineNumber = "325"
          landmarkName = "-TouchEventHandle:withEvent:withEventType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450281157.616719"
+         timestampString = "450351675.305877"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "184"
-         endingLineNumber = "184"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
          landmarkName = "-InitIndicator"
          landmarkType = "5">
       </FileBreakpoint>
@@ -79,6 +79,19 @@
          startingLineNumber = "63"
          endingLineNumber = "63"
          landmarkName = "-touchesBegan:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
+         timestampString = "450351675.305877"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "338"
+         endingLineNumber = "338"
+         landmarkName = "-TouchEventHandle:withEvent:withEventType:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

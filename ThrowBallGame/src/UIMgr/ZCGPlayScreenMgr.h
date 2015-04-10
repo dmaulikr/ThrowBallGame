@@ -15,6 +15,7 @@
 @class ZCGBackground;
 @class ZCGDrawView;
 @class ZCGUIMgr;
+@class ZCGStat;
 
 
 
@@ -73,6 +74,8 @@
 // mp_gameContainer is used to put the ball basket hole and so on
 @property(nonatomic, retain) ZCGView *mp_gameContainer;
 @property(nonatomic, retain) ZCGUIMgr *mp_gameUIMgr;
+
+@property(nonatomic, retain) ZCGStat *mp_gameStat;
 
 - (BOOL)InitPlayScreen:(ZCGView *)p_mainPlayView;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;

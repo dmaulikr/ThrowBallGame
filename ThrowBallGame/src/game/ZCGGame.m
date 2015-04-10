@@ -44,6 +44,8 @@
     
     [mp_gameContainer release];
     
+    [mp_gameStat release];
+    
     [super dealloc];
 }
 
@@ -58,6 +60,16 @@
     
     [ZCGTimer LaunchTimer:0.01 target:mp_throwBallCtrl selector:@selector(ThrowBall) repeats:YES];
     
+    //mp_gameStat.m_gameElement.p_ball = mp_gameBall;
+    mp_gameStat = [ZCGStat new];
+    GAME_ELEMENT gameElement;
+    gameElement.p_ball = mp_gameBall;
+    gameElement.p_basket = mp_gameBasket;
+    gameElement.p_holeArr = mp_holeArr;
+    gameElement.nHoleCount = BG_HOLE_COUNT;
+    [mp_gameStat SetGameElement:&gameElement];
+    
+    [mp_gameUIMgr SetGameStatistic:mp_gameStat];
 }
 
 - (void)InitGameContainer

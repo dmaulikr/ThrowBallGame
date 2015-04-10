@@ -14,6 +14,7 @@
 #import "../thing/basket//ZCGBasket.h"
 #import "../background/ZCGBackground.h"
 #import "../background/ZCGBackgroundMgr.h"
+#import "../statistic/ZCGStat.h"
 #import "ZCGUIMgr.h"
 
 //extern ZCGUIMgr *p_mgr;
@@ -73,6 +74,7 @@
 @synthesize mp_directionIndicatorView;
 
 @synthesize mp_gameUIMgr;
+@synthesize mp_gameStat;
 
 
 - (void)dealloc
@@ -104,6 +106,8 @@
     [mp_gameContainer release];
     
     [mp_gameUIMgr release];
+    
+    [mp_gameStat release];
     
     [super dealloc];
 }
@@ -327,6 +331,11 @@
     {
         f_direction_indicator_draw_line_long = point.y;
         [self IndicatorDrawLine:mp_directionIndicatorView];;
+    }
+    else if (p_view == mp_touchView)
+    {
+        ZCGBall *p_ball = [mp_gameStat GetGameElement]->p_ball;
+        [p_ball MoveBallToPoint : point];
     }
 }
 

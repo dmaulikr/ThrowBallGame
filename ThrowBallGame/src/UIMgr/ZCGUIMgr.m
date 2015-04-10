@@ -8,6 +8,7 @@
 
 #import "ZCGUIMgr.h"
 #import "../gameView/ZCGView.h"
+#import "../statistic/ZCGStat.h"
 #import "ZCGPlayScreenMgr.h"
 #import "ZCGStartScreenMgr.h"
 #import "ZCGBackgroundMgr.h"
@@ -26,6 +27,7 @@
 @synthesize mp_startScreenMgr;
 @synthesize mp_playMainScreen;
 @synthesize mp_playScreenMgr;
+@synthesize mp_gameStat;
 
 - (void)dealloc
 {
@@ -34,6 +36,8 @@
     [mp_playMainScreen release];
     [mp_playScreenMgr release];
     [mp_startScreenMgr release];
+    
+    [mp_gameStat release];
     
     [super dealloc];
 }
@@ -80,12 +84,20 @@
     mp_playMainScreen.hidden = YES;
     
     
-    
     [mp_mainViewContainer insertSubview:mp_startMainScreen atIndex:0];
     [mp_mainViewContainer insertSubview:mp_playMainScreen atIndex:1];
     
     return;
 }
+
+
+- (void)SetGameStatistic:(ZCGStat *)p_stat
+{
+    self.mp_gameStat = p_stat;
+    mp_playScreenMgr.mp_gameStat = p_stat;
+    mp_startScreenMgr.mp_gameStat = p_stat;
+}
+
 
 - (ZCGView *)GetGameContainer
 {

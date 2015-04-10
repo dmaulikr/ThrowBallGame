@@ -8,6 +8,7 @@
 
 #import "ZCGStartScreenMgr.h"
 #import "../gameView/ZCGView.h"
+#import "../statistic/ZCGStat.h"
 #import "ZCGUIMgr.h"
 
 @interface ZCGStartScreenMgr ()
@@ -22,6 +23,7 @@
 @synthesize mp_startBtn;
 @synthesize mp_helpBtn;
 @synthesize mp_gameUIMgr;
+@synthesize mp_gameStat;
 
 
 - (void)dealloc
@@ -31,6 +33,8 @@
     [mp_helpBtn release];
     
     [mp_gameUIMgr release];
+    
+    [mp_gameStat release];
     
     [super dealloc];
 }

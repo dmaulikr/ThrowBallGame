@@ -32,8 +32,8 @@
 - (BOOL)InitStat
 {
     m_gameStat.nCurrentLife = 10;
-    m_gameStat.nCurrentCard = 0;
-    m_gameStat.nNeedTouchGndCount = 0;
+    m_gameStat.nCurrentCard = 1;
+    m_gameStat.nNeedTouchGndCount = 1;
     m_gameStat.nCurrentCardHoleNum = 0;
     
     return TRUE;
@@ -76,6 +76,20 @@
     return &m_gameStat;
 }
 
+- (void)SetGameStat:(GAME_STATISTICS *)p_statSrc
+{
+    memcpy(&m_gameStat, p_statSrc, sizeof(GAME_STATISTICS));
+}
+
+- (void)SetGameElement:(P_GAME_ELEMENT) p_elementSrc
+{
+    memcpy(&m_gameElement, p_elementSrc, sizeof(GAME_ELEMENT));
+}
+
+- (P_GAME_ELEMENT)GetGameElement
+{
+    return &m_gameElement;
+}
 
 - (void)UpdateLife : (BOOL)bGoal
 {

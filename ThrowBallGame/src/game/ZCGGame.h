@@ -19,6 +19,7 @@
 #import "../gameView/ZCGDrawView.h"
 
 #import "../UIMgr/ZCGUIMgr.h"
+#import "../statistic/ZCGStat.h"
 
 
 #define BG_HOLE_COUNT 3
@@ -34,6 +35,7 @@
     int m_nGameContainerSubviewIndex;
     ZCGView *mp_gameContainer;
     
+    ZCGStat *mp_gameStat;
     
 }
 @property(nonatomic, retain) ZCGBall *mp_gameBall;

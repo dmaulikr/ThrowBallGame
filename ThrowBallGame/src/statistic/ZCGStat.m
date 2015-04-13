@@ -33,7 +33,7 @@
 {
     m_gameStat.nCurrentLife = 10;
     m_gameStat.nCurrentCard = 1;
-    m_gameStat.nNeedTouchGndCount = 1;
+    m_gameStat.nNeedTouchGndNum = 1;
     m_gameStat.nCurrentCardHoleNum = 0;
     
     return TRUE;
@@ -61,14 +61,14 @@
     return m_gameStat.nCurrentCard;
 }
 
-- (void)SetNeedTouchGndCount : (int)nCount
+- (void)SetNeedTouchGndNum : (int)nNum
 {
-    m_gameStat.nNeedTouchGndCount = nCount;
+    m_gameStat.nNeedTouchGndNum = nNum;
 }
 
-- (int)GetNeedTouchGndCount
+- (int)GetNeedTouchGndNum
 {
-    return m_gameStat.nNeedTouchGndCount;
+    return m_gameStat.nNeedTouchGndNum;
 }
 
 - (GAME_STATISTICS *)GetGameStat

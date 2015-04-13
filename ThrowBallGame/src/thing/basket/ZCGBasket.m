@@ -80,8 +80,9 @@
     
     // insert the basket view to the view container (self)
     [self insertSubview:mp_basketEntireImageView atIndex:m_nContainerIndex++];
-    [self insertSubview:mp_basketSectionImageView atIndex:m_nContainerIndex++];
+    [self insertSubview:mp_basketSectionImageView atIndex:m_nContainerIndex+=2];
     
+    self.index = m_nContainerIndex;
 }
 
 - (void)ReceiveBall : (ZCGBall *)p_ballSrc

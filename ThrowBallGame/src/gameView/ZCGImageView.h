@@ -23,6 +23,9 @@
 - (void)DisableTouchEvent;
 - (void)EnableTouchEvent;
 
+// clear what  have been drawed that displaying on the view
+- (void)ClearDraw;
+
 - (void)InitBitmapContext;
 - (void)ReleaseBitmapContext;
 - (UIImage *)GetBimapFromBitmapContext;

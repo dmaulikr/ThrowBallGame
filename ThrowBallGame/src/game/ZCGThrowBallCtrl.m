@@ -11,6 +11,8 @@
 #import "../thing/basket/ZCGBasket.h"
 #import "../thing/hole/ZCGHole.h"
 
+#import "../gameMsg/ZCGMessage.h"
+#import "../game/ZCGMessageID.h"
 
 @interface ZCGThrowBallCtrl ()
 {
@@ -63,9 +65,10 @@
         mp_gameHoleArr[i] = nil;
     }
     
+    m_nCurrentHoleCount = 0;
     
-    m_fBallVelocityInit = 0;
-    m_fBallVelocityAngleDegInit = 0;
+    m_fBallVelocityInit = -30;
+    m_fBallVelocityAngleDegInit = 30;
     
     m_nStartToThrowBall = 0;
     m_nFinishThrowBall = 0;
@@ -75,6 +78,7 @@
     
     m_n_ground_x = BG_GROUND_X_DEFAULT;
     m_n_touch_gnd_count = 0;
+    m_nNeedTouchGndNum = 1;
     
     // indicate if ball have touched the ground ever
     m_nTouchGndFlag = 0;
@@ -101,8 +105,10 @@
     }
     
     [p_hole retain];
-    [mp_gameHoleArr[m_nCurrentHoleCount++] release];
+    [mp_gameHoleArr[m_nCurrentHoleCount] release];
     mp_gameHoleArr[m_nCurrentHoleCount] = p_hole;
+    
+    m_nCurrentHoleCount++;
     
     return YES;
 }
@@ -124,6 +130,30 @@
     m_fBallVelocityInit = fVelocity;
 }
 
+
+- (void)SetNeedTouchGndNum:(int)nNum
+{
+    m_nNeedTouchGndNum = nNum;
+}
+
+
+- (void)SetVelocity:(float)fVelocity
+{
+    m_fBallVelocityInit = fVelocity;
+}
+
+
+- (void)SetDirectionDeg:(float)fAngleDeg
+{
+    m_fBallVelocityAngleDegInit = fAngleDeg;
+}
+
+- (void)SetDirectionRad:(float)fAngleRad
+{
+    m_fBallVelocityAngleDegInit = [self Rad2Deg:fAngleRad];
+}
+
+
 - (float)Deg2Rad:(float)fDeg
 {
     return (fDeg * M_PI / 180.0);
@@ -134,7 +164,7 @@
     return (fRad * 180.0 / M_PI);
 }
 
-- (void)ThrowBallInit
+- (void)Ready
 {
     m_nStartToThrowBall = 1;
     m_nFinishThrowBall = 0;
@@ -151,6 +181,11 @@
     return;
 }
 
+
+- (void)Stop
+{
+    m_nStartToThrowBall = 0;
+}
 
 // return NO,if end of moving ball
 // return YES, if ball continues moving
@@ -171,12 +206,25 @@
 
     [self BallMotion];
     
-    if ([self CheckBallOutOfBound]||[self CheckMeetHole]||[self CheckMeetBasket])
+    m_nThrowBallState = BG_MOVING;
+    
+    if ([self CheckBallOutOfBound])
     {
+        //[self EndBallMotion];
+        //return NO;
+        m_nThrowBallState = BG_OUT_OF_BOUND;
+    }else if ([self CheckMeetHole])
+    {
+        m_nThrowBallState = BG_MEET_HOLE;
+    }else if ([self CheckMeetBasket])
+    {
+        m_nThrowBallState = BG_MEET_BASKET;
+    }
+    
+    if (m_nThrowBallState != BG_MOVING) {
         [self EndBallMotion];
         return NO;
     }
-    
     
     return YES;
 }
@@ -262,7 +310,7 @@
 // or return NO
 - (BOOL)CheckBallOutOfBound
 {
-    if (m_ball_current_point.y >= 600)
+    if (m_ball_current_point.y >= 650)
     {
         //[self EndBallMotionHandle];
         return YES;
@@ -342,6 +390,15 @@
     //[self Judge_The_Throw_Ball_Result];
     
     //m_n_touch_gnd_count = 0;
+    
+    if (m_nThrowBallState == BG_MEET_BASKET) {
+        if (m_n_touch_gnd_count == m_nNeedTouchGndNum) {
+            [ZCGMessage PostGameMessage:GM_THROW_BALL_SUCCESS_ID];
+            return;
+        }
+    }
+    
+    [ZCGMessage PostGameMessage:GM_THROW_BALL_FAILURE_ID];
     
     return;
 }

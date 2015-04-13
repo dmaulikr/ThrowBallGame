@@ -8,12 +8,28 @@
 
 #import "ZCGGame.h"
 
+#import "../gameMsg/ZCGMessage.h"
+#import "../game/ZCGMessageID.h"
+
+
+BEGIN_GAME_MESSAGE(ZCGGame)
+ADD_GAME_MSG(TouchViewClicked, GM_TOUCH_VIEW_TOUCHED_ID)
+ADD_GAME_MSG(PowerChanged, GM_POWER_CHANGE_ID)
+ADD_GAME_MSG(DirectChanged, GM_DIRECT_CHANGE_ID)
+ADD_GAME_MSG(ThrowBtnTouched, GM_THROW_BTN_TOUCHED_ID)
+ADD_GAME_MSG(NextCardBtnTouched, GM_NEXT_CARD_BTN_TOUCHED_ID)
+ADD_GAME_MSG(ThrowBallSucceed, GM_THROW_BALL_SUCCESS_ID)
+ADD_GAME_MSG(ThrowBallFailure, GM_THROW_BALL_FAILURE_ID)
+END_GAME_MESSAGE()
+
+
+
 
 @interface ZCGGame ()
 {
     
 }
-@property(nonatomic, retain) ZCGView *mp_gameContainer;
+@property(nonatomic, retain) ZCGThing *mp_gameContainer;
 @end
 
 
@@ -21,6 +37,11 @@
 {
     
 }
+- (void)TouchViewClicked;
+- (void)PowerChanged;
+- (void)DirectChanged;
+- (void)ThrowBtnTouched;
+
 - (void)InitGameContainer;
 - (void)InitThrowBallCtrl;
 @end
@@ -44,13 +65,20 @@
     
     [mp_gameContainer release];
     
-    [mp_gameStat release];
+    [mp_gameCard release];
     
     [super dealloc];
 }
 
+//- (void)AddGameMessage
+//{
+//    [ZCGMessage AddMessage:self withSelector:@selector(TouchViewClicked) withMsgID:GM_TOUCH_VIEW_TOUCHED_ID];
+//}
+
 - (void)InitGameWithMainView:(ZCGView *)p_mainGameView
 {
+    INIT_GAME_MESSAGE()
+    
     mp_gameUIMgr = [ZCGUIMgr new];
     [mp_gameUIMgr InitGameUI:p_mainGameView];
     
@@ -61,15 +89,16 @@
     [ZCGTimer LaunchTimer:0.01 target:mp_throwBallCtrl selector:@selector(ThrowBall) repeats:YES];
     
     //mp_gameStat.m_gameElement.p_ball = mp_gameBall;
-    mp_gameStat = [ZCGStat new];
+    mp_gameCard = [ZCGCard new];
     GAME_ELEMENT gameElement;
     gameElement.p_ball = mp_gameBall;
     gameElement.p_basket = mp_gameBasket;
     gameElement.p_holeArr = mp_holeArr;
     gameElement.nHoleCount = BG_HOLE_COUNT;
-    [mp_gameStat SetGameElement:&gameElement];
+    [mp_gameCard SetGameElement:&gameElement];
+    [mp_gameCard FirstCard];
     
-    [mp_gameUIMgr SetGameStatistic:mp_gameStat];
+    [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
 }
 
 - (void)InitGameContainer
@@ -92,6 +121,7 @@
     mp_gameBasket = [[ZCGBasket alloc] initWithFrame:CGRectMake(20, 370, 40, 55)];
     [mp_gameBasket InitBasket];
     [mp_gameContainer insertSubview:mp_gameBasket atIndex:m_nGameContainerSubviewIndex++];
+    
 }
 
 - (void)InitThrowBallCtrl
@@ -106,7 +136,6 @@
     [mp_throwBallCtrl SetBasket:mp_gameBasket];
     
     [mp_throwBallCtrl SetVelocityAndDirection:2 directionDeg:-20];
-    //[mp_throwBallCtrl ThrowBallInit];
     
     return;
 }
@@ -115,8 +144,86 @@
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType
 {
     [mp_gameUIMgr TouchEventHandle:touches withEvent:event withEventType:touchEventType];
-    //[mp_throwBallCtrl ThrowBallInit];
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+// game message handle section
+- (void)TouchViewClicked
+{
+    CGPoint *p = (CGPoint *)([ZCGMessage GetArgument]);
+    
+    [mp_throwBallCtrl Stop];
+    [mp_gameBall MoveToThing:mp_gameContainer];
+    [mp_gameBall MoveToPoint:*p];
+}
+
+- (void)PowerChanged
+{
+    float *p_fPower = (float *)([ZCGMessage GetArgument]);
+    [mp_throwBallCtrl SetVelocity:*p_fPower];
+}
+
+
+- (void)DirectChanged
+{
+    float *p_fDirectDeg = (float *)([ZCGMessage GetArgument]);
+    [mp_throwBallCtrl SetDirectionDeg:*p_fDirectDeg];
+}
+
+
+- (void)NextCardBtnTouched
+{
+    [mp_gameCard NextCard];
+}
+
+- (void)ThrowBtnTouched
+{
+    [mp_throwBallCtrl Ready];
+}
+
+- (void)ThrowBallSucceed
+{
+    NSLog(@"SUCCESS\n");
+    [mp_gameCard CurrentCardSuccess];
+    [mp_gameCard NextCard];
+    [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
+}
+
+- (void)ThrowBallFailure
+{
+    NSLog(@"FAILURE\n");
+    [mp_gameCard CurrentCardFailure];
 }
 
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

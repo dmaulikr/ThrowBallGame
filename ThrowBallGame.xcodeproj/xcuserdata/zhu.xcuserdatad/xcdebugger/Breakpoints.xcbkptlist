@@ -34,7 +34,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/ViewController.m"
-         timestampString = "450289643.081575"
+         timestampString = "450463719.487469"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "109"
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450351675.305877"
+         timestampString = "450515889.092264"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "325"
-         endingLineNumber = "325"
+         startingLineNumber = "377"
+         endingLineNumber = "377"
          landmarkName = "-TouchEventHandle:withEvent:withEventType:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450351675.305877"
+         timestampString = "450510301.985106"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "188"
-         endingLineNumber = "188"
+         startingLineNumber = "208"
+         endingLineNumber = "208"
          landmarkName = "-InitIndicator"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,12 +86,77 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
-         timestampString = "450351675.305877"
+         timestampString = "450515889.092264"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "338"
-         endingLineNumber = "338"
+         startingLineNumber = "395"
+         endingLineNumber = "395"
          landmarkName = "-TouchEventHandle:withEvent:withEventType:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ThrowBallGame/src/UIMgr/ZCGPlayScreenMgr.m"
+         timestampString = "450515889.092264"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "430"
+         endingLineNumber = "430"
+         landmarkName = "-ValueConstraint:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ThrowBallGame/src/gameView/ZCGDrawView.m"
+         timestampString = "450503241.865917"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
+         landmarkName = "-Draw_Arrow_Line:with_end_point:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ThrowBallGame/src/game/ZCGGame.m"
+         timestampString = "450551796.804672"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "162"
+         endingLineNumber = "162"
+         landmarkName = "-PowerChanged"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ThrowBallGame/src/game/ZCGGame.m"
+         timestampString = "450551796.804672"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "169"
+         endingLineNumber = "169"
+         landmarkName = "-DirectChanged"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ThrowBallGame/src/game/ZCGThrowBallCtrl.m"
+         timestampString = "450552473.337497"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "336"
+         endingLineNumber = "336"
+         landmarkName = "-CheckMeetHole"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -47,6 +47,24 @@
 //    NSLog(@"ZCGDrawView: Output\n");
 //}
 
+
+- (void)ClearDraw
+{    
+//    UIGraphicsBeginImageContext(m_pMainImage.size);
+//    //    // 绘制改变大小的图片
+//    //[p_image_src drawInRect:self.frame];
+//    //    // 从当前context中创建一个改变大小后的图片
+//    self.m_pMainImage = UIGraphicsGetImageFromCurrentImageContext();
+//    //    // 使当前的context出堆栈
+//    UIGraphicsEndImageContext();
+    
+    //CGContextDrawImage(m_bitmapContextRef, self.frame, m_pMainImage.CGImage);
+    CGContextClearRect(m_bitmapContextRef, self.frame);
+    [self SetImage:[self GetBimapFromBitmapContext]];
+    
+    return;
+}
+
 - (void)EnableDrawFunction
 {
     [self InitBitmapContext];
@@ -88,7 +106,7 @@
 {
     CGContextDrawImage(m_bitmapContextRef, frame, pImageSrc.CGImage);
     
-    self.image = [self GetBimapFromBitmapContext];
+    self.image = [self GetBimapFromBitmapContext];// invoked many times will leak memory?
 }
 
 - (void)SetImage : (UIImage *)pImageSrc
@@ -96,6 +114,18 @@
     self.m_pMainImage = pImageSrc;
     self.image = pImageSrc;
 }
+
+- (float)Deg2Rad:(float)fDeg
+{
+    return (fDeg * M_PI / 180.0);
+}
+
+- (float)Rad2Deg:(float)fRad
+{
+    return (fRad * 180.0 / M_PI);
+}
+
+
 
 - (void)DrawLine : (CGPoint)startPoint withEndPoint:(CGPoint)endPoint
 {
@@ -141,7 +171,7 @@
 
 - (void)Draw_Arrow_Line
 {
-    CGPoint point_1, point_2;
+    //CGPoint point_1, point_2;
     
     CGContextSetStrokeColorWithColor(m_bitmapContextRef, m_StrokeColorRef);//线条颜色
     CGContextSetShouldAntialias(m_bitmapContextRef,NO);//设置线条平滑，不需要两边像素宽
@@ -149,13 +179,15 @@
     CGContextMoveToPoint(m_bitmapContextRef,m_startPoint.x,m_startPoint.y); //线条起始点
     CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);//线条结束点
     // draw arrow
-    [self Get_Arrow_Point:&point_1 with_return_point_2:&point_2 with_angle:GV_ARROW_ANGLE];
+    //CO_SYSTEM_TRANSFORM(point_1);
+    //CO_SYSTEM_TRANSFORM(point_2);
+    //[self Get_Arrow_Point:&point_1 with_return_point_2:&point_2 with_angle:GV_ARROW_ANGLE];
     //CO_SYSTEM_TRANSFORM(point_1);
     //CO_SYSTEM_TRANSFORM(point_2);
     
-    CGContextMoveToPoint(m_bitmapContextRef,point_1.x,point_1.y); //线条起始点
+    CGContextMoveToPoint(m_bitmapContextRef,m_arrowPoint1.x,m_arrowPoint1.y); //线条起始点
     CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);//线条结束点
-    CGContextMoveToPoint(m_bitmapContextRef,point_2.x,point_2.y); //线条起始点
+    CGContextMoveToPoint(m_bitmapContextRef,m_arrowPoint2.x,m_arrowPoint2.y); //线条起始点
     CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);//线条结束点
     
     CGContextStrokePath(m_bitmapContextRef);//结束，也就是开始画
@@ -163,20 +195,37 @@
     [self SetImage:[self GetBimapFromBitmapContext]];
 }
 
-- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_end_point:(CGPoint)_end_point_ with_line_width : (float)_f_line_width_
+- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_end_point:(CGPoint)_end_point_
 {
     m_startPoint = _start_point_;
     m_endPoint = _end_point_;
-    m_fLineWidth = _f_line_width_;
+    //m_fLineWidth = _f_line_width_;
     
-    CO_SYSTEM_TRANSFORM(m_startPoint);
-    CO_SYSTEM_TRANSFORM(m_endPoint);
+    float x1 = m_startPoint.x - m_endPoint.x;
+    float y1 = m_startPoint.y - m_endPoint.y;
+    float fAngleDeg;
+    float fLineLong;
     
-    [self Draw_Arrow_Line];
+    fAngleDeg = y1 == 0 ? 0 : atanf(x1 / y1);
+    fAngleDeg = [self Rad2Deg:fAngleDeg];
+    x1 *= x1;
+    y1 *= y1;
+    fLineLong = sqrtf(x1 + y1);
+     
+    
+    //CO_SYSTEM_TRANSFORM(m_startPoint);
+    //CO_SYSTEM_TRANSFORM(m_endPoint);
+    [self Draw_Arrow_Line:m_startPoint with_line_long:fLineLong with_line_direction:fAngleDeg];
+    
+    return;
 }
 
-- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_line_width : (float)_f_line_width_ with_line_long:(float)_f_line_long_ with_line_direction : (float)f_line_direction
+- (void)Draw_Arrow_Line : (CGPoint)_start_point_  with_line_long:(float)_f_line_long_ with_line_direction : (float)f_line_direction
 {
+    
+    float fAngleTempDeg = f_line_direction;
+    
+    f_line_direction = fabsf(f_line_direction);
     
     m_startPoint = _start_point_;
     
@@ -184,15 +233,36 @@
     m_endPoint.x = m_startPoint.x + _f_line_long_ * cos(f_line_direction);
     m_endPoint.y = m_startPoint.y + _f_line_long_ * sin(f_line_direction);
     
-    m_fLineWidth = _f_line_width_;
+    //m_fLineWidth = _f_line_width_;
     m_fLineLength = _f_line_long_;
     
     CO_SYSTEM_TRANSFORM(m_startPoint);
     CO_SYSTEM_TRANSFORM(m_endPoint);
+
+    [self Compute_Arrow_Point];
     
+    if (fAngleTempDeg < 0 ) {
+        [self SetToXAxisSymmetric];
+    }
     
     [self Draw_Arrow_Line];
 }
+
+- (void)SetToXAxisSymmetric
+{
+    float fTemp = m_startPoint.x + m_startPoint.x;
+    
+    m_endPoint.x = fTemp - m_endPoint.x;
+    m_arrowPoint1.x = fTemp - m_arrowPoint1.x;
+    m_arrowPoint2.x = fTemp - m_arrowPoint2.x;
+    
+}
+
+- (void)Compute_Arrow_Point
+{
+    [self Get_Arrow_Point:&m_arrowPoint1 with_return_point_2:&m_arrowPoint2 with_angle:GV_ARROW_ANGLE];
+}
+
 
 - (void)Get_Arrow_Point : (CGPoint *)p_point_1 with_return_point_2: (CGPoint *)p_point_2
              with_angle : (float)f_angle

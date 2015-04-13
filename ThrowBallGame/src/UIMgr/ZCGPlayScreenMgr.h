@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "UIMgrHeader.h"
 
+
+
 @class ZCGView;
 @class ZCGBall;
 @class ZCGBasket;
@@ -16,6 +18,7 @@
 @class ZCGDrawView;
 @class ZCGUIMgr;
 @class ZCGStat;
+@class ZCGThing;
 
 
 
@@ -44,6 +47,8 @@
 #define BG_PRE_CARD_BUTTON_ID 6
 #define BG_NEXT_CARD_BUTTON_ID 7
 
+#define BALL_LIMIT_X 250
+#define BALL_LIMIT_Y 80
 
 @interface ZCGPlayScreenMgr : NSObject
 {
@@ -56,7 +61,10 @@
     CGPoint direction_indicator_start_draw_point;
     float f_direction_indicator_draw_line_width;
     float f_direction_indicator_draw_line_long;
+    float f_direction_deg;
     
+    CGPoint ballPoint;
+    BOOL m_bNeedDrawArrow;
 }
 @property(nonatomic, retain) ZCGBall *mp_gameBall;
 @property(nonatomic, retain) ZCGBasket *mp_gameBasket;
@@ -72,15 +80,17 @@
 @property(nonatomic, retain) UIButton *mp_directionReduceButton;
 
 // mp_gameContainer is used to put the ball basket hole and so on
-@property(nonatomic, retain) ZCGView *mp_gameContainer;
-@property(nonatomic, retain) ZCGUIMgr *mp_gameUIMgr;
+@property(nonatomic, retain) ZCGThing *mp_gameContainer;
+//@property(nonatomic, retain) ZCGUIMgr *mp_gameUIMgr;
 
-@property(nonatomic, retain) ZCGStat *mp_gameStat;
+//@property(nonatomic, retain) ZCGStat *mp_gameStat;
 
 - (BOOL)InitPlayScreen:(ZCGView *)p_mainPlayView;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
 - (void)IndicatorDrawLine:(ZCGDrawView *)p_indicator;
+- (float)GetDirectionDeg;
+- (float)GetPower;
 
 @end
 

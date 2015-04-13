@@ -19,6 +19,12 @@
 #define BG_HOLE_COUNT_MAX 10
 #define BG_GROUND_X_DEFAULT 30
 
+#define BG_MOVING 0
+#define BG_MEET_HOLE 1
+#define BG_MEET_BASKET 2
+#define BG_OUT_OF_BOUND 3
+#define BG_SOFTWARE_STOP 4
+
 
 @interface ZCGThrowBallCtrl : NSObject
 {
@@ -40,9 +46,12 @@
     
     int m_n_ground_x;
     int m_n_touch_gnd_count;
+    int m_nNeedTouchGndNum;
     
     // indicate if ball have touched the ground ever
     int m_nTouchGndFlag;
+    
+    int m_nThrowBallState;
     
     double m_fBallMovetTime;
     
@@ -61,8 +70,13 @@
 - (void)SetBall:(ZCGBall *)p_ball;
 - (BOOL)TryAddHole:(ZCGHole *)p_hole;
 
+- (void)Stop;
+- (void)Ready;
+- (void)SetVelocity:(float)fVelocity;
+- (void)SetDirectionDeg:(float)fAngleDeg;
+- (void)SetDirectionRad:(float)fAngleRad;
+- (void)SetNeedTouchGndNum:(int)nNum;
 
-- (void)ThrowBallInit;
 - (void)SetVelocityAndDirection:(float)fVelocity directionDeg:(float)fAngleDeg;
 - (void)SetVelocityAndDirection:(float)fVelocity directionRad:(float)fAngleRad;
 

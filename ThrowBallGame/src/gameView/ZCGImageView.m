@@ -123,6 +123,21 @@
     self.image = p_new_image;
 }
 
+
+- (void)ClearDraw
+{
+    UIGraphicsBeginImageContext(self.image.size);
+    //    // 绘制改变大小的图片
+    //[p_image_src drawInRect:self.frame];
+    //    // 从当前context中创建一个改变大小后的图片
+    self.image = UIGraphicsGetImageFromCurrentImageContext();
+    //    // 使当前的context出堆栈
+    UIGraphicsEndImageContext();
+    
+    return;
+}
+
+
 + (UIImage *)Image_Rotation_Angle_90 : (UIImage *)p_image_src with_direction : (int)n_direction
 {
     if (n_direction == BG_LEFT) {

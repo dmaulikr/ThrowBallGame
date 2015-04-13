@@ -9,7 +9,7 @@
 
 @interface ZCGBackground : ZCGThing
 {
-    int m_nIndex;
+    //int m_nIndex;
 }
 - (void)AddQuietThing:(ZCGThing *)p_thing withFrame:(CGRect)frame;
 - (void)AddMovingThing:(ZCGThing *)p_thing withFrame:(CGRect)frame;

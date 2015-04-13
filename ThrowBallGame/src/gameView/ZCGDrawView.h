@@ -30,12 +30,13 @@
     // used for fuction DrawLineToPoint
     CGPoint m_startPoint;
     CGPoint m_endPoint;
+    CGPoint m_arrowPoint1, m_arrowPoint2;
     
     
     // line atribute varery define
     float m_fLineWidth;
-    CGColorRef m_StrokeColorRef;
     float m_fLineLength;
+    CGColorRef m_StrokeColorRef;
     
     
     // store the frame of this view object
@@ -45,6 +46,10 @@
 - (void)EnableDrawFunction;
 - (void)DisableDrawFunction;
 
+// clear what  have been drawed that displaying on the view
+- (void)ClearDraw;
+
+- (void)SetToXAxisSymmetric;
 ///////////////////////////////////////////////////////////////////////////////////////////
 // draw a line
 // you can only invoke DrawLine fuction
@@ -59,13 +64,17 @@
 // draw a line with arrow
 - (void)Get_Arrow_Point : (CGPoint *)p_point_1 with_return_point_2: (CGPoint *)p_point_2
              with_angle : (float)f_angle;
-- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_end_point:(CGPoint)_end_point_ with_line_width : (float)_f_line_width_;
-- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_line_width : (float)_f_line_width_ with_line_long:(float)_f_line_long_ with_line_direction : (float)f_line_direction;
+- (void)Compute_Arrow_Point;
+- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_end_point:(CGPoint)_end_point_;
+- (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_line_long:(float)_f_line_long_ with_line_direction : (float)f_line_direction;
 - (void)Draw_Arrow_Line;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // set the line attribute
 - (void)SetLineWidth : (float)fLineWidth;
 - (void)SetStrokeColor : (CGColorRef)colorRef;
+
+- (float)Deg2Rad:(float)fDeg;
+- (float)Rad2Deg:(float)fRad;
 
 @end

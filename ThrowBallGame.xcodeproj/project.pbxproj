@@ -37,6 +37,7 @@
 		A9A2F8DC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8BC1AD3D6A500F91CBE /* ZCGPlayScreenMgr.m */; };
 		A9A2F8DD1AD3D6A500F91CBE /* ZCGStartScreenMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8BE1AD3D6A500F91CBE /* ZCGStartScreenMgr.m */; };
 		A9A2F8DE1AD3D6A500F91CBE /* ZCGUIMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A2F8C01AD3D6A500F91CBE /* ZCGUIMgr.m */; };
+		A9B3F1021AD98DAA001D8338 /* ZCGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B3F1011AD98DAA001D8338 /* ZCGMessage.m */; };
 		A9B58A6F1ABABADB00F6CEBF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */; };
 		A9B58A711ABABADB00F6CEBF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A701ABABADB00F6CEBF /* Foundation.framework */; };
 		A9B58A731ABABADB00F6CEBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B58A721ABABADB00F6CEBF /* CoreGraphics.framework */; };
@@ -106,6 +107,8 @@
 		A9A2F8BE1AD3D6A500F91CBE /* ZCGStartScreenMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGStartScreenMgr.m; sourceTree = "<group>"; };
 		A9A2F8BF1AD3D6A500F91CBE /* ZCGUIMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGUIMgr.h; sourceTree = "<group>"; };
 		A9A2F8C01AD3D6A500F91CBE /* ZCGUIMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGUIMgr.m; sourceTree = "<group>"; };
+		A9B3F1001AD98DAA001D8338 /* ZCGMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGMessage.h; sourceTree = "<group>"; };
+		A9B3F1011AD98DAA001D8338 /* ZCGMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGMessage.m; sourceTree = "<group>"; };
 		A9B58A6A1ABABADB00F6CEBF /* ThrowBallGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThrowBallGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9B58A6E1ABABADB00F6CEBF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9B58A701ABABADB00F6CEBF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,7 @@
 		A9BE243E1AD6D0A00020F66A /* ZCGGameContainerMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGGameContainerMgr.m; sourceTree = "<group>"; };
 		A9BE24401AD6D34C0020F66A /* ZCGGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCGGame.h; sourceTree = "<group>"; };
 		A9BE24411AD6D34C0020F66A /* ZCGGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCGGame.m; sourceTree = "<group>"; };
+		A9C52D411AD94F38008AE300 /* ZCGMessageID.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZCGMessageID.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		A9A2F87F1AD3D6A500F91CBE /* src */ = {
 			isa = PBXGroup;
 			children = (
+				A9B3F0FF1AD98DAA001D8338 /* gameMsg */,
 				A9A2F8801AD3D6A500F91CBE /* background */,
 				A9A2F8851AD3D6A500F91CBE /* game */,
 				A9A2F88A1AD3D6A500F91CBE /* gameView */,
@@ -178,6 +183,7 @@
 				A9A2F8891AD3D6A500F91CBE /* ZCGTimer.m */,
 				A9BE24401AD6D34C0020F66A /* ZCGGame.h */,
 				A9BE24411AD6D34C0020F66A /* ZCGGame.m */,
+				A9C52D411AD94F38008AE300 /* ZCGMessageID.h */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -302,6 +308,15 @@
 				A9BE243E1AD6D0A00020F66A /* ZCGGameContainerMgr.m */,
 			);
 			path = UIMgr;
+			sourceTree = "<group>";
+		};
+		A9B3F0FF1AD98DAA001D8338 /* gameMsg */ = {
+			isa = PBXGroup;
+			children = (
+				A9B3F1001AD98DAA001D8338 /* ZCGMessage.h */,
+				A9B3F1011AD98DAA001D8338 /* ZCGMessage.m */,
+			);
+			path = gameMsg;
 			sourceTree = "<group>";
 		};
 		A9B58A5F1ABABADB00F6CEBF = {
@@ -460,6 +475,7 @@
 				A9A2F8DE1AD3D6A500F91CBE /* ZCGUIMgr.m in Sources */,
 				A9BE243F1AD6D0A00020F66A /* ZCGGameContainerMgr.m in Sources */,
 				A9BE24421AD6D34C0020F66A /* ZCGGame.m in Sources */,
+				A9B3F1021AD98DAA001D8338 /* ZCGMessage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,9 +18,9 @@ typedef struct _GAME_STATISTICS_
 {
     int nCurrentLife;
     int nCurrentCard;
-    int nNeedTouchGndCount;
-    int nCurrentCardHoleNum;
     int nCurrentScore;
+    int nNeedTouchGndNum;
+    int nCurrentCardHoleNum;
 }GAME_STATISTICS, *P_GAME_STATISTICS;
 #endif
 
@@ -48,8 +48,8 @@ typedef struct _GAME_ELEMENT_
 - (int)GetCurrentLife;
 - (void)SetCurrentCard:(int)nCard;
 - (int)GetCurrentCard;
-- (void)SetNeedTouchGndCount : (int)nCount;
-- (int)GetNeedTouchGndCount;
+- (void)SetNeedTouchGndNum : (int)nNum;
+- (int)GetNeedTouchGndNum;
 
 - (void)SetGameStat:(GAME_STATISTICS *)p_statSrc;
 - (GAME_STATISTICS *)GetGameStat;

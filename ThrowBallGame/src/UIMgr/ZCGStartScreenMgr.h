@@ -19,10 +19,10 @@
 {
 }
 @property(nonatomic, retain) ZCGView *mp_startMainView;
-@property(nonatomic, retain) ZCGUIMgr *mp_gameUIMgr;
+//@property(nonatomic, retain) ZCGUIMgr *mp_gameUIMgr;
 @property(nonatomic, retain) UIButton *mp_startBtn;
 @property(nonatomic, retain) UIButton *mp_helpBtn;
-@property(nonatomic, retain) ZCGStat *mp_gameStat;
+//@property(nonatomic, retain) ZCGStat *mp_gameStat;
 - (BOOL)InitStartScreen:(ZCGView *)p_startMainView;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
 @end

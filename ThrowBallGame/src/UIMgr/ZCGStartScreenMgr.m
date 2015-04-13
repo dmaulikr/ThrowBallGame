@@ -9,7 +9,10 @@
 #import "ZCGStartScreenMgr.h"
 #import "../gameView/ZCGView.h"
 #import "../statistic/ZCGStat.h"
-#import "ZCGUIMgr.h"
+
+#import "../gameMsg/ZCGMessage.h"
+#import "../game/ZCGMessageID.h"
+
 
 @interface ZCGStartScreenMgr ()
 {
@@ -22,8 +25,8 @@
 @synthesize mp_startMainView;
 @synthesize mp_startBtn;
 @synthesize mp_helpBtn;
-@synthesize mp_gameUIMgr;
-@synthesize mp_gameStat;
+//@synthesize mp_gameUIMgr;
+//@synthesize mp_gameStat;
 
 
 - (void)dealloc
@@ -32,9 +35,9 @@
     [mp_startBtn release];
     [mp_helpBtn release];
     
-    [mp_gameUIMgr release];
+    //[mp_gameUIMgr release];
     
-    [mp_gameStat release];
+    //[mp_gameStat release];
     
     [super dealloc];
 }
@@ -73,12 +76,12 @@
 {
     switch ([sender tag]) {
         case BG_START_BUTTON_ID:
-            NSLog(@"START BUTTON IS CLICKED\n");
-            mp_gameUIMgr.mp_playMainScreen.hidden = NO;
-            mp_gameUIMgr.mp_startMainScreen.hidden = YES;
+            //NSLog(@"START BUTTON IS CLICKED\n");
+            [ZCGMessage PostGameMessage:GM_START_BTN_TOUCHED_ID];
             break;
         case BG_HELP_BUTTON_ID:
-            NSLog(@"HELP BUTTON IS CLICKED\n");
+            //NSLog(@"HELP BUTTON IS CLICKED\n");
+            [ZCGMessage PostGameMessage:GM_HELP_BTN_TOUCHED_ID];
             break;
         default:
             break;

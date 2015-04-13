@@ -7,6 +7,7 @@
 //
 
 #import "ZCGPlayScreenMgr.h"
+#import "ZCGUIMgr.h"
 
 #import "../gameView/ZCGView.h"
 #import "../gameView/ZCGDrawView.h"
@@ -15,13 +16,22 @@
 #import "../background/ZCGBackground.h"
 #import "../background/ZCGBackgroundMgr.h"
 #import "../statistic/ZCGStat.h"
-#import "ZCGUIMgr.h"
+
+#import "../gameMsg/ZCGMessage.h"
+#import "../game/ZCGMessageID.h"
+
+
+BEGIN_GAME_MESSAGE(ZCGPlayScreenMgr)
+//ADD_GAME_MSG(TouchViewClicked, GM_TOUCH_VIEW_TOUCHED_ID)
+END_GAME_MESSAGE()
+
 
 //extern ZCGUIMgr *p_mgr;
 
 @interface ZCGPlayScreenMgr ()
 @property(nonatomic, retain) ZCGView *mp_playViewContainer;
 @property(nonatomic, retain) ZCGView *mp_touchView;
+@property(nonatomic, retain) ZCGDrawView *mp_drawView;
 
 
 
@@ -40,6 +50,11 @@
 - (void)InitPlayScreenLabel;
 - (void)InitPlayScreenButton;
 - (void)InitIndicator;
+
+- (void)UpdateDrawView;
+- (float)ValueConstraint:(float)fValue;
+- (float)GetDirectionDeg;
+- (float)GetPower;
 @end
 
 
@@ -55,6 +70,7 @@
 @synthesize mp_gameBasket;
 @synthesize mp_backgnd;
 @synthesize mp_touchView;
+@synthesize mp_drawView;
 @synthesize mp_gameContainer;
 
 @synthesize mp_homeButton;
@@ -73,8 +89,8 @@
 @synthesize mp_powerIndicatorView;
 @synthesize mp_directionIndicatorView;
 
-@synthesize mp_gameUIMgr;
-@synthesize mp_gameStat;
+//@synthesize mp_gameUIMgr;
+//@synthesize mp_gameStat;
 
 
 - (void)dealloc
@@ -105,9 +121,9 @@
     
     [mp_gameContainer release];
     
-    [mp_gameUIMgr release];
+    //[mp_gameUIMgr release];
     
-    [mp_gameStat release];
+    //[mp_gameStat release];
     
     [super dealloc];
 }
@@ -125,6 +141,9 @@
     direction_indicator_start_draw_point.y = 0;
     
     m_nPlaySubviewIndex = 0;
+    
+    m_bNeedDrawArrow = FALSE;
+    ballPoint = CGPointMake(0, 0);
 }
 
 // fisrt background
@@ -133,6 +152,8 @@
 // forth component button and label and so on
 - (BOOL)InitPlayScreen:(ZCGView *)p_mainPlayView
 {
+    INIT_GAME_MESSAGE()
+    
     if (p_mainPlayView == nil) {
         return NO;
     }
@@ -146,9 +167,15 @@
     [mp_backgnd LoadScene:"field"];
     [mp_playViewContainer insertSubview:mp_backgnd atIndex:m_nPlaySubviewIndex++];
     
+    mp_drawView = [[ZCGDrawView alloc] initWithFrame:mp_playViewContainer.frame];
+    [mp_drawView setBackgroundColor:[UIColor clearColor]];
+    [mp_drawView SetStrokeColor:[UIColor blueColor].CGColor];
+    [mp_playViewContainer insertSubview:mp_drawView atIndex:m_nPlaySubviewIndex++];
+    [self UpdateDrawView];
+    
     // ball and basket and hole and other
     // need to insert to the mp_gameContainer
-    mp_gameContainer = [[ZCGView alloc] initWithFrame:mp_playViewContainer.frame];
+    mp_gameContainer = [[ZCGThing alloc] initWithFrame:mp_playViewContainer.frame];
     [mp_gameContainer setBackgroundColor:[UIColor clearColor]];
     [mp_playViewContainer insertSubview:mp_gameContainer atIndex:m_nPlaySubviewIndex++];
     
@@ -273,45 +300,77 @@
 
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender
 {
+    float fTemp;
+    
     switch ([sender tag]) {
         case BG_POWER_PLUS_BUTTON_ID:
-            NSLog(@"POWER PLUS BUTTON IS CLICKED\n");
+            //NSLog(@"POWER PLUS BUTTON IS CLICKED\n");
             //endPoint = power_indicator_start_draw_point;
             f_power_indicator_draw_line_long++;
+            f_power_indicator_draw_line_long = [self ValueConstraint:f_power_indicator_draw_line_long];
             [self IndicatorDrawLine:mp_powerIndicatorView];
+            [ZCGMessage SetArgument:&f_power_indicator_draw_line_long withSize:sizeof(float)];
+            [ZCGMessage PostGameMessage:GM_POWER_CHANGE_ID];
             break;
         case BG_POWER_REDUCE_BUTTON_ID:
-            NSLog(@"POWER REDUCE BUTTON IS CLICKED\n");
+            //NSLog(@"POWER REDUCE BUTTON IS CLICKED\n");
             f_power_indicator_draw_line_long--;
+            f_power_indicator_draw_line_long = [self ValueConstraint:f_power_indicator_draw_line_long];
             [self IndicatorDrawLine:mp_powerIndicatorView];
+            [ZCGMessage SetArgument:&f_power_indicator_draw_line_long withSize:sizeof(float)];
+            [ZCGMessage PostGameMessage:GM_POWER_CHANGE_ID];
             break;
         case BG_DIRECTION_PLUS_BUTTON_ID:
-            NSLog(@"DIRECTION PLUS BUTTON IS CLICKED\n");
+            //NSLog(@"DIRECTION PLUS BUTTON IS CLICKED\n");
             f_direction_indicator_draw_line_long++;
+            f_direction_indicator_draw_line_long = [self ValueConstraint:f_direction_indicator_draw_line_long];
             [self IndicatorDrawLine:mp_directionIndicatorView];
+            fTemp = [self GetDirectionDeg];
+            [ZCGMessage SetArgument:&fTemp withSize:sizeof(float)];
+            [ZCGMessage PostGameMessage:GM_DIRECT_CHANGE_ID];
             break;
         case BG_DIRECTION_REDUCE_BUTTON_ID:
-            NSLog(@"DIRECTION REDUCE BUTTON IS CLICKED\n");
+            //NSLog(@"DIRECTION REDUCE BUTTON IS CLICKED\n");
             f_direction_indicator_draw_line_long--;
+            f_direction_indicator_draw_line_long = [self ValueConstraint:f_direction_indicator_draw_line_long];
             [self IndicatorDrawLine:mp_directionIndicatorView];
+            fTemp = [self GetDirectionDeg];
+            [ZCGMessage SetArgument:&fTemp withSize:sizeof(float)];
+            [ZCGMessage PostGameMessage:GM_DIRECT_CHANGE_ID];
             break;
         case BG_THROW_BUTTON_ID:
-            NSLog(@"THROW BUTTON IS CLICKED\n");
+            if (m_bNeedDrawArrow == FALSE) {
+                break;
+            }
+            //NSLog(@"THROW BUTTON IS CLICKED\n");
+            [ZCGMessage SetArgument:&f_power_indicator_draw_line_long withSize:sizeof(float)];
+            [ZCGMessage PostGameMessage:GM_POWER_CHANGE_ID];
+            fTemp = [self GetDirectionDeg];
+            [ZCGMessage SetArgument:&fTemp withSize:sizeof(float)];
+            [ZCGMessage PostGameMessage:GM_DIRECT_CHANGE_ID];
+            [ZCGMessage PostGameMessage:GM_THROW_BTN_TOUCHED_ID];
+            m_bNeedDrawArrow =FALSE;
+            [self UpdateDrawView];
             break;
         case BG_HOME_BUTTON_ID:
-            NSLog(@"HOME BUTTON IS CLICKED\n");
-            mp_gameUIMgr.mp_startMainScreen.hidden = NO;
-            mp_gameUIMgr.mp_playMainScreen.hidden = YES;
+            //NSLog(@"HOME BUTTON IS CLICKED\n");
+            //mp_gameUIMgr.mp_startMainScreen.hidden = NO;
+            //mp_gameUIMgr.mp_playMainScreen.hidden = YES;
+            [ZCGMessage PostGameMessage:GM_HOME_BTN_TOUCHED_ID];
             break;
         case BG_PRE_CARD_BUTTON_ID:
-            NSLog(@"PRE CARD BUTTON IS CLICKED\n");
+            //NSLog(@"PRE CARD BUTTON IS CLICKED\n");
+            [ZCGMessage PostGameMessage:GM_PRE_CARD_BBTN_TOUCHED_ID];
             break;
         case BG_NEXT_CARD_BUTTON_ID:
-            NSLog(@"NEXT CARD BUTTON IS CLICKED\n");
+            //NSLog(@"NEXT CARD BUTTON IS CLICKED\n");
+            [ZCGMessage PostGameMessage:GM_NEXT_CARD_BTN_TOUCHED_ID];
             break;
         default:
             break;
     }
+    
+    [self UpdateDrawView];
     
 }
 
@@ -321,22 +380,91 @@
     UITouch *touch = [allTouches anyObject];   //视图中的所有对象
     UIView *p_view = [touch view];
     CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
+    float fTemp;
+    
     
     if (p_view == mp_powerIndicatorView) {
         f_power_indicator_draw_line_long = point.y;
         [self IndicatorDrawLine:mp_powerIndicatorView];
-        //[mp_powerIndicatorView DrawLine:power_indicator_start_draw_point withEndPoint:point];
+        [ZCGMessage SetArgument:&f_power_indicator_draw_line_long withSize:sizeof(float)];
+        [ZCGMessage PostGameMessage:GM_POWER_CHANGE_ID];
     }
     else if (p_view == mp_directionIndicatorView)
     {
         f_direction_indicator_draw_line_long = point.y;
-        [self IndicatorDrawLine:mp_directionIndicatorView];;
+        [self IndicatorDrawLine:mp_directionIndicatorView];
+        fTemp = [self GetDirectionDeg];
+        [ZCGMessage SetArgument:&fTemp withSize:sizeof(float)];
+        [ZCGMessage PostGameMessage:GM_DIRECT_CHANGE_ID];
     }
     else if (p_view == mp_touchView)
     {
-        ZCGBall *p_ball = [mp_gameStat GetGameElement]->p_ball;
-        [p_ball MoveBallToPoint : point];
+//        ZCGBall *p_ball = [mp_gameStat GetGameElement]->p_ball;
+//        [p_ball MoveBallToPoint : point];
+        if (point.x <= BALL_LIMIT_X - 10 && point.y <= BALL_LIMIT_Y -10) {
+            m_bNeedDrawArrow = TRUE;
+            ballPoint = point;
+            [ZCGMessage SetArgument:&point withSize:sizeof(CGPoint)];
+            [ZCGMessage PostGameMessage:GM_TOUCH_VIEW_TOUCHED_ID];
+        }
     }
+    
+    [self UpdateDrawView];
+}
+
+- (void)UpdateDrawView
+{
+    CGPoint point1 = CGPointMake(BALL_LIMIT_X, 0);
+    CGPoint point2 = CGPointMake(0, BALL_LIMIT_Y);
+    CGPoint point3 = CGPointMake(BALL_LIMIT_X, BALL_LIMIT_Y);
+    [mp_drawView ClearDraw];
+    [mp_drawView DrawLine:point1 withEndPoint:point3];
+    [mp_drawView DrawLine:point2 withEndPoint:point3];
+    if (m_bNeedDrawArrow == TRUE) {
+        [mp_drawView Draw_Arrow_Line:ballPoint with_line_long:40 with_line_direction:[self GetDirectionDeg]];
+    }
+}
+
+- (float)ValueConstraint:(float)fValue
+{
+    float fTemp = fValue;
+    
+    if (fValue <= 0)
+    {
+        fTemp = 0;
+    }
+    
+    if (fValue >= BG_INDICATOR_LONG)
+    {
+        fTemp = BG_INDICATOR_LONG;
+    }
+    
+    return fTemp;
+    
+}
+
+
+- (float)GetDirectionDeg
+{
+    float temp;
+    
+    temp = f_direction_indicator_draw_line_long * 1.8 - 90;
+    if (temp >= 89) {
+        temp = 89;
+    }
+    else if (temp <= -89)
+    {
+        temp = -89;
+    }
+    
+    return temp;
+}
+
+
+- (float)GetPower
+{
+    
+    return f_power_indicator_draw_line_long;
 }
 
 

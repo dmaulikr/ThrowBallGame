@@ -20,6 +20,8 @@
 
 #import "../UIMgr/ZCGUIMgr.h"
 #import "../statistic/ZCGStat.h"
+#import "../statistic/ZCGCard.h"
+#import "../thing/ZCGThing.h"
 
 
 #define BG_HOLE_COUNT 3
@@ -33,9 +35,9 @@
     ZCGThrowBallCtrl *mp_throwBallCtrl;
     
     int m_nGameContainerSubviewIndex;
-    ZCGView *mp_gameContainer;
+    ZCGThing *mp_gameContainer;
     
-    ZCGStat *mp_gameStat;
+    ZCGCard *mp_gameCard;
     
 }
 @property(nonatomic, retain) ZCGBall *mp_gameBall;
@@ -43,5 +45,4 @@
 
 - (void)InitGameWithMainView:(ZCGView *)p_mainGameView;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
-
 @end

@@ -16,6 +16,7 @@
 @class ZCGPlayScreenMgr;
 @class ZCGStartScreenMgr;
 @class ZCGStat;
+@class ZCGThing;
 
 
 @interface ZCGUIMgr : NSObject
@@ -27,11 +28,11 @@
 @property(nonatomic, retain) ZCGView *mp_playMainScreen;
 @property(nonatomic, retain) ZCGPlayScreenMgr *mp_playScreenMgr;
 @property(nonatomic, retain) ZCGStartScreenMgr *mp_startScreenMgr;
-@property(nonatomic, retain) ZCGStat *mp_gameStat;
+//@property(nonatomic, retain) ZCGStat *mp_gameStat;
 - (id)init:(ZCGView *)p_mainViewContainer;
 - (void)InitGameUI:(ZCGView *)p_mainViewContainer;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
-- (ZCGView *)GetGameContainer;
+- (ZCGThing *)GetGameContainer;
 - (void)SetGameStatistic:(ZCGStat *)p_stat;
 @end

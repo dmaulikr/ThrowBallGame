@@ -9,15 +9,28 @@
 #import "ZCGUIMgr.h"
 #import "../gameView/ZCGView.h"
 #import "../statistic/ZCGStat.h"
+#import "../thing/ZCGThing.h"
 #import "ZCGPlayScreenMgr.h"
 #import "ZCGStartScreenMgr.h"
 #import "ZCGBackgroundMgr.h"
+
+#import "../gameMsg/ZCGMessage.h"
+#import "../game/ZCGMessageID.h"
+
+
+BEGIN_GAME_MESSAGE(ZCGUIMgr)
+ADD_GAME_MSG(HomeBtnClicked,GM_HOME_BTN_TOUCHED_ID)
+ADD_GAME_MSG(StartBtnClicked,GM_START_BTN_TOUCHED_ID)
+END_GAME_MESSAGE()
+
 
 
 
 @interface ZCGUIMgr ()
 {
 }
+- (void)HomeBtnClicked;
+- (void)StartBtnClicked;
 @end
 
 
@@ -27,7 +40,7 @@
 @synthesize mp_startScreenMgr;
 @synthesize mp_playMainScreen;
 @synthesize mp_playScreenMgr;
-@synthesize mp_gameStat;
+//@synthesize mp_gameStat;
 
 - (void)dealloc
 {
@@ -37,7 +50,7 @@
     [mp_playScreenMgr release];
     [mp_startScreenMgr release];
     
-    [mp_gameStat release];
+    //[mp_gameStat release];
     
     [super dealloc];
 }
@@ -54,6 +67,9 @@
 
 - (void)InitGameUI:(ZCGView *)p_mainViewContainer
 {
+    
+    INIT_GAME_MESSAGE()
+    
     CGRect frame;
     
     self.mp_mainViewContainer = p_mainViewContainer;
@@ -66,7 +82,7 @@
     [mp_startMainScreen setBackgroundColor:[UIColor clearColor]];
     mp_startMainScreen.hidden = YES;
     mp_startScreenMgr = [[ZCGStartScreenMgr alloc] init];
-    mp_startScreenMgr.mp_gameUIMgr = self;
+    //mp_startScreenMgr.mp_gameUIMgr = self;
     [mp_startScreenMgr InitStartScreen:mp_startMainScreen];
     
     
@@ -75,7 +91,7 @@
     mp_playMainScreen.hidden = YES;
     mp_playScreenMgr = [[ZCGPlayScreenMgr alloc] init];
     [mp_playScreenMgr InitPlayScreen:mp_playMainScreen];
-    mp_playScreenMgr.mp_gameUIMgr = self;
+   // mp_playScreenMgr.mp_gameUIMgr = self;
     
     [mp_mainViewContainer insertSubview:mp_startMainScreen atIndex:0];
     [mp_mainViewContainer insertSubview:mp_playMainScreen atIndex:1];
@@ -93,13 +109,13 @@
 
 - (void)SetGameStatistic:(ZCGStat *)p_stat
 {
-    self.mp_gameStat = p_stat;
-    mp_playScreenMgr.mp_gameStat = p_stat;
-    mp_startScreenMgr.mp_gameStat = p_stat;
+    //self.mp_gameStat = p_stat;
+    //mp_playScreenMgr.mp_gameStat = p_stat;
+    //mp_startScreenMgr.mp_gameStat = p_stat;
 }
 
 
-- (ZCGView *)GetGameContainer
+- (ZCGThing *)GetGameContainer
 {
     return mp_playScreenMgr.mp_gameContainer;
 }
@@ -116,6 +132,20 @@
     [mp_startScreenMgr TouchEventHandle:touches withEvent:event withEventType:touchEventType];
     
     return;
+}
+
+
+- (void)HomeBtnClicked
+{
+    mp_startMainScreen.hidden = NO;
+    mp_playMainScreen.hidden = YES;
+}
+
+- (void)StartBtnClicked
+{
+    mp_playMainScreen.hidden = NO;
+    mp_startMainScreen.hidden = YES;
+    
 }
 
 

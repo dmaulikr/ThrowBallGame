@@ -6,6 +6,12 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
+
+// class thing
+// the super class of ball, hole, tree etc.
+// as a thing, it can receive other things and it can move to other thing
+
+
 #import "../gameView/ZCGImageView.h"
 
 @interface ZCGThing : ZCGImageView

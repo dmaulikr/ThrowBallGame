@@ -18,8 +18,10 @@ ADD_GAME_MSG(PowerChanged, GM_POWER_CHANGE_ID)
 ADD_GAME_MSG(DirectChanged, GM_DIRECT_CHANGE_ID)
 ADD_GAME_MSG(ThrowBtnTouched, GM_THROW_BTN_TOUCHED_ID)
 ADD_GAME_MSG(NextCardBtnTouched, GM_NEXT_CARD_BTN_TOUCHED_ID)
+ADD_GAME_MSG(PreCardBtnTouched, GM_PRE_CARD_BBTN_TOUCHED_ID)
 ADD_GAME_MSG(ThrowBallSucceed, GM_THROW_BALL_SUCCESS_ID)
 ADD_GAME_MSG(ThrowBallFailure, GM_THROW_BALL_FAILURE_ID)
+ADD_GAME_MSG(NeedRestartGame, GM_NEED_RESTART_GAME_ID)
 END_GAME_MESSAGE()
 
 
@@ -37,13 +39,22 @@ END_GAME_MESSAGE()
 {
     
 }
+// message handle
+- (void)ThrowBallFailure;
+- (void)ThrowBallSucceed;
+- (void)NextCardBtnTouched;
+- (void)PreCardBtnTouched;
 - (void)TouchViewClicked;
 - (void)PowerChanged;
 - (void)DirectChanged;
 - (void)ThrowBtnTouched;
+- (void)NeedRestartGame;
 
+// initialize
 - (void)InitGameContainer;
 - (void)InitThrowBallCtrl;
+- (void)InitAttribute;
+
 @end
 
 
@@ -70,14 +81,16 @@ END_GAME_MESSAGE()
     [super dealloc];
 }
 
-//- (void)AddGameMessage
-//{
-//    [ZCGMessage AddMessage:self withSelector:@selector(TouchViewClicked) withMsgID:GM_TOUCH_VIEW_TOUCHED_ID];
-//}
+- (void)InitAttribute
+{
+    m_nCount = 0;
+}
 
 - (void)InitGameWithMainView:(ZCGView *)p_mainGameView
 {
     INIT_GAME_MESSAGE()
+    
+    [self InitAttribute];
     
     mp_gameUIMgr = [ZCGUIMgr new];
     [mp_gameUIMgr InitGameUI:p_mainGameView];
@@ -86,7 +99,8 @@ END_GAME_MESSAGE()
 
     [self InitThrowBallCtrl];
     
-    [ZCGTimer LaunchTimer:0.01 target:mp_throwBallCtrl selector:@selector(ThrowBall) repeats:YES];
+    
+    [ZCGTimer LaunchTimer:0.01 target:self selector:@selector(TimerHandle) repeats:YES];
     
     //mp_gameStat.m_gameElement.p_ball = mp_gameBall;
     mp_gameCard = [ZCGCard new];
@@ -98,7 +112,10 @@ END_GAME_MESSAGE()
     [mp_gameCard SetGameElement:&gameElement];
     [mp_gameCard FirstCard];
     
+    
     [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
+    
+    [self SendGameStatChangeMsg];
 }
 
 - (void)InitGameContainer
@@ -146,8 +163,50 @@ END_GAME_MESSAGE()
     [mp_gameUIMgr TouchEventHandle:touches withEvent:event withEventType:touchEventType];
 }
 
+
+- (void)SendGameStatChangeMsg
+{
+    GAME_STATISTICS *p_gs = [mp_gameCard GetGameStat];
+    [ZCGMessage SetArgument:p_gs withSize:sizeof(GAME_STATISTICS)];
+    [ZCGMessage PostGameMessage:GM_UPDATE_STATISTICS_ID];
+}
+
+- (void)SetNotifyInfo:(NSString *)pInfo
+{
+    
+}
+
+
+///////////////////////////////////////////////////////////
+// game timer handle
+- (void)TimerHandle
+{
+    [mp_throwBallCtrl ThrowBall];
+    
+    // 0.2 second
+    if (m_nCount++ >= 10) {
+        m_nCount = 0;
+        //make the label displayed and moved and disappeared
+        [mp_gameUIMgr GameStatusLabelMove];
+    }
+    
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 // game message handle section
+
+- (void)NeedRestartGame
+{
+    [mp_gameCard FirstCard];
+    
+    [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
+    [self SendGameStatChangeMsg];
+    
+    NSString *pInfo = [[NSString alloc] initWithFormat:@"CARD %d", [mp_gameCard GetCurrentCard]];
+    [mp_gameUIMgr SetNotifyInfo:pInfo];
+    
+}
+
 - (void)TouchViewClicked
 {
     CGPoint *p = (CGPoint *)([ZCGMessage GetArgument]);
@@ -174,6 +233,21 @@ END_GAME_MESSAGE()
 - (void)NextCardBtnTouched
 {
     [mp_gameCard NextCard];
+    [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
+    [self SendGameStatChangeMsg];
+    
+    NSString *pInfo = [[NSString alloc] initWithFormat:@"CARD %d", [mp_gameCard GetCurrentCard]];
+    [mp_gameUIMgr SetNotifyInfo:pInfo];
+}
+
+- (void)PreCardBtnTouched
+{
+    [mp_gameCard PreCard];
+    [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
+    [self SendGameStatChangeMsg];
+    
+    NSString *pInfo = [[NSString alloc] initWithFormat:@"CARD %d", [mp_gameCard GetCurrentCard]];
+    [mp_gameUIMgr SetNotifyInfo:pInfo];
 }
 
 - (void)ThrowBtnTouched
@@ -184,15 +258,35 @@ END_GAME_MESSAGE()
 - (void)ThrowBallSucceed
 {
     NSLog(@"SUCCESS\n");
+    
     [mp_gameCard CurrentCardSuccess];
     [mp_gameCard NextCard];
     [mp_throwBallCtrl SetNeedTouchGndNum:[mp_gameCard GetNeedTouchGndNum]];
+    [self SendGameStatChangeMsg];
+    
+    NSString *pInfo = [[NSString alloc] initWithFormat:@" GOOD "];
+    [mp_gameUIMgr SetNotifyInfo:pInfo];
+    
 }
 
 - (void)ThrowBallFailure
 {
     NSLog(@"FAILURE\n");
     [mp_gameCard CurrentCardFailure];
+    
+    [self SendGameStatChangeMsg];
+    
+    if ([mp_gameCard GetCurrentLife] == 0) {
+        [ZCGMessage PostGameMessage:GM_GAME_OVER_ID];// post a game message
+        //NSString *pInfo = [[NSString alloc] initWithFormat:@"GAME OVER"];
+        //[mp_gameUIMgr SetNotifyInfo:pInfo];
+    }
+    else
+    {
+        NSString *pInfo = [[NSString alloc] initWithFormat:@" FAILURE "];
+        [mp_gameUIMgr SetNotifyInfo:pInfo];
+    }
+    
 }
 
 

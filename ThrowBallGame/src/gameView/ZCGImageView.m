@@ -33,6 +33,10 @@
  **/
 - (void)InitBitmapContext
 {
+    if (m_bitmapContextRef != nil) {
+        return;
+    }
+    
     int nWidth = self.frame.size.width;
     int nHeight = self.frame.size.height;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -149,6 +153,7 @@
 
 - (void)Image_Rotation_Angle_90:(int)n_direction
 {
+    
     if (n_direction == BG_LEFT) {
         self.image = [UIImage imageWithCGImage:self.image.CGImage scale:1 orientation:UIImageOrientationLeft];
     }

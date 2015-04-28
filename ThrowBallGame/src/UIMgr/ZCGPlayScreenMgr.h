@@ -6,6 +6,10 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
+
+// the play view manager of the game
+
+
 #import <Foundation/Foundation.h>
 #import "UIMgrHeader.h"
 
@@ -21,6 +25,9 @@
 @class ZCGThing;
 
 
+
+#ifndef _ZCG_PlayScreenMgr_H_
+#define _ZCG_PlayScreenMgr_H_
 
 #define BG_TOUCH_BEGAN 0
 #define BG_TOUCH_MOVE 1
@@ -50,21 +57,30 @@
 #define BALL_LIMIT_X 250
 #define BALL_LIMIT_Y 80
 
+#endif
+
+
 @interface ZCGPlayScreenMgr : NSObject
 {
+    // to be used as the index when invoke the insertSubview method of (ZCGView *)mp_playViewContainer
     int m_nPlaySubviewIndex;
     
+    // the power indicator property define
     CGPoint power_indicator_start_draw_point;
     float f_power_indicator_draw_line_width;
     float f_power_indicator_draw_line_long;
     
+    // the direction indicator property define
     CGPoint direction_indicator_start_draw_point;
     float f_direction_indicator_draw_line_width;
     float f_direction_indicator_draw_line_long;
     float f_direction_deg;
     
+    // ball center point storage
     CGPoint ballPoint;
     BOOL m_bNeedDrawArrow;
+    
+    CGPoint m_gameStatusLabelCenter;
 }
 @property(nonatomic, retain) ZCGBall *mp_gameBall;
 @property(nonatomic, retain) ZCGBasket *mp_gameBasket;
@@ -89,8 +105,14 @@
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
 - (void)IndicatorDrawLine:(ZCGDrawView *)p_indicator;
+
+// this returned degree is meaning the ball initialized direction degree
 - (float)GetDirectionDeg;
+// return the throw ball strength
 - (float)GetPower;
+- (void)GameStatusLabelMove;
+// the info is display on the game status label to do some instruction.
+- (void)SetNotifyInfo:(NSString *)pInfo;
 
 @end
 

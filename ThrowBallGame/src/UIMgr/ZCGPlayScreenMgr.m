@@ -22,7 +22,7 @@
 
 
 BEGIN_GAME_MESSAGE(ZCGPlayScreenMgr)
-//ADD_GAME_MSG(TouchViewClicked, GM_TOUCH_VIEW_TOUCHED_ID)
+ADD_GAME_MSG(UpdateGameStatLabel, GM_UPDATE_STATISTICS_ID)
 END_GAME_MESSAGE()
 
 
@@ -38,6 +38,7 @@ END_GAME_MESSAGE()
 @property(nonatomic, retain) UILabel *mp_powerLabel;
 @property(nonatomic, retain) UILabel *mp_directionLabel;
 @property(nonatomic, retain) UILabel *mp_stateLabel;
+@property(nonatomic, retain) UILabel *mp_gameStatusLabel;
 
 @property(nonatomic, retain) ZCGDrawView *mp_powerIndicatorView;
 @property(nonatomic, retain) ZCGDrawView *mp_directionIndicatorView;
@@ -85,9 +86,11 @@ END_GAME_MESSAGE()
 @synthesize mp_powerLabel;
 @synthesize mp_directionLabel;
 @synthesize mp_stateLabel;
+@synthesize mp_gameStatusLabel;
 
 @synthesize mp_powerIndicatorView;
 @synthesize mp_directionIndicatorView;
+
 
 //@synthesize mp_gameUIMgr;
 //@synthesize mp_gameStat;
@@ -110,6 +113,7 @@ END_GAME_MESSAGE()
     [mp_powerLabel release];
     [mp_directionLabel release];
     [mp_stateLabel release];
+    [mp_gameStatusLabel release];
     
     [mp_gameBall release];
     [mp_gameBasket release];
@@ -261,9 +265,21 @@ END_GAME_MESSAGE()
     
     mp_stateLabel = [mp_playViewContainer Add_Label:pStr with_frame:CGRectMake(90, 180, 350, 30) with_index:m_nPlaySubviewIndex++];
     [mp_stateLabel setTransform : CGAffineTransformMakeRotation(M_PI / 2)];
+    mp_stateLabel.frame = CGRectMake(250, 20, 30, 300);
+    [pStr release];
     
-        
+    
+    pStr = [[NSString alloc] initWithFormat:(@"GAME START")];
+    
+    mp_gameStatusLabel = [mp_playViewContainer Add_Label:pStr with_frame:CGRectMake(90, 180, 350, 30) with_index:m_nPlaySubviewIndex++];
+    [mp_gameStatusLabel setTransform : CGAffineTransformMakeRotation(M_PI / 2)];
+    mp_gameStatusLabel.frame = CGRectMake(110, 150, 50, 400);
+    mp_gameStatusLabel.font = [UIFont fontWithName:@"Arial-BoldItalicMT" size:35];
+    mp_gameStatusLabel.hidden = YES;
+    
+    m_gameStatusLabelCenter = mp_gameStatusLabel.center;
 }
+
 
 - (void)InitPlayScreenButton
 {
@@ -376,10 +392,10 @@ END_GAME_MESSAGE()
 
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType
 {
-    NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
-    UITouch *touch = [allTouches anyObject];   //视图中的所有对象
+    NSSet *allTouches = [event allTouches];    
+    UITouch *touch = [allTouches anyObject];   
     UIView *p_view = [touch view];
-    CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
+    CGPoint point = [touch locationInView:[touch view]];
     float fTemp;
     
     
@@ -487,6 +503,48 @@ END_GAME_MESSAGE()
 
     return;
 }
+
+
+- (void)UpdateGameStatLabel
+{
+    GAME_STATISTICS *p_gs = (GAME_STATISTICS *)[ZCGMessage GetArgument];
+    
+    NSString *pStr = [[NSString alloc] initWithFormat:(@"CARD%d--TGT%d--LIFE%d--SCORE%d"),
+                      p_gs->nCurrentCard,p_gs->nNeedTouchGndNum, p_gs->nCurrentLife, p_gs->nCurrentScore];
+    mp_stateLabel.text = pStr;
+}
+
+
+- (void)SetNotifyInfo:(NSString *)pInfo
+{
+//    CGRect frame = mp_gameStatusLabel.frame;
+//    frame.origin.x = 100;
+//    mp_gameStatusLabel.frame = frame;
+    mp_gameStatusLabel.center = m_gameStatusLabelCenter;
+    mp_gameStatusLabel.text = pInfo;
+    mp_gameStatusLabel.hidden = NO;
+}
+
+- (void)GameStatusLabelMove
+{
+    if (mp_gameStatusLabel.hidden == YES) {
+        return;
+    }
+    
+    CGPoint point = mp_gameStatusLabel.center;
+    point.x += 3;
+//    CGRect frame = mp_gameStatusLabel.frame;
+//    frame.origin.x += 5
+//    mp_gameStatusLabel.frame = frame;
+    
+    mp_gameStatusLabel.center = point;
+    
+    if (point.x >= 170) {
+        mp_gameStatusLabel.hidden = YES;
+    }
+    
+}
+
 
 @end
 

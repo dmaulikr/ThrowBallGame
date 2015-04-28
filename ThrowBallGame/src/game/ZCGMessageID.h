@@ -43,6 +43,13 @@ enum _GAME_MESSAGE_ID_
     
     GM_THROW_BALL_SUCCESS_ID = 17,
     GM_THROW_BALL_FAILURE_ID,
+    
+    GM_UPDATE_STATISTICS_ID = 19,
+    GM_GAME_OVER_ID,// mean that game over
+    
+    GM_RESTART_BTN_TOUCHED_ID = 21,
+    GM_RETURN_BTN_TOUCHED_ID,
+    GM_NEED_RESTART_GAME_ID,
 };
 #endif
 

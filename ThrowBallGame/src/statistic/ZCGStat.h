@@ -43,6 +43,7 @@ typedef struct _GAME_ELEMENT_
     GAME_STATISTICS m_gameStat;
     GAME_ELEMENT m_gameElement;
 }
+- (BOOL)InitStat;
 // setter and getter methods declare section
 - (void)SetCurrentLife:(int)nLife;
 - (int)GetCurrentLife;
@@ -51,7 +52,9 @@ typedef struct _GAME_ELEMENT_
 - (void)SetNeedTouchGndNum : (int)nNum;
 - (int)GetNeedTouchGndNum;
 
+
 - (void)SetGameStat:(GAME_STATISTICS *)p_statSrc;
+
 - (GAME_STATISTICS *)GetGameStat;
 - (void)SetGameElement:(P_GAME_ELEMENT) p_elementSrc;
 - (P_GAME_ELEMENT)GetGameElement;

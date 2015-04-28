@@ -23,8 +23,12 @@
 #import "../statistic/ZCGCard.h"
 #import "../thing/ZCGThing.h"
 
+#ifndef _ZCG_Game_H_
+#define _ZCG_Game_H_
 
 #define BG_HOLE_COUNT 3
+
+#endif
 
 @interface ZCGGame : NSObject
 {
@@ -39,10 +43,33 @@
     
     ZCGCard *mp_gameCard;
     
+    int m_nCount;
 }
 @property(nonatomic, retain) ZCGBall *mp_gameBall;
 @property(nonatomic, retain) ZCGBasket *mp_gameBasket;
 
 - (void)InitGameWithMainView:(ZCGView *)p_mainGameView;
 - (void)TouchEventHandle:(NSSet *)touches withEvent:(UIEvent *)event withEventType:(TOUCH_EVENT_TYPE)touchEventType;
+- (void)SendGameStatChangeMsg;
+- (void)SetNotifyInfo:(NSString *)pInfo;
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

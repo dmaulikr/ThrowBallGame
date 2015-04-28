@@ -12,7 +12,6 @@
 {
     
 }
-- (BOOL)InitStat;
 @end
 
 @implementation ZCGStat
@@ -33,7 +32,7 @@
 {
     m_gameStat.nCurrentLife = 10;
     m_gameStat.nCurrentCard = 1;
-    m_gameStat.nNeedTouchGndNum = 1;
+    m_gameStat.nNeedTouchGndNum = 0;
     m_gameStat.nCurrentCardHoleNum = 0;
     
     return TRUE;

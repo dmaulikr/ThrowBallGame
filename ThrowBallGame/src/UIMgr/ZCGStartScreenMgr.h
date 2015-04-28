@@ -12,8 +12,13 @@
 @class ZCGUIMgr;
 @class ZCGStat;
 
+#ifndef _ZCG_StartScreenMgr_H_
+#define _ZCG_StartScreenMgr_H_
+
 #define BG_START_BUTTON_ID 0
 #define BG_HELP_BUTTON_ID 1
+
+#endif
 
 @interface ZCGStartScreenMgr : NSObject
 {

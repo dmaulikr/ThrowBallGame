@@ -35,4 +35,6 @@
 - (IBAction)ButtonTouchUpInsideAction:(UIButton *)sender;
 - (ZCGThing *)GetGameContainer;
 - (void)SetGameStatistic:(ZCGStat *)p_stat;
+- (void)GameStatusLabelMove;
+- (void)SetNotifyInfo:(NSString *)pInfo;
 @end

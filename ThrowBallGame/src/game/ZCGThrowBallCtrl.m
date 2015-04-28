@@ -364,7 +364,7 @@
     
     double df_temp = sqrt(point_12.x * point_12.x + point_12.y * point_12.y);
     
-    if (df_temp <= 15)
+    if (df_temp <= 13)
     {
         [mp_gameBasket ReceiveBall:mp_gameBall];
         //[self EndBallMotionHandle];
@@ -378,7 +378,7 @@
 - (void)EndBallMotion
 {
     if (m_nTouchGndFlag == 1) {
-        m_n_touch_gnd_count--;
+        //m_n_touch_gnd_count--;
     }
     
     //NSLog(@"tgc: %d\n",m_n_touch_gnd_count);
@@ -390,6 +390,8 @@
     //[self Judge_The_Throw_Ball_Result];
     
     //m_n_touch_gnd_count = 0;
+    
+    NSLog(@"curr tnt %d",m_n_touch_gnd_count);
     
     if (m_nThrowBallState == BG_MEET_BASKET) {
         if (m_n_touch_gnd_count == m_nNeedTouchGndNum) {

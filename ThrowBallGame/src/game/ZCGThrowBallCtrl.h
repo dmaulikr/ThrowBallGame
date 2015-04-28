@@ -12,6 +12,8 @@
 @class ZCGHole;
 @class ZCGBasket;
 
+#ifndef _ZCG_ThrowBallCtrl_H_
+#define _ZCG_ThrowBallCtrl_H_
 
 #define BG_ACC 10
 #define BG_BALL_TIME_STEP 0.1
@@ -25,6 +27,8 @@
 #define BG_OUT_OF_BOUND 3
 #define BG_SOFTWARE_STOP 4
 
+
+#endif
 
 @interface ZCGThrowBallCtrl : NSObject
 {

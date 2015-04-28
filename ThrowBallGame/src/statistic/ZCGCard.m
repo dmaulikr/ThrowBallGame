@@ -55,6 +55,13 @@
 {
     P_GAME_STATISTICS pGameStat = [self GetGameStat];
     
+    if (pGameStat->nCurrentCard > BG_EACH_SCENE_CARD_MAX) {
+        // to-do
+        // this scene have been finished
+        // and needed code
+        
+        //return;
+    }
     
     // m_nNeedTouchGndCount
     int nTemp = (pGameStat->nCurrentCard - 1) / BG_TOUCH_GND_NUMBER_MAX;
@@ -64,7 +71,7 @@
         pGameStat->nNeedTouchGndNum = 0;
     }
     
-    pGameStat->nNeedTouchGndNum = pGameStat->nCurrentCard -
+    pGameStat->nNeedTouchGndNum = (pGameStat->nCurrentCard - 1) -
                                             pGameStat->nCurrentCardHoleNum * BG_TOUCH_GND_NUMBER_MAX;
     
     [self LoadCard];
@@ -72,12 +79,19 @@
 
 - (void)FirstCard
 {
+    [self InitStat];
+    
     [self CardManage];
 }
 
 - (void)NextCard
 {
     [self GetGameStat]->nCurrentCard++;
+    if ([self GetGameStat]->nCurrentCard >= BG_EACH_SCENE_CARD_MAX) {
+        [self GetGameStat]->nCurrentCard = BG_EACH_SCENE_CARD_MAX;
+        //return;
+    }
+    
     [self CardManage];
 }
 
@@ -88,7 +102,15 @@
 
 - (void)PreCard
 {
+    P_GAME_STATISTICS pGameStat = [self GetGameStat];
     
+    pGameStat->nCurrentCard--;
+    
+    if (pGameStat->nCurrentCard <= 1) {
+        pGameStat->nCurrentCard = 1;
+    }
+    
+    [self CardManage];
 }
 
 
@@ -163,12 +185,19 @@
 
 - (void)CurrentCardSuccess
 {
-    
+    P_GAME_STATISTICS pGameStat = [self GetGameStat];
+    pGameStat->nCurrentScore++;
 }
 
 - (void)CurrentCardFailure
 {
+    P_GAME_STATISTICS pGameStat = [self GetGameStat];
+    pGameStat->nCurrentLife--;
     
+    if (pGameStat->nCurrentLife <= 0)
+    {
+        pGameStat->nCurrentLife = 0;
+    }
 }
 
 

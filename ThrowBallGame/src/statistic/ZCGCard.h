@@ -11,7 +11,16 @@
 
 @class ZCGThing;
 
+#ifndef _ZCG_STAT_H_
+#define _ZCG_STAT_H_
+
 #define BG_TOUCH_GND_NUMBER_MAX 4
+
+// 4 situation of hole 0 1 2 3
+// 4 cards for each situation of hole
+#define BG_EACH_SCENE_CARD_MAX (4*4)
+
+#endif
 
 @interface ZCGCard : ZCGStat
 {

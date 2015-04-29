@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 zhu. All rights reserved.
 //
 
+// a class designed to process the motion of the ball
+
 #import <Foundation/Foundation.h>
 
 @class ZCGBall;
@@ -63,6 +65,7 @@
 @property(nonatomic, retain) ZCGBall *mp_gameBall;
 @property(nonatomic, retain) ZCGBasket *mp_gameBasket;
 
+// the main method to handle the motion of the ball
 - (BOOL)ThrowBall;
 - (void)BallMotion;
 - (BOOL)CheckBallOutOfBound;
@@ -70,21 +73,26 @@
 - (BOOL)CheckMeetBasket;
 - (void)EndBallMotion;
 
+// and the element of the game
 - (void)SetBasket:(ZCGBasket *)p_basket;
 - (void)SetBall:(ZCGBall *)p_ball;
 - (BOOL)TryAddHole:(ZCGHole *)p_hole;
 
 - (void)Stop;
 - (void)Ready;
+// set the ball velocity
 - (void)SetVelocity:(float)fVelocity;
+// orientation in degree
 - (void)SetDirectionDeg:(float)fAngleDeg;
+// orientation in radian
 - (void)SetDirectionRad:(float)fAngleRad;
+// the name of the method indicates the function
 - (void)SetNeedTouchGndNum:(int)nNum;
 
 - (void)SetVelocityAndDirection:(float)fVelocity directionDeg:(float)fAngleDeg;
 - (void)SetVelocityAndDirection:(float)fVelocity directionRad:(float)fAngleRad;
 
-
+// switch between the degree and radian
 - (float)Deg2Rad:(float)fDeg;
 - (float)Rad2Deg:(float)fRad;
 

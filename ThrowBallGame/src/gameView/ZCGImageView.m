@@ -103,11 +103,8 @@
     UIImage* p_new_image;
     
     UIGraphicsBeginImageContext(rect.size);
-    //    // 绘制改变大小的图片
     [p_image_src drawInRect:rect];
-    //    // 从当前context中创建一个改变大小后的图片
     p_new_image = UIGraphicsGetImageFromCurrentImageContext();
-    //    // 使当前的context出堆栈
     UIGraphicsEndImageContext();
     
     return p_new_image;
@@ -117,11 +114,9 @@
 - (void)Display_Image : (UIImage *)p_image_src with_rect : (CGRect)rect
 {
     UIGraphicsBeginImageContext(self.frame.size);
-    //    // 绘制改变大小的图片
+    //  draw the image in the specified rect
     [p_image_src drawInRect:rect];
-    //    // 从当前context中创建一个改变大小后的图片
     UIImage* p_new_image = UIGraphicsGetImageFromCurrentImageContext();
-    //    // 使当前的context出堆栈
     UIGraphicsEndImageContext();
     
     self.image = p_new_image;
@@ -131,11 +126,7 @@
 - (void)ClearDraw
 {
     UIGraphicsBeginImageContext(self.image.size);
-    //    // 绘制改变大小的图片
-    //[p_image_src drawInRect:self.frame];
-    //    // 从当前context中创建一个改变大小后的图片
     self.image = UIGraphicsGetImageFromCurrentImageContext();
-    //    // 使当前的context出堆栈
     UIGraphicsEndImageContext();
     
     return;

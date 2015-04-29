@@ -71,10 +71,10 @@
 
 - (void)Fill_Color
 {
-    CGContextRef context    =UIGraphicsGetCurrentContext();//获取画布
+    CGContextRef context    =UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, color);
     CGContextFillRect(context, rect);
-    CGContextStrokePath(context);//结束，也就是开始画
+    CGContextStrokePath(context);
     
     return;
 }
@@ -93,14 +93,14 @@
 
 - (void)Draw_Line
 {
-    CGContextRef context    =UIGraphicsGetCurrentContext();//获取画布
-    CGContextSetStrokeColorWithColor(context, line_color);//线条颜色
-    CGContextSetShouldAntialias(context,NO);//设置线条平滑，不需要两边像素宽
-    CGContextSetLineWidth(context,f_line_width);//设置线条宽度
-    CGContextMoveToPoint(context,start_point.x,start_point.y); //线条起始点
-    CGContextAddLineToPoint(context,end_point.x,end_point.y);//线条结束点
+    CGContextRef context    =UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, line_color);
+    CGContextSetShouldAntialias(context,NO);
+    CGContextSetLineWidth(context,f_line_width);
+    CGContextMoveToPoint(context,start_point.x,start_point.y);
+    CGContextAddLineToPoint(context,end_point.x,end_point.y);
     
-    CGContextStrokePath(context);//结束，也就是开始画
+    CGContextStrokePath(context);
     
 }
 
@@ -131,20 +131,20 @@
 {
     CGPoint point_1, point_2;
     
-    CGContextRef context    =UIGraphicsGetCurrentContext();//获取画布
-    CGContextSetStrokeColorWithColor(context, line_color);//线条颜色
-    CGContextSetShouldAntialias(context,NO);//设置线条平滑，不需要两边像素宽
-    CGContextSetLineWidth(context,f_line_width);//设置线条宽度
-    CGContextMoveToPoint(context,start_point.x,start_point.y); //线条起始点
-    CGContextAddLineToPoint(context,end_point.x,end_point.y);//线条结束点
+    CGContextRef context    =UIGraphicsGetCurrentContext();
+    CGContextSetStrokeColorWithColor(context, line_color);
+    CGContextSetShouldAntialias(context,NO);
+    CGContextSetLineWidth(context,f_line_width);
+    CGContextMoveToPoint(context,start_point.x,start_point.y);
+    CGContextAddLineToPoint(context,end_point.x,end_point.y);
     // draw arrow
     [self Get_Arrow_Point:&point_1 with_return_point_2:&point_2 with_angle:GV_ARROW_ANGLE];
-    CGContextMoveToPoint(context,point_1.x,point_1.y); //线条起始点
-    CGContextAddLineToPoint(context,end_point.x,end_point.y);//线条结束点
-    CGContextMoveToPoint(context,point_2.x,point_2.y); //线条起始点
-    CGContextAddLineToPoint(context,end_point.x,end_point.y);//线条结束点
+    CGContextMoveToPoint(context,point_1.x,point_1.y); 
+    CGContextAddLineToPoint(context,end_point.x,end_point.y);
+    CGContextMoveToPoint(context,point_2.x,point_2.y);
+    CGContextAddLineToPoint(context,end_point.x,end_point.y);
     
-    CGContextStrokePath(context);//结束，也就是开始画
+    CGContextStrokePath(context);
 }
 
 - (void)Draw_Arrow_Line : (CGPoint)_start_point_ with_end_point:(CGPoint)_end_point_ with_line_width : (float)_f_line_width_

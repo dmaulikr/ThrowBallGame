@@ -50,14 +50,6 @@
 
 - (void)ClearDraw
 {    
-//    UIGraphicsBeginImageContext(m_pMainImage.size);
-//    //    // 绘制改变大小的图片
-//    //[p_image_src drawInRect:self.frame];
-//    //    // 从当前context中创建一个改变大小后的图片
-//    self.m_pMainImage = UIGraphicsGetImageFromCurrentImageContext();
-//    //    // 使当前的context出堆栈
-//    UIGraphicsEndImageContext();
-    
     //CGContextDrawImage(m_bitmapContextRef, self.frame, m_pMainImage.CGImage);
     CGContextClearRect(m_bitmapContextRef, self.frame);
     [self SetImage:[self GetBimapFromBitmapContext]];
@@ -132,7 +124,7 @@
     CO_SYSTEM_TRANSFORM(startPoint);
     CO_SYSTEM_TRANSFORM(endPoint);
     
-    CGContextSetShouldAntialias(m_bitmapContextRef,NO);//设置线条平滑，不需要两边像素宽
+    CGContextSetShouldAntialias(m_bitmapContextRef,NO);//set the stroke smooth
     CGContextMoveToPoint(m_bitmapContextRef, startPoint.x, startPoint.y);
     CGContextAddLineToPoint(m_bitmapContextRef, endPoint.x, endPoint.y);
     CGContextStrokePath(m_bitmapContextRef);
@@ -173,11 +165,11 @@
 {
     //CGPoint point_1, point_2;
     
-    CGContextSetStrokeColorWithColor(m_bitmapContextRef, m_StrokeColorRef);//线条颜色
-    CGContextSetShouldAntialias(m_bitmapContextRef,NO);//设置线条平滑，不需要两边像素宽
-    CGContextSetLineWidth(m_bitmapContextRef,m_fLineWidth);//设置线条宽度
-    CGContextMoveToPoint(m_bitmapContextRef,m_startPoint.x,m_startPoint.y); //线条起始点
-    CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);//线条结束点
+    CGContextSetStrokeColorWithColor(m_bitmapContextRef, m_StrokeColorRef);
+    CGContextSetShouldAntialias(m_bitmapContextRef,NO);
+    CGContextSetLineWidth(m_bitmapContextRef,m_fLineWidth);
+    CGContextMoveToPoint(m_bitmapContextRef,m_startPoint.x,m_startPoint.y); 
+    CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);
     // draw arrow
     //CO_SYSTEM_TRANSFORM(point_1);
     //CO_SYSTEM_TRANSFORM(point_2);
@@ -185,12 +177,12 @@
     //CO_SYSTEM_TRANSFORM(point_1);
     //CO_SYSTEM_TRANSFORM(point_2);
     
-    CGContextMoveToPoint(m_bitmapContextRef,m_arrowPoint1.x,m_arrowPoint1.y); //线条起始点
-    CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);//线条结束点
-    CGContextMoveToPoint(m_bitmapContextRef,m_arrowPoint2.x,m_arrowPoint2.y); //线条起始点
-    CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);//线条结束点
+    CGContextMoveToPoint(m_bitmapContextRef,m_arrowPoint1.x,m_arrowPoint1.y); 
+    CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);
+    CGContextMoveToPoint(m_bitmapContextRef,m_arrowPoint2.x,m_arrowPoint2.y);
+    CGContextAddLineToPoint(m_bitmapContextRef,m_endPoint.x,m_endPoint.y);
     
-    CGContextStrokePath(m_bitmapContextRef);//结束，也就是开始画
+    CGContextStrokePath(m_bitmapContextRef);
     
     [self SetImage:[self GetBimapFromBitmapContext]];
 }
@@ -263,7 +255,7 @@
     [self Get_Arrow_Point:&m_arrowPoint1 with_return_point_2:&m_arrowPoint2 with_angle:GV_ARROW_ANGLE];
 }
 
-
+// vector algorithm
 - (void)Get_Arrow_Point : (CGPoint *)p_point_1 with_return_point_2: (CGPoint *)p_point_2
              with_angle : (float)f_angle
 {

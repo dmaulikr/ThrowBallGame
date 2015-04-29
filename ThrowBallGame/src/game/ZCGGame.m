@@ -99,10 +99,11 @@ END_GAME_MESSAGE()
 
     [self InitThrowBallCtrl];
     
-    
+    // this timer is used as game time
+    // and the motion of the ball will base on it
     [ZCGTimer LaunchTimer:0.01 target:self selector:@selector(TimerHandle) repeats:YES];
     
-    //mp_gameStat.m_gameElement.p_ball = mp_gameBall;
+    // initialize the game card
     mp_gameCard = [ZCGCard new];
     GAME_ELEMENT gameElement;
     gameElement.p_ball = mp_gameBall;
@@ -240,6 +241,7 @@ END_GAME_MESSAGE()
     [mp_gameUIMgr SetNotifyInfo:pInfo];
 }
 
+// previous card button have been touched
 - (void)PreCardBtnTouched
 {
     [mp_gameCard PreCard];
